@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>inLine Styles</title>
+        <style>
+            /*連結的虛擬類別*/
+            /*未點選狀態*/
+            a:link {
+                color: green;
+            }
+            /*已點選狀態*/
+            a:visited {
+                color: blue;
+            }
+            /*當游標靠近就會改變樣式*/
+            a:hover {
+                size: 30px;
+                color:yellow;
+            }
+            /*當被點選*/
+            a:active {
+                size: 20px;
+            }
+            /*被點選(聚焦)就會改變樣式(小心不要與visited重疊到focus會優先)*/
+            input:focus {
+                background-color: red;
+            }
+            /*用在目標虛擬類別，比如下方href例子*/
+            h1:target {
+                background-color: grey;
+            }
+        </style>
+    </head>
+    <body>
+        <p><a href = "https:/google.com" target = "_blank">點擊前往Google</a></p>
+        <p>測試輸入框：<input></p>
+        <p><a href = "#test1">前往test1</a></p>
+        <h1 id = "test1">測試拉!!</h1>
+        <p><a href = "#test2">前往test2</a></p>
+        <h1 id = "test2">測試第二版啦!!</h1>
+    </body>
+</html>

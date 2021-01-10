@@ -1,0 +1,31 @@
+h1 { 
+    color: pink; 
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 24px;
+}
+
+h1.font1 {
+    color: green; 
+    text-align: center;
+    font-family: "Times New Roman" , 標楷體;
+    font-size: 24px;
+    font-size-adjust: 0.46;
+}
+
+p.font1 {
+    color: plum;
+    text-align: right;
+    font-family: "Times New Roman", "Arial";
+}
+
+#z1 {
+    color: orange; 
+    text-align: center;
+}
+
+#a1 {
+    color: red;
+    text-align: right;
+    font-size: 100pt;
+}

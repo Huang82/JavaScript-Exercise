@@ -1,0 +1,15 @@
+
+/* font */
+#font1 {
+    font-family: "Timer New Roman" , "Arial"; /*字型名稱*/
+    font-size: 10px;                          /*字型大小*/
+    font-style: normal;                       /*字型樣式(這邊是斜體處理，分為正常normal 斜體italic 傾斜體oblique)*/
+    font-weight: normal;                      /*字型樣式(這邊是粗體處理，分為正常normal 粗體字bold 更粗的字體bolder 更細的字體bolder 也可以給數值100-900 細至粗)*/
+    font-variant: small-caps;                 /*預設是normal，可以把英文小寫變大寫、大寫字體變得比小寫還要大一點*/
+    font-size-adjust: none;                   /*主要是設定字型高度高度比率，給小數數值*/
+    @font-face {                              /*可以從伺服器上下載字型下來(但要小心版權問題)*/
+        font-family: ;
+        src: url();
+    }
+
+}

@@ -1,0 +1,30 @@
+<!--test HTML-->
+<!doctype html>
+<html lang="zh-tw">
+    <head>
+        <meta charset = "utf-8">
+        <title>Test html</title>
+    </head>
+    <!--視窗事件-->
+    <body onload = "load()" onresize = "change1()">     
+        <!--滑鼠事件-->
+        <p onmouseover = "change(this)" onmouseout = "back(this)">
+        請把滑鼠移進來</p>
+        <br>
+        <hr>
+        <br>
+        <p>請輸入文字：</p>
+        <!--鍵盤事件-->
+        <input type = "text" onkeydown = "enter()">
+        <br>
+        <hr>
+        <br>
+        <!--表單事件-->
+        <form onsubmit = "send()">
+            <input type = "text" onchange = "change2()">
+            <input type = "submit">
+        </form>
+
+        <script src = ".\test.js"></script>
+    </body>
+</html>
