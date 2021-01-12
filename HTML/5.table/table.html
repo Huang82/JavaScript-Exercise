@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>表格</title>
+    </head>
+    <body>
+        <!--建立一個表格，預設是靠左對齊-->
+        <h1>簡易表格</h1>
+        <table>
+            <tr><td>aaa</td><td>10</td><td>男</td></tr>
+            <tr><td>bbeeeb</td><td>12</td><td>男</td></tr>
+            <tr><td>ccc</td><td>165</td><td>女</td></tr>
+            <tr><td>dwdd</td><td>14</td><td>男</td></tr>
+            <tr><td>ee</td><td>18149</td><td>男</td></tr>
+        </table>
+        <hr>
+        <!--設置表格框線，數字越大框線越厚-->
+        <h1>表格的框線</h1>
+        <table border = "1">
+            <tr><td>aaa</td><td>10</td><td>男</td></tr>
+            <tr><td>bbeeeb</td><td>12</td><td>男</td></tr>
+            <tr><td>ccc</td><td>165</td><td>女</td></tr>
+            <tr><td>dwdd</td><td>14</td><td>男</td></tr>
+            <tr><td>ee</td><td>18149</td><td>男</td></tr>
+        </table>
+        <hr>
+        <!--建立表頭、表格本體、建立表尾(為了方便觀看)-->
+        <h1>建立表頭、表格本體、建立表尾(為了方便觀看)</h1>
+        <table border = "1">
+            <!--表格的標題-->
+            <caption>XX學校</caption>
+            <!--欄位的群組話-->
+            <colgroup>
+                <col style = "background-color: lightblue;">
+                <!--也可以合併-->
+                <col span = "2" style = "background-color: yellow;">
+                <!-- <col style = "background-color: orange;"> -->
+            </colgroup>
+            <!--表頭-->
+            <thead>
+                <tr><th colspan = "3">XX學校-X年X班</th></tr>
+                <tr><th>name</th><th>age</th><th>sex</th></tr>
+            </thead>
+            <!--表格本體，為了讓表格更容易看得清楚(分類)-->
+            <tbody>
+                <!--合併表格-->
+                <tr><td>aaa</td><td>10</td><td rowspan = "2">男</td></tr>
+                <tr><td>bbeeeb</td><td>12</td></tr>
+                <tr><td>ccc</td><td>165</td><td>女</td></tr>
+                <tr><td>dwdd</td><td>14</td><td rowspan = "2">男</td></tr>
+                <tr><td>ee</td><td>18149</td></tr>
+            </tbody>
+            <!--建立表尾-->
+            <tfoot>
+                <!--合併表格，colspan = "佔表格數"-->
+                <tr><th colspan = "3">2021/1/12製作</th></tr>
+            </tfoot>
+        </table>
+        <hr>
+        <!--練習-->
+        <table border = "1">
+            <thead>
+                <tr><th colspan = "2">美國電子大廠</th></tr>
+                <tr><th>公司</th><th>產品</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><a href="https://www.ibm.com/tw-zh">IBM</a></td><td>大型主機</td></tr>
+                <tr><td><a href="https://www.apple.com/tw/">Apple</a></td><td>隨身裝置</td></tr>
+                <tr><td><a href="https://www.intel.com.tw/content/www/tw/zh/homepage.html">Intel</a></td><td>電子晶片</td></tr>
+            </tbody>
+        </table>
+    </body>
+</html>

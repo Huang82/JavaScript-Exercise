@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>項目清單</title>
+    </head>
+    <body>
+        <h1>前往網站，項目符號清單</h1>
+        <!--項目符號清單，一般使用在順序不重要的條列式資料-->
+        <ul>
+            <li><h3><a href = "http:/google.com">前往Google</a></h3></li>
+            <li><h3><a href = "http:/yahoo.com.tw">前往Yahoo!</a></h3></li>
+        </ul>
+        <hr>
+        <h1>前往網站，有編號的項目清單</h1>
+        <!--有編號的項目清單，使用在需要明確表達順序的條列式資料-->
+        <!--可以使用start來設定起始編號，每下一個+1，也可以是負數-->
+        <ol start = "6">
+            <li><h3><a href = "http:/google.com">前往Google</a></h3></li>
+            <li><h3><a href = "http:/yahoo.com.tw">前往Yahoo!</a></h3></li>
+            <li><h3><a>Test</a></h3></li>
+            <li><h3><a>Test1</a></h3></li>
+            <!--也可以中途更改順序-->
+            <li value = "1"><h3><a>Test2</a></h3></li>
+            <li><h3><a>Test3</a></h3></li>
+            <li><h3><a>Test4</a></h3></li>
+        </ol>
+        <hr>
+        <!--更改項目清單的編號種類，預設1、a、A、i、I-->
+        <h1>更改項目清單的編號種類</h1>
+        <ol type = "A">
+            <li><h3><a href = "http:/google.com">前往Google</a></h3></li>
+            <li><h3><a href = "http:/yahoo.com.tw">前往Yahoo!</a></h3></li>
+            <li><h3><a>Test</a></h3></li>
+            <li><h3><a>Test1</a></h3></li>
+            <!--也可以中途更改順序-->
+            <li value = "1"><h3><a>Test2</a></h3></li>
+            <li><h3><a>Test3</a></h3></li>
+            <li><h3><a>Test4</a></h3></li>
+        </ol>
+        <hr>
+        <h1>項目清單編號遞減的應用</h1>
+        <ol reversed>
+            <li><h3><a href = "http:/google.com">前往Google</a></h3></li>
+            <li><h3><a href = "http:/yahoo.com.tw">前往Yahoo!</a></h3></li>
+            <li><h3><a>Test</a></h3></li>
+            <li><h3><a>Test1</a></h3></li>
+            <!--也可以中途更改順序-->
+            <li value = "1"><h3><a>Test2</a></h3></li>
+            <li><h3><a>Test3</a></h3></li>
+            <li><h3><a>Test4</a></h3></li>
+        </ol>
+        <hr>
+        <!--自定義清單-->
+        <h1>自定義清單</h1>
+        <dl>
+            <dt>物聯網</dt>
+                <dd>物聯網（英語：Internet of Things，簡稱IoT）是一種計算裝置、機械、數位機器相互關聯的系統，具備通用唯一辨識碼（UID），並具有通過網路傳輸數據的能力，無需人與人、或是人與裝置的互動[1][2][3]。
+
+                    物聯網將現實世界數位化，應用範圍十分廣泛。物聯網可拉近分散的資料，統整物與物的數位資訊。物聯網的應用領域主要包括以下方面：運輸和物流、工業製造[4]、健康醫療、智慧型環境（家庭、辦公、工廠）、個人和社會領域等[5]。
+                    
+                    物聯網為受各界矚目的新興領域，但安全性是物聯網應用受到各界質疑的主要因素[6]，主要的質疑在於物聯網技術正在快速發展中，但其中涉及的安全性挑戰，與可能需要的法規變更等，目前均相當欠缺[7][8]</dd>
+        
+            <dt>Arduino</dt>
+                    <dd>Arduino是一家製作開源硬體和開源軟體的公司，同時兼有專案和使用者社群，該公司負責設計和製造單板微控制器和微控制器套件，用於構建數位裝置和互動式物件，以便在物理和數位世界中感知和控制物件。該專案的產品是按照GNU寬通用公共許可證（LGPL）或GNU通用公共許可證（GPL）[1]許可的開源硬體和軟體分發的，Arduino允許任何人製造Arduino板和軟體分發。 Arduino板可以以預裝的形式商業銷售，也可以作為DIY套件購買。</dd>
+
+        </dl>
+    </body>
+</html>
