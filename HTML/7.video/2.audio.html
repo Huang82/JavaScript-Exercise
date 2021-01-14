@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>播放音樂</title>
+    </head>
+    <body>
+        <!--
+            屬性設定
+            src 指定來源位子(格式要對)
+            preload 設定使用者進入該網頁時是否要先下載音檔
+                auto     這是預設，由瀏覽器決定
+                metadata 只下載meta資料，Ex.播放時間、第一個畫格圖片和聲音標題
+                none     不下載
+            autoplay 如果設定這個屬性，則當音樂載入完成就自動撥放(不建議這樣做)
+            mediagroup 如果要同時播放多個影片、檔案的URL是相同時，將用群組方式播放
+            loop 音檔將會重複播放
+            muted 會讓影片靜音
+            controls 如果要播放影片一定要增加的屬性，會讓影片出現播放控制器
+        -->
+        <p><audio src = ".\coin01.mp3" controls loop></audio></p>
+    </body>
+</html>
