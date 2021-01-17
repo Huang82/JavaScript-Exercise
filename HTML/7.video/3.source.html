@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Source Exercise</title>
+    </head>
+    <body>
+        <!--
+            source 必須放在video或者audio元素內
+            格式如下ex.
+            <source src = "" type = "">
+            src     這是必要的屬性，主要設定影片或聲音檔案的URL
+            type    設定檔案的MIME類型，若加上這個設定，可以先讓瀏覽器判斷可否執行
+                subtype常見組合
+                text/plain      純文本
+                text/html       HTML檔案
+                image/gif       GIF圖檔
+                image/png       PNG圖檔
+                image/jpeg      JPEG圖檔
+                video/mp4       MP4圖檔
+                video/ogg       OGG影片檔
+                video/webm      WEBM影片檔
+            media   可以由此設定在哪一種媒體設備撥放
+                all         預設值
+                tv          電視機
+                screen      PC螢幕
+                handheld    手機螢幕
+        -->
+        <video width = "350" controls>
+            <source src = "./aa.mp4" type = "video/mp4">
+            <source src = "bb.mp4" type = "video/mp4">
+            <source src = "./test.mp4" type = "video/mp4">
+            <p>此網頁不支援此影片</p>
+        </video>
+    </body>
+</html>

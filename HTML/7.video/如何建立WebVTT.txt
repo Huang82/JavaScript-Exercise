@@ -1,0 +1,36 @@
+副檔名必須是.vtt
+
+裡面格式為ex.
+
+
+
+WEBVTT
+
+1
+00:00.00 --> 00:06.000
+Welcome to my table
+By Huang82
+
+2
+00:06.00 --> 00:12.000
+結束...
+
+
+3
+00:12.000 --> 00:12.500
+The End
+
+
+--------------------
+第一行為告知這個檔案為WEBVTT檔案
+1 2 3 數字編號為cue，可以想成時間節點
+秒數是由指定時間到下個終點時間
+
+也可以上網查 HTML5 Video Caption Maker來尋找可以方便製作.vtt檔的工具
+
+
+注意!!
+因為CORS使得vtt字幕被擋下所以要把Access-Control-Allow-Origin關掉才能執行
+(另個方法好像是開伺服器下去設定)
+如果執行的是Google Chrome 的話按內容->捷徑
+->目標裡後面增加"C:Program Files (x86)GoogleChromeApplicationchrome.exe" --user-data-dir="C:/Chrome dev session2" --disable-web-security

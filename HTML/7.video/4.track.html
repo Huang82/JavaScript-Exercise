@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>track Exercise</title>
+    </head>
+    <body>
+        <!--
+            track必須放在video或audio元素內，同時這個元素必須放在source元素後面
+            格式如下ex.
+            <track src = "字幕的URL"其它屬性>
+            src     必要的屬性，主要設定字幕檔的URL，這字幕檔案須視WebVTT的檔案格式，副檔名vtt
+            kind    主要設定字幕的種類
+                subtitles   預設選項，列出或是翻譯影片對話內容。一般是用在可以聽見聲音但不懂語言和內容的人
+                captions    列出或是翻譯影片對話內容、聲音資訊或是音效。一般是用在無法播放聲音的環境，或是當觀眾是有聽覺障礙的人
+                chapters    這個字幕主要是作為影片的開頭標題或是影片選項，例如影片有30集，可用此當作是選項
+                description 主要是影片內容的說明，一般是用在無法看到影像或是有視覺障礙者，具有將它轉換成聲音的淺在應用
+                metadata    這個資訊將不再螢幕上顯示
+                srclang     指定字幕語言。若是kind屬性是subtitles或是有kind屬性時，一定要在track元素內加上這個屬性
+                    zh-tw       繁體中文
+                    zh-cn       簡體中文
+                    en          英文
+                    en-US       美式英文
+                    ja          日文
+                    de          德文
+                    fr          法文
+                lebel       字幕軌道的標籤，例如字幕軌道有多個時，可以用此列出辨別字幕
+                default     即使影片只有一個track，也必須要加上這個屬性，如果track元素內有多個字幕軌道時，可以用這個指定預設字幕軌道
+        -->
+        <!--
+            注意!!
+            因為CORS使得vtt字幕被擋下所以要把Access-Control-Allow-Origin關掉才能執行
+        -->
+        <video src = "test.mp4" width = "350" controls>
+            <track src = "text.vtt" srclang = "zh-tw" default>
+        </video>
+    </body>
+</html>
