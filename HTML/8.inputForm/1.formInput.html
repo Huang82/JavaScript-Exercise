@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>formInput練習</title>
+    </head>
+    <body>
+        <!--
+            使用格式為
+            <form action = "表單處理程式的URL" method = "資料傳送方式" 其它屬性>...</form>
+
+            action      設定表單處理程式的URL。如果設計表單元件的<input>元素(type屬性是submit或image)
+            或button元素內有formaction屬性，這個屬性有特別的表單處理程式，則formaction屬性有優先使用順序
+            
+            method      設定表單資料用哪一種方式傳給伺服器的程式，有兩種選項
+                    get     這是預設，表單資料會以"name/value"方式附加到URL的變數中，若有基於安全考量請勿用這種
+                    post    表單資料會以封包(package)方式傳送到伺服器端的HTTP的檔頭區塊內，因用封包方式傳送，所以資料大小沒有限
+            
+            name        這是表單的名稱，一個HTML文件不可以有重複的表單名稱。未來伺服器端的表單處理程式，才可針對這個表單執行更進一步的工作
+            
+            accept-charset  一般透過表單傳送資料時，它的文字編碼應該和網頁的文字編碼相同。如果想要有不同的文字編碼方式可以用acceot-charset屬性設定。
+            假設有多種文字編碼方式，可以彼此間空一格，這時書寫的順序代表使用的優先順序。
+            
+            autocomplete    可以由此設定出入欄位是否具有自動填入的功能，所謂的自動填入是指瀏覽器會記住之前的輸入，下次連結到相同網站，
+            會填入先前輸入的資料。這方面的預設功能由瀏覽器決定，一般瀏覽器會詢問是否儲存此訊息。有兩種選項
+                    on      會自動輸入
+                    off     不使用自動輸入功能
+            不過，如果設計表單元件的<input>元素(type屬性是text)有autocomplete屬性，這個屬性設定將優先使用
+
+            enctype      可以設定表單資料傳送到伺服器的編碼方式
+                    application/x-www-form-urlencoded   這是預設選項
+                    multipart-form-data                 如果傳送的表單有附加檔案時使用
+                    text/plain                          傳送純文字的表單使用
+            不過，如果設計表單元件的<input>元素(type屬性是submit或image)有formenctype屬性，這個formenctype屬性設定將優先使用
+
+            novalidate   傳送表單時，不對所輸入的資料作驗證
+            其實在HTML5中，若使用<input>元素當type屬性是url或email時，將自動檢查輸入的料否正確，如果設定此屬性，則改成不做資料驗證
+            
+            target      可設定顯示資料傳送的結果的瀏覽脈絡，這個屬秀的意義與a元素的target屬性使用相同
+        -->
+
+        <!--
+            <input>
+            
+            accept      設定伺服器可以接收檔案的MIME類型，如果有指定多個MIME類型時，可以用","隔開
+            
+            alt         如果無法輸出圖片內容，可以用此屬性指定的內容輸出
+            
+            autocomplete可以由此設定輸入欄位是否具有自動填入功能，所謂的自動填入會記住之前的輸入，下次連結到相同的網站會自動填入
+            先前的內容，預設的話由瀏覽器決定
+                    on      會自動輸入
+                    off     不使用自動輸入
+
+            autofocus   網頁顯示時，如果是輸入欄位插入點將在此欄位上，也可稱焦點(focus)在此欄位。如果是按鈕，該按鈕將自動被選取，
+            此時按鍵盤的Enter鍵時，相當於按這個鈕。在頁面中按鍵盤的Tab可以切換此焦點，一個頁面只能有一個表單元件有此設定
+
+            checked     若設定這個屬性核對框(checkbox)將呈現被選取狀態
+
+            dirname     設定文字走向的資訊，這個屬性只用在input和textarea元素，在傳送資料到伺服器端時，一定要加上".dir"。例如，
+            <form action="get.exe" First Name:<input type="text" name="filename" dirname="filename.dir">
+
+            disabled    設定停用這個欄位，未來這個欄位就無法輸入和點選
+
+            form        本身是一個元素，當相同的字是屬性時，主要是可以令表單的欄位和指定的form元素產生連結
+
+            formaction  可以設定表單資料處理程式的URL。這個formaction屬性相較form元素內action有優先使用順序
+
+            formenctype 可以設定表單資料元件傳送到伺服器的編碼方式
+                    application/x-www-form-urlencoded   這是預設選項
+                    multipart-form-data                 如果傳送的表單有附加檔案時使用
+                    text/plain                          傳送純文字的表單使用
+
+            formmethod  可以設定表單資料用哪一種方式傳送。這個formmethod屬性相較form元素內method有優先使用順序
+
+            formnovalidate  可設定是否對所傳送的資料作驗證。這個formnovalidate屬性相較form元素內novalidate有優先使用順序
+
+            formtarget      可設定顯示資料傳送的結果的瀏覽脈絡，這個屬性的意義與a元素的target屬性使用相同。這個formatarget屬性
+            相較form元素內target有優先使用順序
+
+            heigth/width    可設定圖片的高度/寬度
+
+            list            主要是定義候補選項，可將此候補選項定義在datalist元素內
+
+            maxlength       設定在此欄位內最多可輸入的字元字數
+
+            multiple        設定可輸入2個以上的值
+
+            name            設定表單的欄位名稱
+
+            pattern         這個屬性適用於input元素當type類型是email、text、tel、search、url和password。主要是驗證欄位輸入值格式是否依規定
+
+            placceholder    主要是在此欄位輸入提醒使用者的內容 ex.
+            <input type="text" name="fullname" placeholder="陳慶煌">
+            上述是提醒使用者這個欄位應該輸入姓名的全名
+
+            readonly        主要是將這個欄位設為只能閱讀，無法更改或編輯
+
+            required        主要是設定這個是必填的欄位，如果沒有輸入就無法傳送
+
+            size            這應是整數值，主要是設定欄位的寬度，所設定的長度代表欄位可接受的字數。如果是用在下拉式選單，則是指可看到的選項數目
+
+            src             可設定圖片檔案的URL
+
+            step            可設定輸入值是依哪一種方式做變化。如果step=5，那數字因該是0、5、10、15方式變化。step屬性可以和max與min搭配使用，
+            這樣就可以建立值的範圍，如果省略min，預設min的值是0
+            這個屬性適用於input元素當type類型是number、range、time、month、date、datetime或datetime-local時使用
+            step使用在不同type類型的相關預設訊息如下：
+            type屬性    step單位    預設step值
+            number         1            1
+            range          1            1
+            time           秒           60
+            datetime       秒           60
+            datetime-locak 秒           60
+            date           日           1
+            week           週           1
+            month          月           1
+
+            max/min屬性
+            max可設定欄位輸入資料的最大值，min可設定欄位輸入資料的最小值
+
+            value         可設定按鈕預設文字，或欄位的預設值或文字
+        -->
+
+        <!--送出按鈕submit屬性
+            其它可設定屬性autofocus、disabled、form、formaction、formmethod、formnovalidate、formtarger、name
+        -->
+        <form action = "./a.exe" method = "GET">
+            <h1>資料查詢</h1>
+            <p>按鈕使用預設名稱</p>
+            <input type = "submit">
+                <p>自行設定按鈕名稱為測試送出</p>
+                <input type = "submit" value = "測試送出">
+            <!--類似觀察者模式，目前伺服器並沒有a.exe的執行讀取按鈕輸入，所以抓不到資料-->
+        </form>
+        <hr>
+        <!--製作重設按鈕reset屬性
+            其它可設定屬性autofocus、disabled、form、name
+        -->
+        <form action = "./b.exe" method = "GET">
+            <h1>建立重設按鈕</h1>
+            <p>按鈕使用預設名稱</p>
+            <input type = "reset">
+            <p>自行設定按鈕名稱為取消輸入</p>
+            <input type = "reset" value = "取消輸入">
+        </form>
+        <hr>
+        <!--上面兩個屬性的整合-->
+        <!--製作單行的文字輸入text屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、maxlength、name、
+            pattern、placeholder、readonly、required、size
+        -->
+        <form action = "./c.exe" method = "GET">
+            <h1>請輸入會員資料</h1>
+            <!--屬性新增輸入寬長度-->
+            <p>姓名：<input type = "text" name = "user" size = "5"></p>
+            <p>地址：<input type = "text" name = "addr"></p>
+            <p><input type = "submit" value = "確認">
+            <input type = "reset" value = "取消"></p>
+        </form>
+        <hr>
+        <!--製作密碼的輸入password屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、maxlength、name、
+            pattern、placeholder、readonly、required、size
+        -->
+        <form action = "./d.exe" method = "GET">
+            <h1>歡迎進入Huang82系統</h1>
+            <!--屬性新增焦點-->
+            <p>帳號：<input type = "text" name = "user" autofocus></p>
+            <!--屬性新增必填欄位-->
+            <p>密碼：<input type = "password" name = "pwd" required></p>
+            <p><input type = "submit" value = "確認">
+            <input type = "reset" value = "取消"></p>
+        </form>
+        <hr>
+        <!--製作搜尋的輸入欄位search屬性
+            其它可設定屬性autocomplete、autofocus、dirname、disabled、form、list、maxlength、name、
+            pattern、placeholder、readonly、required、size、value
+        -->
+        <form action = "e.exe" method = "GET">
+            <h1>歡迎進入Huang82搜尋系統</h1>
+            <!--屬性新增提醒內容-->
+            <p><input type = "search" name = "searching" placeholder = "請輸入關鍵字"></p>
+            <p><input type = "button" value = "搜尋"></p>
+        </form>
+        <hr>
+        <!--製作圖片按鈕image屬性
+            其它可設定屬性autofocus、disabled、form、formaction、formenctype、formmethod、
+            formnovalidate、formtarget、height、name、size、value、width
+        -->
+        <form action = "./f.exe" method = "GET">
+            <h1>歡迎進入Huang82搜尋系統</h1>
+            <!--屬性新增提醒內容-->
+            <p><input type = "search" name = "searching" placeholder = "請輸入關鍵字"></p>
+            <p><input src = "./search.png" type = "image" value = "搜尋"></p>
+        </form>
+        <hr>
+        <!--製作輸入電話號碼欄位tel屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、maxlength、name、
+            pattern、placeholder、readonly、required、size、value
+        -->
+        <!--製作輸入電話號碼欄位email屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、maxlength、multiple、name、
+            pattern、placeholder、readonly、required、size、value
+        -->
+        <form action = "./g.exe" method = "GET">
+            <h1>關於tel與Email</h1>
+            <p>tel:<input type = "tel"></p>
+            <p>Email:<input type = "email" multiple></p>
+            <p><input type = "button" value = "送出"></p>
+        </form>
+        <hr>
+        <!--製作輸入URL欄位url屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、maxlength、name、
+            pattern、placeholder、readonly、required、size、value
+        -->
+        <form action = "./h.exe" method = "GET">
+            <h1>歡迎進入Huang82民調系統</h1>
+            <p>請留個人資料</p>
+            <p>電話號碼：<input type = "tel" name = "tel" placeholder = "0912345678"></p>
+            <!--大部分網站好像都是讓後端處理-->
+            <p>郵件地址：<input type = "email" name = "Email" placeholder = "Huang82@me.com" pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></p>
+            <p>請輸入最常瀏覽網址</p>
+            <p>URL網址：<input type = "url" name = "myurl" value = "http://"></p>
+            <p><input type = "submit" value = "確認">
+               <input type = "reset" value = "取消"></p>
+        </form>
+        <hr>
+        <!--製作選單按鈕radio屬性
+            其它可設定屬性autofocus、disabled、form、required
+        -->
+        <form action = "./i.exe" method = "GET">
+            <!--
+                name    相同選單群組的選單應該要有相同的名稱
+                value   每一個選項按鈕應該有一個值，這個值將送回伺服器
+                checked 如果有這個值，相當於這個按鈕被選取
+            -->
+            <h1>歡迎進入Huang82民調系統</h1>
+            <p>請留個人資料</p>
+            <p>姓名：<input type = "text" name = "user"></p>
+            <p>性別：<br>
+                <input type = "radio" name = "sex" value = "1">男性<br>
+                <input type = "radio" name = "sex" value = "0">女性
+            </p>
+            <p>年齡分析資料：<br>
+                <input type = "radio" name = "age" value = "20">小於20歲<br>
+                <input type = "radio" name = "age" value = "40">20~40歲<br>
+                <input type = "radio" name = "age" value = "60">41~60歲<br>
+                <input type = "radio" name = "age" value = "70">大於60歲<br>
+            </p>
+        </form>
+        <hr>
+        <!--製作選單按鈕checkbox屬性
+            其它可設定屬性autofocus、disabled、form、required
+        -->
+        <form action = "./j.exe" method = "GET">
+            <!--
+                name    相同選單群組的選單應該要有相同的名稱
+                value   每一個選項按鈕應該有一個值，這個值將送回伺服器
+                checked 如果有這個值，相當於這個按鈕被選取
+            -->
+            <h1>歡迎進入Huang82軟體實力調查系統</h1>
+            <p>請留個人資料</p>
+            <p>姓名：<input type = "text" name = "user"></p>
+            <p>性別：<br>
+                <input type = "radio" name = "sex" value = "1">男性<br>
+                <input type = "radio" name = "sex" value = "0">女性
+            </p>
+            <p>年齡分析資料：<br>
+                <input type = "checkbox" name = "software" value = "HTML">HTML<br>
+                <input type = "checkbox" name = "software" value = "CSS">CSS<br>
+                <input type = "checkbox" name = "software" value = "JavaScript">JavaScript<br>
+                <input type = "checkbox" name = "software" value = "JQuery">JQuery<br>
+            </p>
+        </form>
+        <hr>
+        <!--製作數值的輸入number屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、max、min、name、
+            placeholder、readonly、required、step
+        -->
+        <form action = "./k.exe" method = "GET">
+            <!--
+                value   可以設定預設數值
+            -->
+            <h1>歡迎進入Huang82外語能力調查系統</h1>
+            <p>請留個人資料</p>
+            <p>姓名：<input type = "text" name = "user"></p>
+            <p>年齡：<br>
+                <input type = "number" name = "num" min = "1" max = "99" value = "10"></p>
+            <p>外語能力分析資料：<br>
+                <input type = "checkbox" name = "language" value = "Ja">日語<br>
+                <input type = "checkbox" name = "language" value = "En">英語<br>
+                <input type = "checkbox" name = "language" value = "Fr">法語<br>
+                <input type = "checkbox" name = "language" value = "De">德語<br>
+            </p>
+            <p><input type = "submit" value = "送出"></p>
+        </form>
+    </body>
+</html>
