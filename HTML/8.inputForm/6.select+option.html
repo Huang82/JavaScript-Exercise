@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>select+option練習</title>
+    </head>
+    <body>
+        <!--建立下拉式選單
+            <select name="框架名稱">
+                <option value = "選單">...</option>
+                ...
+                <option value = "選單">...</option>
+            </select>
+
+            name        元素內的name是指下拉式選單框架名稱
+            value       選單代表值，將被傳送到伺服器。如果省略value，則<option>元素內容將被傳至伺服器端
+            selected    <option>元素如果有selected屬性，代表這個選項被預選了
+            
+            其它可設定屬性
+            <select>元素：autofocus、disabled、form、name、required
+            <option>元素：disabled、label
+        -->
+        <form action = "./a.exe" method = "GET">
+            <h1>Huang82民調中心</h1>
+            <p>選舉人學歷</p>
+            <p>
+                <select name = "Edu">
+                    <option value = "BA">大學</option>
+                    <option value = "MS">碩士</option>
+                    <option value = "PhD" selected>博士</option>
+                </select>
+            </p>
+            <p>選擇中心最佳企業</p>
+            <p>
+                <select name = "Cor">
+                    <option value = "TSMC">台積電</option>
+                    <option value = "Alibaba">阿里巴巴</option>
+                    <option value = "Amazon">亞馬遜</option>
+                </select>
+            </p>
+            <p><input type = "submit"><input type = "reset"></p>
+        </form>
+        <hr>
+        <!--建立選取方塊
+            size        選取方塊的行數
+            multiple    若設定可以複選。若省略size，而有設定這個屬性則size預設是4行
+        -->
+        <form action = "./b.exe" method = "GET">
+            <h1>Huang82民調中心</h1>
+            <p>選舉人學歷</p>
+            <p>
+                <select name = "Edu" size = "3">
+                    <option value = "HS">高中</option>
+                    <option value = "DP">專科</option>
+                    <option value = "BA">大學</option>
+                    <option value = "MS">碩士</option>
+                    <option value = "PhD" selected>博士</option>
+                </select>
+            </p>
+            <p>選擇中心最佳企業</p>
+            <p>可以複選</p>
+            <p>
+                <!--沒設定size預設為4-->
+                <select name = "Cor" multiple>
+                    <option value = "TSMC">台積電</option>
+                    <option value = "Alibaba">阿里巴巴</option>
+                    <option value = "Amazon">亞馬遜</option>
+                    <option value = "Intel">英特爾</option>
+                    <option value = "Microsoft">微軟</option>
+                </select>
+            </p>
+            <p><input type = "submit"><input type = "reset"></p>
+        </form>
+    </body>
+</html>

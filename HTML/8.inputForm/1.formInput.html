@@ -29,7 +29,7 @@
 
             enctype      可以設定表單資料傳送到伺服器的編碼方式
                     application/x-www-form-urlencoded   這是預設選項
-                    multipart-form-data                 如果傳送的表單有附加檔案時使用
+                    multipart/form-data                 如果傳送的表單有附加檔案時使用
                     text/plain                          傳送純文字的表單使用
             不過，如果設計表單元件的<input>元素(type屬性是submit或image)有formenctype屬性，這個formenctype屬性設定將優先使用
 
@@ -293,6 +293,100 @@
                 <input type = "checkbox" name = "language" value = "De">德語<br>
             </p>
             <p><input type = "submit" value = "送出"></p>
+        </form>
+        <hr>
+        <!--製作特定範圍的數值range屬性
+            value   可在此設定預設數值，不指定為50
+            max/min 如果不指定max預設為100，min為0
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、name、
+            placeholder、step
+        -->
+        <form action = "./l.exe" method = "GET">
+            <h1>歡迎進入Huang82調查系統</h1>
+            <p>請留個人資料</p>
+            <p>姓名：<input type = "text" name = "user"></p>
+            <p>滿意度調查：<input type = "range" name = "Grade" max = "10" value = "5"></p>
+        </form>
+        <hr>
+        <!--製作特定顏色color屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、name、value
+        -->
+        <form action = "/m.exe" method = "GET">
+            <p>色彩選擇1：<input type = "color" name = "color1"></p>
+            <p>色彩選擇2：<input type = "color" name = "color2" value = "#0000ff"></p>
+        </form>
+        <hr>
+        <!--製作部顯示但要傳送的欄位資訊hidden屬性
+            其它可設定屬性autofocus、disabled、form、name
+            通常是用在要標註這是哪一個的編號(回傳)，像是一間大型商店每一間都有自己的問卷調查
+            裡面就可以標註這是哪一家編號
+        -->
+        <form action = "./n.exe" method = "GET">
+            <p><input type = "hidden" name = "gov" value = "govID:001"></p>
+            <h1>對自己居住縣市的滿意度調查</h1>
+            <p><input type = "radio" name = "city" value = "A">滿意<br>
+               <input type = "radio" name = "city" value = "B">尚可<br>
+               <input type = "radio" name = "city" value = "C">不滿意</p>
+            <p><input type = "submit"><input type = "reset"></p>
+        </form>
+        <hr>
+        <!--製作輸入時間time屬性
+            時間格式是"hh:mm:ss"，ex.11:45書寫格式為"11:45:0"或"11:45"，step的預設值是60秒
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、max、min、name、
+            readonly、required、step、value
+        -->
+        <form action = "./o.exe" method = "GET">
+            <!--時間跳動使用預設每單位1分鐘-->
+            <p>設定時間：<input type = "time" name = "t"></p>
+            <!--時間跳動使用每單位2分鐘-->
+            <p>設定時間：<input type = "time" name = "t" step = "120"></p>
+            <!--時間跳動使用每單位1秒鐘-->
+            <p>設定時間：<input type = "time" name = "t" step = "1"></p>
+        </form>
+        <hr>
+        <!--製作輸入日期date屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、max、min、name、
+            readonly、required、step、value
+        -->
+        <form action = "./p.exe" method = "GET">
+            <p>出生日期：<input type = "date" name = "dd"></p>
+            <p><input type = "submit"><input type = "reset"></p>
+        </form>
+        <hr>
+        <!--製作輸入週次week屬性
+            週次格式是YYYY-Www，ex.2018年第30週次書寫格式為"2018-W30"，step預設值為1週
+        -->
+        <form action = "./q.exe" method = "GET">
+            <p>輸入週次：<input type = "week" name = "wnum"></p>
+        </form>
+        <hr>
+        <!--製作輸入年份和月份month屬性
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、max、min、name、
+            readonly、required、step、value
+        -->
+        <form action = "./r.exe" method = "GET">
+            <p>輸入月份：<input type = "month" name = "mon"></p>
+        </form>
+        <hr>
+        <!--本地與世界標準時間datetime/datetime-local屬性
+            可設定UTC時間或者本地時間    
+            datetime:       YYYY-MM-DDthh:mm:ssZ，ex."2017-06-02T13:30:50Z"代表2017年6月2日13點30分50秒
+            datetime-local: YYYY-MM-DDThh:mm:ss，ex."2017-06-02T13:30:50"代表本地時間2017年60月2日13點30分50秒
+            其它可設定屬性autocomplete、autofocus、disabled、form、list、max、min、name、
+            readonly、required、step、value
+        -->
+        <form action = "./s.exe" method = "GET">
+            <p>輸入UTC時間：<input type = "datetime" name = "dt"></p>
+            <p>輸入本地時間：<input type = "datetime-local" name = "dtl"></p>
+        </form>
+        <hr>
+        <!--製作選擇檔案後上傳file屬性
+            enctype在form元素內需要設定"multipart/form-data"才可以製作可上傳的表單
+            其它可設定屬性autofocus、disabled、form、multiple、required、value
+        -->
+        <form action = "./s.exe" method = "GET" enctype = "multipart/form-data">
+            <p>上傳檔案：<input type = "file" name = "fileupload"></p>
+            <p><input type = "submit" value = "上傳檔案"><input type = "reset" value = "重新設定"></p>
         </form>
     </body>
 </html>

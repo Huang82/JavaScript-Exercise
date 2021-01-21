@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>meter練習</title>
+    </head>
+    <body>
+        <!--顯示儀表值meter元素
+            value   儀表值，這個屬性必須存在
+            max     範圍的最大值，若省略預設是1
+            min     範圍的最小值，若省略預設是0
+            high    高標準值，若省略預設是1
+            low     低標準值，若省略預設是0
+            optimun 最佳值，如果不寫則是取max和min的中間值
+        -->
+        <form action = "./a.exe" method = "GET">
+            <p>未指明min,high和low：
+                <meter value = "75" max = "100"></meter>
+            </p>
+            <p>有設定min,high和low：
+                <meter value = "75" max = "100" min = "0" high = "85" low = "60"></meter>
+            </p>
+            <hr>
+            <!----------------------------------------------->
+            <p>若瀏覽器為支援meter可以更改為如下</p>
+            <p>未指明min,high和low：
+                <meter value = "75" max = "100">75%</meter>
+            </p>
+            <p>有設定min,high和low：
+                <meter value = "60" max = "100" min = "0" high = "85" low = "60">60%</meter>
+            </p>
+        </form>
+    </body>
+</html>

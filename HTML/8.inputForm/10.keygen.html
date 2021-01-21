@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>keygen練習</title>
+    </head>
+    <body>
+        <!--加密金鑰
+            <keygen keytype="加密方法" 其它屬性>
+            keytype     加密的方法，目前有rsa、dsa和ec等3種方法，若省略則是使用rsa
+            challenge   指出與金鑰一起傳送的資料將被認證
+            其它可設定屬性
+            autofocus、disabled、form、name
+        -->
+        <form action = "./a.exe" method = "post">
+            <p>
+                姓名：<input type = "text" name = "user">
+                <!--好像不行使用?-->
+                金鑰：<keygen name = "security">
+                <input type = "submit">
+            </p>
+        </form>
+    </body>
+</html>

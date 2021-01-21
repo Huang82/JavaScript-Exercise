@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>textarea練習</title>
+    </head>
+    <body>
+        <!--建立多行輸入的文字框<textarea>元素
+            cols    可設定文字框的寬度，相當於1行可以輸入的英文字元數，預設是20個字
+            rows    可設定行數(row)，預設是2行
+            wrap    可設定傳送文字框內容至伺服器時要不要加上換行字元，可以有下列2種選擇
+                soft    這是預設，除了有特別按Enter造成換行外，其它皆不加上換行字元傳送
+                hard    如果設定這個屬性，則rows屬性一定要設定欄位寬度，只要因寬度換行的地方
+                        傳送時一定要加上換行字元
+            其它可設定屬性autofocus、dirname、disabled、form、maxlength、name、
+            placeholder、readonly、required
+        -->
+        <form action = "./a.exe" method = "POST">
+            <h1>歡迎進入Huang82市調系統</h1>
+            <p>請留個人資料</p>
+            <p>姓名：<input type = "text" name = "user"></p>
+            <p>性別：<br>
+                <input type = "radio" name = "sex" value = "1" checked>男性<br>
+                <input type = "radio" name = "sex" value = "0">女性
+            </p>
+            <p>請給Huang82系統使用建議</p>
+            <p><textarea name = "opinion1" cols = "30" rows = "5"></textarea></p>
+            <p>下列文字框使用系統預設大小</p>
+            <p><textarea name = "opinion2">文字框預設大小</textarea></p>
+            <p><input type = "submit" value = "確認"><input type = "reset" value = "取消"></p>
+        </form>
+    </body>
+</html>

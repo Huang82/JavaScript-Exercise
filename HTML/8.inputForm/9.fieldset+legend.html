@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>filedset+legend練習</title>
+    </head>
+    <body>
+        <!--表單元件群組化<fieldset>和<legend>元素
+            <fieldset>
+                <legend>表單標題</legend>
+                ...
+            </fieldset>
+
+            其它可設定屬性
+            disabled、form、name
+        -->       
+        <fieldset>
+            <!--表單標題-->
+            <legend>Huang82客戶資料調查表</legend>
+            <form action = "./a.exe" method = "GET">
+                <!--required必填資料-->
+                <p>姓名：<input type = "text" name = "user" required>
+                   出生日期：<input type = "text" neme = "user">
+                </p>
+                <p>性別：<input type = "radio" name = "sex" value = "1" id = "M">
+                        <label for = "M">男性</label>
+                         <input type = "radio" name = "sex" value = "0" id = "F">
+                         <label for = "F">女性</label>    
+                </p>
+                <p>電話：<input type = "tel" name = "phone" maxlength = "10"></p>
+                <p>電子郵件：<input type = "email" name = "mail"></p>
+                <p><input type = "submit" name = "確認">&nbsp;&nbsp;
+                    <input type = "reset" name = "清除">
+                </p>
+            </form>
+        </fieldset>
+    </body>
+</html>

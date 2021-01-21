@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>datalist+option練習</title>
+    </head>
+    <body>
+        <!--製作文字框的後補選項<datalist>和<option>元素
+            <datalist id="值">
+                <option 屬性>...</option>
+                ...
+                <option 屬性>...</option>
+            </datalist>
+            id  <datalist>元素的id屬性值的內容應該與使用<input>元素建立輸入框元件的list
+                屬性值內容相同，如此才可將<datalist>元素和<input>元素做關聯
+        -->
+        <form action = "./a.exe" method = "GET">
+            <h2>請輸入會員資料</h2>
+            <p>姓名：<input type = "text" name = "user" list = "member"></p>
+            <p><input type = "submit" value = "確認"><input type = "reset" value = "取消"></p>
+            <datalist id = "member">
+                <option value = "外國參訪"></option>
+                <option value = "臨時會員"></option>
+                <option value = "企業會員"></option>
+            </datalist>
+        </form>
+    </body>
+</html>

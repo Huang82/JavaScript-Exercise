@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>optgroup練習</title>
+    </head>
+    <body>
+        <!--選項群組化<optgroup>元素
+            <optgroup label = "群組名稱">
+                <option label="選項名稱">...</option>
+                ...
+                <option label="選項名稱">...</option>
+            </optgroup>   
+            
+            optgroup的label     這是群組選項的名稱，不可省略
+            option的label       這是個別的選項名稱，如果瀏覽器有支援，它會比<option>元素內容更優先顯示。
+            如果省略則以<option>元素內容顯示。
+            value               若點選時未來將傳送到伺服器端的值。如果省略則<option>元素內容被傳送
+            
+            其它可設定屬性
+            <optgroup>元素：disabled
+        -->
+        <form action = "./a.exe" method = "GET">
+            <h1>Huang82民調中心</h1>
+            <h2>選擇未來3年最想去的旅遊城市</h2>
+            <p>
+                <select name = "Country">
+                    <optgroup label = "亞洲">
+                        <option label = "東京" value = "TK">東京</option>
+                        <option label = "北京" value = "HJ">北京</option>
+                        <option label = "香港" value = "HK">香港</option>
+                    </optgroup>
+                    <optgroup label = "歐洲">
+                        <option label = "倫敦" value = "LN">倫敦</option>
+                        <option label = "巴黎" value = "PA">巴黎</option>
+                        <option label = "維亞納" value = "VN">維也納</option>
+                    </optgroup>
+                </select>
+            </p>
+        </form>
+        <hr>
+        <!--做一點小更改-->
+        <form action = "./b.exe" method = "GET">
+            <h1>Huang82民調中心</h1>
+            <h2>選擇未來3年最想去的旅遊城市</h2>
+            <p>
+                <select name = "Country" multiple>
+                    <optgroup label = "亞洲">
+                        <option label = "東京" value = "TK">東京</option>
+                        <option label = "北京" value = "HJ">北京</option>
+                        <option label = "香港" value = "HK">香港</option>
+                    </optgroup>
+                    <optgroup label = "歐洲">
+                        <option label = "倫敦" value = "LN">倫敦</option>
+                        <option label = "巴黎" value = "PA">巴黎</option>
+                        <option label = "維亞納" value = "VN">維也納</option>
+                    </optgroup>
+                </select>
+            </p>
+        </form>
+    </body>
+</html>

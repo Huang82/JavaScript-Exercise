@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>label練習</title>
+    </head>
+    <body>
+        <!--為物件加上關聯標籤<label>元素
+            for     若想將表單元件應用label做關聯文字，表單元件內需有id屬性同時設定此值
+            ，然後表單id值，設為for屬性值，這樣就可以產生關聯
+            id      它是屬於全域屬性    
+        -->
+        <form action = "./a.exe" method = "GET">
+            <h1>歡迎進入Huang82民調系統</h1>
+            <p>請留個人資料</p>
+            <label><p>姓名：<input type = "text" name = "user"></p></label>
+            <p>性別：<br>
+                <!--先建立id，然後再用label做關聯動作，填入的值必須是對應的id名字才行-->
+                <input type = "radio" name = "sex" value = "1" id = "M" checked><label for = "M">男性</label>
+                <input type = "radio" name = "sex" value = "0" id = "F"><label for = "F">女性</label>
+            </p>
+            <p>軟體能力分析資料：<br>
+                <input type = "checkbox" name = "softw" value = "HTML5" id = "htm"><label for = "htm">HTML5</label>
+                <input type = "checkbox" name = "softw" value = "CSS3" id = "css"><label for = "css">CSS3</label>
+            </p>
+        </form>
+    </body>
+</html>
