@@ -5,6 +5,8 @@ h1 {
     font-size: 24px;
 }
 
+/* 以下給class使用 */
+
 h1.font1 {
     color: green; 
     text-align: center;
@@ -19,6 +21,11 @@ p.font1 {
     font-family: "Times New Roman", "Arial";
 }
 
+*.all {
+    color: blue;
+}
+
+/* 以下給id使用 */
 #z1 {
     color: orange; 
     text-align: center;

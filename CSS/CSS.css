@@ -1,0 +1,103 @@
+
+/* 如果html要套用css在title先載入<link rel = "stylesheet" href = "./CSS.css"> */
+
+font {
+    
+    /* 更改字體設定 */
+
+    color: #0000ff;         /* 更改字體顏色 */
+
+    text-align: center;       /* 文字對齊 left：左  right：右   center：置中對齊    justify：左右對齊   
+                                                initial：使用預設   inherit：繼承父元素對齊方式 */
+
+    text-indent: 32px;        /* 首行縮排，可以使用cm、px、pt、em等設定固定長度，預設是0，%：縮排父元素寬度的百分比 */
+
+    text-transform: none;     /* 大小寫轉換，normal：這是預設，保持文字原本樣式 capitalize：文字第1個字母大寫
+                                            uppercase：字母全部轉成大寫 lowercase：字母全部轉成小寫 */
+
+    text-shadow: none;        /* 文字陰影，h-shadow：水平陰影的位置，往右是正值，允許負值，此值不可忽略
+                                          v-shadow：垂直陰影的位置，往下是正值，允許負值，此值不可省略 
+                                          blur-radius：可設定模糊的範圍，單位與h-shadow或v-shadow相同，可省略
+                                          color：陰影顏色 
+                                          前面3(4)個要輸入，輸入格式為text-shadow: 5 5 5 blue;
+                                          none：這是預設，沒有陰影 */
+
+    text-decoration: none;    /* 線條裝飾，none：這是預設   inderline：底線
+                                          overline：頂線    line-through：刪除線 還有許多搭配線條的設定屬性*/
+
+    text-decoration-color: blue;    /* 主要是指定裝飾線條色彩 */
+
+    text-decoration-style: none;    /* 這是線條裝修樣式，solid：實線，這是預設  dashed：虛線    dotted：點線
+                                                        double：雙線    wavy：波浪線 */
+    
+    overflow: hidden;               /* 溢出資料隱藏 */
+
+    text-overflow: clip;            /* 文字超出顯示範圍時的處理方式，clip：超出顯示區的資料不予顯示
+                                                                   ellipsis：超出顯示區的資料以"..."顯示 */
+
+    white-space: normal;      /* 處理空白字元，normal：這是預設，瀏覽器會忽略空白   nowrap：本文不換行，直到遇上<br>
+                                              pre：空白會保留，類似HTML的<pre>元素  pre-line：合併空白符號，文件正常換行
+                                              pre-wrap：瀏覽器會保留空白符號，文件正常換行 
+                                              initial：使用預設   inherit：繼承父元素對齊方式 */
+
+    word-spacing: normal;     /* 文字間距，normal：這是預設，文字間距是0.25em   length：設定額外文字的間距，可以是負值
+                                initial：使用預設(不知跟上面有甚麼差別)     inherit：繼承父元素對齊方式*/
+
+    word-wrap: normal;        /* 這個屬性主要是處理顯示區寬度無法顯示較長的單字時，ex.URL的網址，網頁處理方式
+                                normal：這是預設，只有在可以換行的地方換行，否則持續顯示直到結束 
+                                break-word：可以直接將較長的單字或URL網址中途換行 */
+
+    line-height: normal;      /* 行高設定，normal：這是預設，設置合理的行高 number：設定數字，這個數字會與目前字形尺寸相乘來設置行間距
+                                          length：設定固定的行間距，單位可以是cm、px、pt等  %：依目前字形尺寸的百分比   inherit：繼承父元素對齊方式 */
+
+    letter-spacing: normal;   /* 字母間距，normal：這是預設，沒有額外空間   length：設定固定的字元間距，可以是負值 
+                                        initial：使用預設(不知跟上面有甚麼差別)     inherit：繼承父元素對齊方式 */
+    
+    font-family: "Timer New Roman" , "Arial"; /* 字型名稱，如果第1個找不到字體將會依序的往下找*/
+    
+    font-size: 10px;                          /* 字型大小 */
+    
+    font-style: normal;                       /* 字型樣式(這邊是斜體處理，分為正常normal 斜體italic 傾斜體oblique) */
+    
+    font-weight: normal;                      /* 字型樣式(這邊是粗體處理，分為正常normal 粗體字bold 更粗的字體bolder 更細的字體bolder 也可以給數值100-900 細至粗) */
+    
+    font-variant: small-caps;                 /* 預設是normal，可以把英文小寫變大寫、大寫字體變得比小寫還要大一點 */
+    
+    font-size-adjust: none;                   /* 主要是設定字型高度高度比率，給小數數值 */
+    
+    @font-face {                              /* 可以從伺服器上下載字型下來(但要小心版權問題) */
+        font-family: ;
+        src: url();
+    }
+
+    tab-size: 0;            /* 設定Tab鑑寬度，number：預設是8個英文字元寬度 
+                                             length：設定tab字元的長度，目前尚未獲得主要瀏覽器支援 */
+}
+
+/* virtualClass */
+    /* 連結的虛擬類別，使用在Client會接觸到的元素，ex.input，超連結 */
+    /*未點選狀態*/
+    a:link {
+        color: green;
+     }
+     /*已點選狀態*/
+     a:visited {
+         color: blue;
+     }
+     /*當游標靠近就會改變樣式*/
+     a:hover {
+         size: 30px;
+         color:yellow;
+     }
+     /*當被點選*/
+     a:active {
+         size: 20px;
+     }
+     /*被點選(聚焦)就會改變樣式(小心不要與visited重疊到focus會優先)*/
+     input:focus {
+         background-color: red;
+     }
+     /*用在目標虛擬類別，比如下方href例子*/
+     h1:target {
+         background-color: grey;
+     }
