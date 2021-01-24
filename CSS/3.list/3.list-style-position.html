@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>list-style-position練習</title>
+        <style>
+            /* 項目符號與編號位置 */
+            ul.blueball {
+                list-style-image: url("./ball2.gif");
+                list-style-position: outside;
+            }
+
+            ul.football {
+                list-style-image: url("./football2.gif");
+                list-style-position: inside;
+            }
+
+            #bluecolor {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class = "blueball">
+            <li>台灣著名科技大學</li>
+        </ul>
+        <ul class = "football">
+            <li id = "bluecolor">明志科大</li>
+            <li>台灣科大</li>
+            <li>台北科大</li>
+        </ul>
+    </body>
+</html>

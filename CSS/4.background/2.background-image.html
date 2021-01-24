@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>background-image練習</title>
+        <style>
+            /* CSS允許有多個背景圖片的，這時會有層次問題，先放的圖片會再圖層上方，再放url(URL)間以","符號隔開 
+                可以放到list、table之類的裡*/
+            body.backgroundImage {
+                background-image: url("./poi.gif"), url("資料.jpg");
+            }
+
+            h1 {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body class = "backgroundImage">
+        <h1>Huang82著作</h1>
+    </body>
+</html>

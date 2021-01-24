@@ -74,6 +74,50 @@ font {
                                              length：設定tab字元的長度，目前尚未獲得主要瀏覽器支援 */
 }
 
+/* 項目清單 */
+list {
+
+    list-style-type: none;      /* 建立項目清單符號 
+                                    下列是項目符號的屬性值
+                                    disc：這是預設，實心圓點    circle：空心圓點    square：實心方塊    none：不顯示項目符號
+                                    下列是編號符號的屬性值
+                                    decimal：阿拉伯數字，從1開始計數
+                                    decimal-leading-zero：阿拉伯數字，從01、02...開始計數
+                                    lower-roman/upper-roman：小寫/大寫羅馬數字(i/l)
+                                    lower-alpha/upper-alpha：小寫/大寫英文字母(a/A)
+                                    lower-greek：小寫希臘字母
+                                    lower-latin/upper-latin：小寫/大寫拉丁字母
+                                    hebrew/armenian/gerogian：希伯來編號/亞美尼雅編號/喬治雅編號 
+                                    hiragana/katakana/hiragana-iroha/katakana-iroha：日文片假名(a/A/i/I)*/
+
+    list-style-image: none;     /* 建立圖片項目符號，url(filename) */
+
+    list-style-position: inside;    /* 項目符號與編號位置，inside和outside，像list一樣有分外層內層關係 */
+    
+    list-style: none;           /* 這是上述3個加起來的屬性，可以一起設定，如果某個屬性值使用預設，是可以省略 */
+
+}
+
+/* 背景 */
+background {
+    
+    opacity: 1;                     /* 透明度，介於0.0(完全透明) ~ 1.0之間(完全不透明) */
+
+    background-color: blue;      /* 背景顏色，可輸入color_name、hex_number、rgb_number、transparent(預設，背景透明) */
+
+    background-image: none;        /* 背景圖像，url()，none */
+
+    background-repeat: repeat;     /* 可設定圖像是否重複出現，
+                                        repeat：這是預設，圖片將在水平方向和船值方向重複出現
+                                        repeat-x：圖片將在x軸水平方向重複出現
+                                        repeat-y：圖片將在y軸垂直方向重複出現
+                                        no-repeat：圖片只顯示一次
+                                        space：圖片在水平和垂直重複出現時會自動調整間距，讓圖片完整呈現
+                                        sound：圖片在水平和垂直重複出現時會自行調整大小，讓圖片完整呈現 */
+
+}
+
+
 /* virtualClass */
     /* 連結的虛擬類別，使用在Client會接觸到的元素，ex.input，超連結 */
     /*未點選狀態*/

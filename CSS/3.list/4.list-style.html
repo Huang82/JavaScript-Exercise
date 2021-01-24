@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>list-style練習</title>
+        <style>
+
+            /* 可讓程式更簡短 */
+
+            ul.blueball {
+                list-style: outside url("./ball2.gif");
+            }
+
+            ul.po-inside {
+                list-style: inside url("./football2.gif");
+            }
+
+            ul.test {
+                list-style: upper-roman;
+            }
+
+            #bluecolor {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class = "blueball">
+            <li>台灣著名科技大學</li>
+        </ul>
+        <ul class = "po-inside">
+            <li id = "bluecolor">明志科大</li>
+            <li>台灣科大</li>
+            <li>台北科大</li>
+        </ul>
+        <hr>
+        <h1>台灣著名科技大學</h1>
+        <ul class = "test">
+            <li>明志科大</li>
+            <li>台灣科大</li>
+            <li>台北科大</li>
+        </ul>
+    </body>
+</html>
