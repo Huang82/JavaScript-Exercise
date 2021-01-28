@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>background-origin練習</title>
+        <style>
+            
+            /* 好像跟clip一樣?，只是這個適合用在背景圖較小的上面 */
+            #borderbox {
+                margin: 30px;
+                border: 10px solid rgba(255, 255, 0, 0.5);
+                padding: 15px;
+                background: url("./poi.gif") border-box no-repeat;
+            }
+
+            #paddingbox {
+                margin: 30px;
+                border: 10px solid rgba(255, 255, 0, 0.5);
+                padding: 15px;
+                background: url("./poi.gif") padding-box no-repeat;
+            }
+            
+            #contentbox {
+                margin: 30px;
+                border: 10px solid rgba(255, 255, 0, 0.5);
+                padding: 15px;
+                background: url("./poi.gif") content-box no-repeat;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p id = "borderbox">一個人的極地旅行&nbsp;南極大陸/北極海</p>
+        <p id = "paddingbox">一個人的極地旅行&nbsp;南極大陸/北極海</p>
+        <p id = "contentbox">一個人的極地旅行&nbsp;南極大陸/北極海</p>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>box-sizing練習</title>
+        <style>
+
+            #div1 {
+                width:300px;
+                height: 80px;
+                border: 3px solid green;
+            }
+
+            #div2 {
+                width:300px;
+                height: 80px;
+                padding: 20px;
+                border: 3px solid green;
+            }
+
+            #div3 {
+                width:300px;
+                height: 80px;
+                border: 3px solid green;
+                box-sizing: border-box;
+            }
+
+            #div4 {
+                width:300px;
+                height: 80px;
+                padding: 20px;
+                border: 3px solid green;
+                box-sizing: border-box;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p>以下未使用box-sizing</p>
+        <div id = "div1">Huang82</div><br>
+        <div id = "div2">Huang82</div><br>
+        <p>下列使用box-sizing</p>
+        <div id = "div3">Huang82</div><br>
+        <div id = "div4">Huang82</div><br>
+    </body>
+</html>

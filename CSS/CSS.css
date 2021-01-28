@@ -137,9 +137,15 @@ background {
     background-attachment: scroll;  /* 背景圖片是否隨內容捲動，scroll：這是預設 fixed：背景圖不會隨頁面捲動 
                                             local：一般使用與scroll相同，但在inframe顯示時，背景圖則不捲動 */
     
-    background-clip: border-box;    /* 設定背景圖片的顯示區域，待 */
+    background-clip: border-box;    /* 設定背景圖片的顯示範圍，
+                                       border-box：背景顯示在邊框盒子之內的區域(包含邊框)
+                                       padding-box：背景顯示在內邊距盒子的區域(包含內邊距)
+                                       content-box：背景顯示在內容盒子之內的區域(只包含內容) */
     
-    background-origin: border-box;  /* 設定背景圖片顯示的基準點，待 */
+    background-origin: border-box;  /* 設定背景圖案的基準位置，
+                                       border-box：邊框盒子左上角是基準點，圖片左上角在此點。此點也可稱(0.0%,0.0%)，右下角為(100%,100%)
+                                       padding-box：內邊距盒子左上角是基準點，同上
+                                       cintent-box：內容盒子左上角是基準點，同上 */
                                             
     background: none;               /* 背景簡易表示法
                                     可以設定下列屬性值 
@@ -239,7 +245,7 @@ Border {
 
     border: none;               /* 簡易表示法 */
     
-    /* 上面表示法可以用下列方式表達
+    /* 上面三個加起來簡易表示法可以用下列方式表達
         border-style  border-color  border-width */
     
     border-top-left-radius: 10px;   /* 可設定左上方的邊框圓角，如果只有一個長度，表示是圓角。
@@ -258,20 +264,94 @@ Border {
 
     border-bottom-left-radius: 10px;   /* 可設定左下方的邊框圓角，同上 */
 
-    border-radius: 10px 10xp 10px 10px; /* 上述4種的簡便表示法，但是只能將4個角設為圓角。
+    border-radius: 10px 10xp 10px 10px; /* 上述4種的簡易表示法，但是只能將4個角設為圓角。
                                            如果只有一個數值，代表4個角皆以此數值當作半徑。
                                            如果有二個數值，第一個數值是套用左上角和右下角，第二個數值是套用在右上角和左下角
                                            如果有三個數值，第一個數值是左上角，第二個是右上角和左下角，第三個是右下角
                                            如果有四個數值，分為左上、右上、右下、左下 */
+
+
+    /* border-image是來取代框線的 */
+    border-image-source: none;          /* 套用邊框圖案，直接以一個圖案套用到邊框 */
+
+    border-image-slice: 5% fill;             /* 設定邊框圖案分割，邊框圖案會被分割成9塊，(很像就是塞一個背景在後面而已，然後中間圖片挖空)
+                                                長度：套用簡易表示法
+                                                %：使用百分比長度
+                                                fill：如果有指定fill，原先套用邊框圖案中央的內容就會顯示出來
+                                                要與border搭配要設置框線 */
+
+    border-image-width: auto;           /* 設定圖案邊框的寬度，
+                                           長度單位(百分比)：可使用1~4個長度單位，套用簡易表示法
+                                           數值：用倍數觀念處理邊框的寬度，預設是1。也可以有1~4個數值，套用簡易表示法
+                                           auto：和border-image-slice所指定的數值相同。如果沒有border-image-slic則是border-width屬性值 */
+
+    border-image-outset: 0%;            /* 加長圖案邊框的區域，
+                                           長度單位(百分比)：加長的距離，可使用1~4個長度單位，套用簡易表示法
+                                           數值：用倍數觀念處理的寬度，預設是1。也可以有1~4個數值，套用簡易表示法 */
+
+    border-image-repeat: repeat;        /* 設定邊框圖案重複顯示方式，(圖片小一點會比較好)
+                                           stretch：這是預設，配合邊框圖案將被展延
+                                           repeat：配合邊框，圖案重複顯示，超出部分就裁剪掉
+                                           round：配合邊框，圖案重複顯示，超出部分時圖案自動縮小，以配合邊框
+                                           space：配合邊框，圖案重複顯示，如果超出邊框無法顯示，將多餘空間分配到個別圖案 */    
+
+    border-image: url() 65 stretch;     /* 簡易表示法，使用順序
+                                            border-image-source     圖片的URL
+                                            border-image-slice      圖片分割的位置
+                                            border-image-width      邊框的寬度
+                                            border-image-outset     圖片加長的距離
+                                            border-imager-repeat    邊框的重複方式 */
+
 }
 
-/* 如果有上述4種的簡易表示表
+/* 如果有上述4種的簡易表示法
     1.如果有一個值，這個值套用上、下、左、右邊框
     2.當有二個值，第一個值套用上、下，第二個套用左、右
     3.當有三個值，第一個值套用上邊，第二個值套用左、右，第三個值套用下
     4.當有四個值，分別套用上、右、下、左 */
 
+/* box (搭配div使用)*/
+box {
 
+    box-shadow: blue 10px 10px 10px 10px inset;     /* 設定盒子的陰影，每個陰影是由2~4個長度值、顏色、以及inset選項組成，若是長度數值省略則是0，
+                                                         h-shadow：這是必須數值，代表水平陰影向右延伸的數量，負值則是向左延伸
+                                                         v-shadow：這是必須數值，代表垂直陰影向下延伸的數量，負值則是向上延伸
+                                                         blur：模糊長度，如果只有一個數值，代表模糊的。如果有第二個數值，將向四周擴散
+                                                         顏色：陰影顏色，若省略則使用瀏覽器預設
+                                                         inset：若設定，表示內側陰影 */
+
+    box-sizing: border-box;                     /* 設定盒子寬度與高度，
+                                                   content-box：這是預設，內容盒子區的寬度和高度
+                                                   padding-box：內邊距盒子區(包含內邊距和內容盒子)的寬度和高度
+                                                   border-box：邊框盒子區(包含邊框、內邊距和內容盒子)的寬度和高度 */
+
+    /* 也可以用overflow-x或overflow-y來設置 */
+    overflow: visible;                          /* 內容超出範圍時的顯示方式，資料超出內容盒子時，可由overflow-x(水平軸)和overflow-y(垂直軸)
+                                                        設定處理方式，也可以直接使用overflow同時處理水平軸和垂直軸
+                                                   visible：在內容盒子外顯示超出的內容
+                                                   hidden：不顯示超出內容，也不提供水平(垂直)卷軸
+                                                   scroll：不顯示超出內容，但提供水平(垂直)卷軸，可捲動顯示內容
+                                                   auto：由瀏覽器設定，一般會提供卷軸 */
+    
+    /*outline指的是緊鄰border外的邊線  */
+    outline-color: blue;                      /* 類似於border-color */
+
+    outline-width: 0px;                         /* 類似於border-width */
+    
+    outline-style: inset;                       /* 類似於border-style */
+
+    outline-offset: 0px;                        /* 這是定義outline邊線與border邊框的距離 */
+
+    outline: blue dotted 0px;                 /* 簡易表示法，使用方式：outline-color outline-style outline-width */
+
+
+    resize: none;                               /* 設定內容盒子的尺寸，
+                                                   none：無法調整，這是預設
+                                                   both：可以調整寬度和高度
+                                                   horizontal：可以調整寬度
+                                                   vertical：可調整高度 */
+
+}
 
 
 /* virtualClass */

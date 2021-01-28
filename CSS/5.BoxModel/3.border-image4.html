@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>border-image4練習</title>
+        <style>
+
+            #boximage1 {
+                margin: 50px;
+                padding: 15px;
+                border: 50px solid;
+                border-image-source: url("./borderfig2.png");
+                border-image-slice: 65;
+                border-image-repeat: stretch;
+            }
+
+            #boximage2 {
+                margin: 50px;
+                padding: 15px;
+                border: 50px solid;
+                border-image-source: url("./borderfig2.png");
+                border-image-slice: 65;
+                border-image-repeat: repeat;
+            }
+
+            #boximage3 {
+                margin: 50px;
+                padding: 15px;
+                border: 50px solid;
+                border-image-source: url("./borderfig2.png");
+                border-image-slice: 65;
+                border-image-repeat: round;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p id = "boximage1">stretch屬性值：一人獨自坐飛機至台灣(Taiwan)</p>
+        <p id = "boximage2">repeat屬性值：一人獨自坐飛機至台灣(Taiwan)</p>
+        <p id = "boximage3">round屬性值：一人獨自坐飛機至台灣(Taiwan)</p>
+    </body>
+</html>

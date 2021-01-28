@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>box-shadow練習</title>
+        <style>
+            
+            div {
+                margin: 30px;
+                border: 3px solid;
+                padding: 15px;
+                width: 200px;
+                height: 100px;
+                background: yellow;
+            }
+
+            #box1 {
+                box-shadow: blue 10px 10px;
+            }
+
+            #box2 {
+                box-shadow: blue 10px 10px 10px;
+            }
+
+            #box3 {
+                box-shadow: blue 10px 10px 10px 10px;
+            }
+
+            #box4 {
+                box-shadow: gray 10px 10px 5px inset;
+            }
+
+            /* 可以設定多組陰影數據，以","隔開 */
+            #box5 {
+                box-shadow:  green 5px 5px, blue 10px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "box1">Huang82</div>
+        <div id = "box2">Huang82</div>
+        <div id = "box3">Huang82</div>
+        <div id = "box4"><img src="./poi.gif"></div>
+        <div id = "box5">Huang82</div>
+    </body>
+</html>
