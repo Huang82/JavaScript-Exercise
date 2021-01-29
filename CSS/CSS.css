@@ -151,6 +151,47 @@ background {
                                     可以設定下列屬性值 
                                     background-color background-image background-position background-size
                                     background-repeat background-attachment background-origin background-clip */
+
+
+
+    /* 線性漸層，這是一個線性漸層函數，可以設定
+       色彩從某一個方向往另一個方向不同色彩線性漸層的變化
+       direction：to bottom, to top, to right, to left，可以用復合的比如to top left 左上
+       color stop：色彩停駐點，如果只有2個點之間的顏色變化，可以直接指定起點顏色和
+       終點顏色。如果線性變化過程有多餘2個顏色，則中間點的顏色需同時指定色彩和位置(其它位置也可以)，
+       ex.blue, green 30%, red */
+    background: linear-gradient(direction, color stop, "..." , color stop);     
+       
+    /* 放射狀漸層，這是一個放射性漸層函數，可以設定色彩從某一個點以圓形或橢圓形往四周不同色彩放射性漸層的變化，
+       shape：色彩放射的形狀，如果省略會自行依照尺寸自行判斷，可使用圓形circle、或橢圓形ellipse
+       length：可以直接使用關鍵字或是直接指定尺寸，關鍵字如下：
+                closet-side：如果是外型是圓形circle，由圓形中心往最近的方塊邊漸層
+                             如果是外型是橢圓形ellipse，由橢圓形中心往最近的方塊邊漸層
+                farthest-side：如果是外型是圓形circle，由圓形中心往最遠的方塊邊漸層
+                               如果是外型橢圓形ellipse，由橢圓形中心往最遠的方塊邊漸層
+                closest-corner：如果是外型是圓形circle，由圓形中心往最近的方塊角漸層
+                                如果是外型是橢圓形ellipse，由橢圓中心往最近的方塊角漸層
+                farthest-corner：如果是外型是圓形circle，由圓形中心往最遠的方塊角漸層
+                                 如果是外型是橢圓形ellipse，由橢圓中心往最遠的方塊角漸層
+                ex. radial-gradient(circle 50px, yellow, red)
+                    radial*gradient(ellipse 250px, 100px, yellow, red)
+       position：預設是使用中心點開始往外漸層，但是也可以使用top、right、bottom、left或數值或%值方法設定中心點
+       color stop： 色彩停駐點，如果只有2個點之間的顏色變化，可以直接指定起點顏色和
+       終點顏色。如果線性變化過程有多餘2個顏色，則中間點的顏色需同時指定色彩和位置(其它位置也可以)，
+       ex.blue, green 30%, red */
+    background: radial-gradient(shape length position, color stop, "...", color stop);
+
+    /* 重複線性漸層，這個函數使用方式與linear-gradient相同，至於可以重複多少次視起始色彩停駐點至結束色彩停駐點的長度而定
+                    ，如果想要重複5次，則請設定結束色彩停駐點的位置視20%。
+                      如果想要重複4次，則請設定結束色彩停駐點得位置視25%。
+                      就是100%/你要的是數=你要設置?% */
+    background: repeating-linear-gradient();
+
+    /* 重複放射漸層，這個函數使用方式與radial-gradient相同，至於可以重複多少次視起始色彩停駐點至結束色彩停駐點的長度而定
+                    ，如果想要重複5次，則請設定結束色彩停駐點的位置視20%。
+                      如果想要重複4次，則請設定結束色彩停駐點得位置視25%。 */
+    background: repeating-radial-gradient();
+
 }
 
 /* Margin外邊距 */
@@ -352,6 +393,39 @@ box {
                                                    vertical：可調整高度 */
 
 }
+
+
+/* 表格 */
+table {
+
+    caption-side: top;                  /* 表格標題，可以放置表格標題的位置 top、bottom */
+
+    border-spacing: 1px;                /* 儲存格框線的距離，只限於separete框線模式下，儲存格與儲存格之間稱為border-spacing`,
+                                            length：定義長度，如果只有一個長度，則是水平和垂直距離相同
+                                                            ，如果有二個長度，第一個長度是水平距離，第二個長度是垂直距離*/
+
+    empty-cells: show;                  /* 顯示或隱藏空白的儲存格，就是儲存格如果沒有內容，可以將儲存個隱藏起來
+                                            hide：不顯示內容、框線、底色
+                                            show：這是預設，顯示框線、底色 */
+
+    border-collapse: collapse;          /* 表格框線的模式，可用於設定表個框線是否與儲存格框線合併，
+                                            separate：這是預設直，表格框線與儲存格框線彼此是分開
+                                            collapse：表格框線與儲存格框線會合併 */
+
+    table-layout: auto;                 /* 表格版面的排版，處理表格的佈局
+                                            auto：這是預設值，表格的寬度會依儲存格內容寬度而定，系統會自動配置足夠空間，只要瀏覽器寬度夠寬內容不會分行顯示
+                                            fixed：可以設定固定寬度 */
+
+
+
+    /* tr:nth-child(2n+1){} */            /* 奇數表格行設定 */
+
+    /* tr:nth-child(2n){} */              /* 偶數表格行設定 */
+
+}
+
+
+
 
 
 /* virtualClass */

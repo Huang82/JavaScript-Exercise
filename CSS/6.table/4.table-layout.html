@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>table-layout練習</title>
+        <style>
+
+            table {
+                width: 100%;
+                border: 1px solid;
+            }
+            
+            td {
+                border: 1px solid;
+            }
+            
+            /* 這裡用到了繼承，繼承Table裡的樣式 */
+            table#sample1 {
+                table-layout: auto;
+            }
+
+            table#sample2 {
+                table-layout: fixed;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p>table-layout: auto</p>
+        <table id = "sample1">
+            <tr>
+                <td width = "5%">9999999999</td>
+                <td width = "95%">8888888888</td>
+            </tr>
+        </table>
+        <p>table-layout: fixed</p>
+        <table id = "sample2">
+            <tr>
+                <td width = "5%">9999999999</td>
+                <td width = "95%">8888888888</td>
+            </tr>
+        </table>
+    </body>
+</html>

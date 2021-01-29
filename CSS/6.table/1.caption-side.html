@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>cpation-side練習</title>
+        <style>
+
+            /* border-spacing設定，儲存格與儲存格之間的距離 */
+            table {
+                border:3px solid blue;
+                border-spacing: 30px 10px;
+            }
+
+            /* caption-side設定，標題擺放位置  */
+            caption {
+                color:blue;
+                caption-side: bottom;
+                padding-top: 5px;
+            }
+
+            /* 框線設定，背景顏色設定，內邊距設定 */
+            th {
+                border: 2px solid green;
+                background-color: aqua;
+                padding: 5px;
+            }
+
+            td {
+                border: 1px solid red;
+                background-color: aliceblue;
+                padding: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table border = "1">
+            <caption>Huang82數位賣場</caption>
+            <thead>
+                <tr><th>店名</th><th>地址</th><th>營業時間</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>天母店</td><td>台北市忠誠路200號</td><td rowspan = "2">09:00-23:00</td></tr>
+                <tr><td>大安店</td><td>台北市大安路10號</td></tr>
+                <tr><td>新竹店</td><td>新竹市清華路112號</td><td>11:00-20:00</td></tr>
+            </tbody>
+        </table>
+    </body>
+</html>

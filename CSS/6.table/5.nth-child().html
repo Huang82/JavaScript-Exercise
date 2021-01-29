@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>nth-child()練習</title>
+        <style>
+
+            /* 奇數表格 */
+            tr:nth-child(2n+1) {
+                background-color: green;
+            }
+
+            /* 偶數表格 */
+            tr:nth-child(2n) {
+                background-color: pink;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- 表頭(thead)不算在上述設定裡 -->
+        <table border = "1">
+            <caption>Huang82數位賣場</caption>
+            <thead>
+                <tr><th>店名</th><th>地址</th><th>營業時間</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>天母店</td><td>台北市忠誠路200號</td><td>09:00-23:00</td></tr>
+                <tr><td>大安店</td><td>台北市大安路10號</td><td>9:30-23:30</td></tr>
+                <tr><td>新竹店</td><td>新竹市清華路112號</td><td>11:00-20:00</td></tr>
+            </tbody>
+        <hr>
+        <table border = "1">
+            <caption>Huang82數位賣場</caption>
+            <tbody>
+                <tr><td>店名</td><td>地址</td><td>營業時間</td></tr>
+                <tr><td>天母店</td><td>台北市忠誠路200號</td><td>09:00-23:00</td></tr>
+                <tr><td>大安店</td><td>台北市大安路10號</td><td>9:30-23:30</td></tr>
+                <tr><td>新竹店</td><td>新竹市清華路112號</td><td>11:00-20:00</td></tr>
+            </tbody>
+    </body>
+</html>
