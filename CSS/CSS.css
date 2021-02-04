@@ -424,7 +424,82 @@ table {
 
 }
 
+/* 設計多欄位版面 */
+column {
 
+    column-count: auto;                 /* 可以直接設定網頁版面的欄位數量(直接使用數字代表count)
+                                           auto:這是預設，基本是一個欄位，但是會因其他屬性值，ex.column-width而調整
+                                           count:欄位的數量 */
+
+    column-width: auto;                 /* 設定欄位寬度(單位是px)
+                                           auto:預設是一個欄位，但是會因其他屬性值，ex.column-count而調整
+                                           count:欄位的寬度，這個寬度是最適的寬度，不是絕對寬度，瀏覽器還是會依照目前視窗寬度做適度的寬度調整 */
+
+    columns: auto auto;                        /* 欄位數量與寬度簡易表示法，使用順序為column-count column-width*/
+
+    column-gap: normal;                 /* 設定欄與欄的間距
+                                           normal:這是預設，個瀏覽器間有不同的設定值，W3C建議是1em
+                                           間距值:直接指定一個數值 */
+
+
+    /* 設定欄與欄界線的屬性 */
+    column-rule-style: none;            /* 欄界線的種類，這個屬性可以設定欄與欄之間的界線種類
+                                           none:預設，沒有界線
+                                           dotted：點框線
+                                           dashed：虛框線
+                                           solid：實線框線
+                                           groove：3D內凹框線
+                                           ridge：3D外凸框線
+                                           inset：內凹框線
+                                           outset：外凹框線
+                                           屬性值與border-style的屬性值相同 */
+
+    column-rule-color: color;           /* 欄界線的顏色，這個屬性可以設定欄與欄之間界線的顏色 */
+
+    column-rule-width: medium;          /* 欄界線的寬度，這個屬性可以設定欄與欄之間界線的寬度
+                                           medium:這是預設，中等寬度
+                                           thin:薄寬度
+                                           thick:後寬度
+                                           length:定義寬度 */
+
+    column-rule: none color medium;     /* 簡易表示法，順序為style color width */
+
+    column-span: none;                  /* 跨欄顯示
+                                           none:這是預設，不做跨欄顯示
+                                           all:做跨欄顯示 */
+
+    column-fill: balance;               /* 設定欄位高度
+                                           balance:這是預設值，將內容平均分割
+                                           auto:前方欄位填完，在填下一個欄位，這種情況會發生，前面欄位填滿，後方欄位可能空下來的情形 */
+
+    /* 換欄或換頁 */
+    break-before: auto;                 /* 在特定元素(也可以想成內容盒子)之前換欄(頁)
+                                           auto:這是預設，瀏覽器自行調整
+                                           always:在特定位置換欄(頁)
+                                           avoid:在特定位置不換欄(頁)
+                                           left:換頁，設定下一頁在左頁
+                                           right:換頁，設定下一頁在右頁
+                                           page:在特定位置換頁
+                                           column:在特定位置換欄
+                                           avoid-page:在特定位置不換頁
+                                           avoid-column:在特定位置不換欄 */
+                            
+    break-after: auto;                  /* 在特定欄(頁)之後換欄(頁)
+                                           auto:這是預設，瀏覽器自行調整
+                                           always:在特定位置換欄(頁)
+                                           avoid:在特定位置不換欄(頁)
+                                           left:換頁，設定下一頁在左頁
+                                           right:換頁，設定下一頁在右頁
+                                           page:在特定位置換頁
+                                           column:在特定位置換欄
+                                           avoid-page:在特定位置不換頁
+                                           avoid-column:在特定位置不換欄 */
+                                        
+    break-inside: auto;                 /* 可設定某個元素的動作
+                                           auto:這是預設，瀏覽器會自行判斷是否換欄或換頁
+                                           avoid:在特定元素內(也可想成內容盒子)不換欄或頁 */
+
+}
 
 
 
