@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>object-fit練習</title>
+        <style>
+
+            img#box-none {
+                border: solid 3px blue;
+                width: 200px;
+                height: 100px;
+                object-fit: none;
+            }
+
+            img#box-contain {
+                border: solid 3px blue;
+                width: 200px;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            img#box-cover {
+                border: solid 3px blue;
+                width: 200px;
+                height: 100px;
+                object-fit: cover;
+            }
+
+            img#box-fill {
+                border: solid 3px blue;
+                width: 200px;
+                height: 100px;
+                object-fit: fill;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p>object-fit:none</p>
+        <img src = "./poi.gif" id = "box-none">
+        <p>object-fit:contain</p>
+        <img src = "./poi.gif" id = "box-contain">
+        <p>object-fit:cover</p>
+        <img src = "./poi.gif" id = "box-cover">
+        <p>object-fit:fill</p>
+        <img src = "./poi.gif" id = "box-fill">
+    </body>
+</html>

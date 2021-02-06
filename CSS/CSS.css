@@ -501,7 +501,91 @@ column {
 
 }
 
+boxPosition{
 
+    /* 可以設定區塊盒子的大小極限 */
+    max-width: none;                    /* none:這是預設，不設定極寬值
+                                           長度:
+                                           %: */
+
+    max-height: none;                   /* 同上 */
+
+    min-width: none;                    /* 同上 */
+
+    min-height: none;                   /* 同上 */
+
+    /* display (可以強制轉換層級(區塊/行內))*/
+    display: inline;                    /* 可以更改顯示層級
+                                           inline:將元素宣告為行內層級(inline level)
+                                           block:將元素宣告為區塊層級(block level)
+                                           inline-block:將元素本身宣告為行內層級，區塊內部則宣告為區塊層級
+                                           inline-table:將元素宣告為行內層級的表格
+                                           list-item:將元素宣告為類似<li>元素
+                                           run-in:將元素宣告為區塊層級或行內層級，視元素內容而定
+                                                將元素宣告類似<table>/<caption>/<colgroup>/<thead>/<tfoot>/<tbody>/<td>/<col>/<tr>
+                                           none:不顯示 */
+
+    position: static;                   /* 可以設定區塊盒子(block level)的編排方式或稱定位
+                                           static:以正常順序排序(normal flow)，所稱的正常順序是，
+                                                  在區塊盒子是依在HTML文件碼的順序由上往下顯示
+                                                  如果是行內層級則是水平方式由左到右顯示
+                                           absolute:定位方式是相對於瀏覽器視窗的左上角，但是視窗捲動時，此方塊將隨著捲動
+                                           fixed:定位方式是相對於瀏覽器視窗的左上角，但是視窗捲動時，此方塊將不捲動
+                                           relative:相較於正常位置的定位   */
+                            
+    /* 使用position屬性定位後，就可以使用top、right、bottom、left設定相較於正常顯示位置位移的量 */
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    /* auto:由瀏覽器計算上邊界距離
+       length:跟其它的不一樣這個允許負值
+       %:用百分比計算上邊界距離 */
+                                
+    /* 設定與解除文繞圖 */
+    float: none;                        /* 可以設定元素內容包圍前面的圖片(不局限於圖片，也可以是區塊層級或行內層級的盒子)
+                                           none:這是預設，不作文繞圖功能
+                                           left:執行文繞圖，圖片在左
+                                           right:執行文繞圖，圖片在右 */
+                                    
+    clear: none;                        /* 某段文件具有文繞圖功能時，如果想在中途終止文繞圖功能，可以使用此功能
+                                           none:這是預設，同意文繞圖功能
+                                           left:圖片在左時，不同意左邊執行文繞圖
+                                           right:圖片在右時，不同意右邊執行文繞圖
+                                           both:不同意左邊或右邊有文繞圖 */
+    
+    /* 推疊順序 */
+    z-index: auto;                      /* 元素重疊時，可以使用這個屬性值設定彼此的推疊順序，數值越大，則越在上方
+                                           auto:這是預設，數值與其父元素相同
+                                           number:可以直接設定推疊數字，也可以使用負值 */
+
+    /* 顯示或隱藏元素 */
+    visibility: visible;                /* 顯示或隱藏元素
+                                           visibility:顯示元素
+                                           hidden:不顯示元素，但是仍占據空間，如果不想佔據空間，須加上"display:none"屬性
+                                           collapse:這是是用在表格，可以隱藏某行或某欄 */
+
+    /*  */
+    object-fit: none;                   /* 在設定圖片在盒子box的呈現方式
+                                           none:這是預設選項，圖片保持原先尺寸
+                                           contain:圖片須保持原比例全部顯示，但可能無法填滿盒子
+                                           cover:圖片須保持原比例，同時須填滿盒子，所以可能部分元素不顯示
+                                           fill:圖片填滿盒子，但是圖片不保持比例 */
+
+    /* 垂直對齊 */
+    vertical-align: auto;               /* 這個元素可以設定行內層級的對其方式
+                                           baseline:這是預設，元素放在父元素基線上
+                                           sub:垂直對齊本文下標
+                                           super:垂直對齊本文上標
+                                           top:元素頂端與行中最高元素的頂端切齊
+                                           text-top:元素頂端與父元素的頂端切齊
+                                           middle:元素放在父元素垂直置中
+                                           bottom:元素底端與最低元素底端切齊
+                                           text-bottom:元素底端與父元素底端切齊
+                                           length:
+                                           %:用line-height的百分比設定高於或小於，允許負值 */
+
+}
 
 /* virtualClass */
     /* 連結的虛擬類別，使用在Client會接觸到的元素，ex.input，超連結 */
