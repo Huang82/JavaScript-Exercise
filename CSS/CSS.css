@@ -523,7 +523,12 @@ boxPosition{
                                            list-item:將元素宣告為類似<li>元素
                                            run-in:將元素宣告為區塊層級或行內層級，視元素內容而定
                                                 將元素宣告類似<table>/<caption>/<colgroup>/<thead>/<tfoot>/<tbody>/<td>/<col>/<tr>
-                                           none:不顯示 */
+                                           none:不顯示 
+                                           
+                                           CSS3新增的(並不會填滿容器，搭配flex-direction設定，預設是row)
+                                           flex:將此元素設為區塊層級(block level)的彈性區塊容器
+                                           inline-flex:將此元素設為行內層級(inline level)的彈性區塊容器
+                                           */
 
     position: static;                   /* 可以設定區塊盒子(block level)的編排方式或稱定位
                                            static:以正常順序排序(normal flow)，所稱的正常順序是，
@@ -584,6 +589,116 @@ boxPosition{
                                            text-bottom:元素底端與父元素底端切齊
                                            length:
                                            %:用line-height的百分比設定高於或小於，允許負值 */
+
+}
+
+
+/* 彈性容器 */
+flexibleContainer {
+
+    flex-direction: row;                /* 可以設定依水平或垂直方向設定版面
+                                           row:這是預設，版面區塊以水平方向由左到右編排
+                                           row-reverse:版面區塊以水平方向由右到左編排
+                                           column:版面區塊以垂直方向由上到下編排
+                                           column-reverse:版面區塊以垂直方向由下到上編排 */
+
+    flex-wrap: nowrap;                  /* 可以讓彈性容器內有多行版面
+                                           nowrap:這是預設，彈性容器只有一行
+                                           wrap:彈性容器允許多行配置
+                                           wrap-reverse:彈性容器允許多行配置，在第二行配置時，是由反方向方式配置 */
+
+    flex-flow: row wrap;                /* 直接設定排版方向和行數(簡易表示法)
+                                           使用順序:flex-direction flex-wrap */
+
+    order: 0;                           /* 版面區塊排列順序，可以依數字更改排列順序，較小的值優先排列
+                                           number:預設是0，可以由此設定正整數 */
+
+    /* 增減版面區塊寬度 */
+    flex-grow: 0;                       /* 增加版面區塊物件寬度
+                                           number:預設是0，這是相較於其它版面區塊物件的放大佔比
+                                           ex.如果留白為30px，a物件為1，b物件為2，
+                                              則a物件可以分到1/3留白10px，b物件可以分到2/3留白20px */
+
+    flex-shrink: 0;                     /* 縮減版面區塊物件寬度
+                                           number:預設值是0，這是相較於其它版面區塊物件的縮小佔比
+                                           ex.如果彈性容器少了300px，a物件為1，b物件為2，
+                                              則a物件需要縮減1/3區塊為100px，b物件需要縮減2/3區塊為100px */
+
+    flex-basis: auto;                   /* 調整前的區塊物件寬度(取代設定區塊物件的width)
+                                           number:長度單位
+                                           auto:這是預設，將依據內容設定寬度 */
+
+    flex: 0 0 200px;                    /* 增減區塊寬度的簡易表示法 */
+
+    /*  */
+    justify-content: flex-start;        /* 設定留白的方式，如果在彈性容器內發生留白時，可以使用這個屬性設定留白的方式
+                                           flex-start:這是預設，版面區塊物件在前面，留白在後面
+                                           flex-end:版面區塊物件在後面，留白在前面
+                                           center:版面區塊物件在中間，留白在兩邊
+                                           space-between:第一格版面區塊物件放在彈性容器開始端，最後一個版面區塊物件放在
+                                                         彈性容器末端，剩下版面區塊間平均分配留白
+                                           space-around:留白平均分配在版面區塊間，但是開頭和末端得留白是其它的一半 */
+
+    align-items: stretch;               /* 垂直向留白的處理
+                                           stretch:這是預設，如果沒有設定height或width，版面區塊物件會被伸展到填滿
+                                                   寬度或高度的留白。如果有設定height或width，則依設定，留白放在彈性容器末端
+                                           flex-start:版面區塊物件會集中在彈性容器開始端，留白放在彈性容器末端
+                                           flex-end:版面區塊物件會集中在彈性容器末端，留白放在彈性容器開始端
+                                           center:版面區塊物件會集中在彈性容器中央，留白放在彈性容器兩端
+                                           baseline:在彈性容器內用一個基準線設定各版面區塊物件的對齊方式 */
+
+    align-self: auto;                   /* 個別版面區塊留白的處理，會覆蓋先前統一設定的align-items
+                                           stretch:這是預設，如果沒有設定height或width，版面區塊物件會被伸展到填滿
+                                                   寬度或高度的留白。如果有設定height或width，則依設定，留白放在彈性容器末端
+                                           flex-start:版面區塊物件會集中在彈性容器開始端，留白放在彈性容器末端
+                                           flex-end:版面區塊物件會集中在彈性容器末端，留白放在彈性容器開始端
+                                           center:版面區塊物件會集中在彈性容器中央，留白放在彈性容器兩端
+                                           baseline:在彈性容器內用一個基準線設定各版面區塊物件的對齊方式 */
+
+    align-content: stretch;             /* 彈性容器有多行版面區塊時留白的處理
+                                           strecth:這是預設，如果沒有設定height或width，留白會平均分配。如果有設定
+                                                   height或width，則依設定，留白放在彈性容器末端
+                                           flex-start:版面區塊物件在前面，留白在後面
+                                           flex-end:版面區塊物件在後面，留白在前面
+                                           center:版面區塊物件在中間，留白在兩邊
+                                           space-between:第一個版面區塊物件放在彈性容器開始端，最後一個版面區塊物件放在彈性
+                                                         容器末端，剩下版面區塊間平均分配留白
+                                           space-around:留白平均分配在版面區塊間，但是開頭和末端的留白是其它的一半 */
+                                           
+
+}
+
+
+/* 動畫設計-漸變效果 */
+transition {
+    
+    transition-duration: 0ms;           /* 設定漸變效果時間
+                                           time:可設定秒(s)或毫秒(ms)，如果有多個屬性要分開執行漸變效果，則需用逗號隔開 */
+                                           
+    transition-property: none;          /* 漸變效果的屬性
+                                           none:沒有屬性會產生漸變效果
+                                           all:有漸變效果，所有屬性會有漸變效果
+                                           property:設定有漸變效果的屬性名稱，如果有多個屬性，屬性間請加上逗號 */
+
+    transition-delay: 0ms;              /* 漸變時間的延遲
+                                           time:可設定秒(s)或毫秒(ms)，執行漸變效果時，可設定延遲時間 */
+
+    transition-timing-function: ease;   /* 設計漸變速度
+                                           ease:這是預設，開始是慢，中途加速、中途減速、結束是慢，相同於cubic-bezier(0.25, 0.1, 0.25, 1)
+                                           ease-in:開始是慢，然後加速，相同於cubic-bezier(0.25, 0.1, 0.25, 1)
+                                           ease-out:開始是快，結束是慢，相同於cubic-bezier(0, 0, 0.58, 1)
+                                           ease-in-out:開始是慢，漸漸加速，減速至結束，相同於cubic-bezier(0.42, 0, 0.58, 1)
+                                           linear:用相同速度，相同於cubic-bezier(0, 0, 1, 1)
+                                           step-start:與設定steps(1, start)相同
+                                           step-end:與設定steps(1, end)相同
+                                           steps(int, start|end):第一個參數是次數，設定變化的量次，執行平均分割。
+                                                                 第二個參數是觸發的時機，start代表在開始點觸發或是end代表在終點觸發
+                                                                 如果省略第二個參數，代表是end
+                                           cubic-bezier(x1, y1, x2, y2):這是貝茲函數代表0-1之間變化的數，其中x軸是變化所需時間，
+                                                                        y軸是變化的比例。主要是用在要設定更細化的變化使用 */
+
+    transition: none 0ms ease;          /* 漸變效果的簡易表示法
+                                           使用方式:property duration timing-function */
 
 }
 

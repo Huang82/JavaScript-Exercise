@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>transition練習</title>
+        <style>
+
+            h1 {
+                height: 100px;
+                width: 250px;
+                background-color: lightgreen;
+                text-align: center;
+                color: green;
+                opacity: 0.1;
+                /* transition-property: opacity, height, width;
+                transition-duration: 10s;
+                transition-timing-function: ease; */
+                transition: opacity, height, width, 10s ease;
+            }
+
+
+            h1:hover {
+                opacity: 1.0;
+                height: 300px;
+                width: 300px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>HTML5 + CSS3</h1>
+    </body>
+</html>

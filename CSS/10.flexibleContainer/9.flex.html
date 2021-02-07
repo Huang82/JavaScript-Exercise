@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <head>
+        <meta charset = "utf-8">
+        <title>flex練習</title>
+        <style>
+
+            #container1 {
+                width: 600px;
+                height: 100px;
+                border: 3px solid blue;
+                display: flex;
+            }
+
+            /* 簡易表示法 */
+            #item1 {
+                background-color: yellow;
+                /* flex-basis: 200px;
+                flex-grow: 1;
+                flex-shrink: 1; */
+                flex: 1 1 200px;
+            }
+
+            #item2 {
+                background-color: pink;
+                /* flex-basis: 200px;
+                flex-grow: 2;
+                flex-shrink: 2; */
+                flex: 2 2 200px;
+            }
+
+            #item3 {
+                background-color: aqua;
+                /* flex-basis: 200px;
+                flex-grow: 3;
+                flex-shrink: 3; */
+                flex: 3 3 200px;
+            }
+
+            #container2 {
+                width: 300px;
+                height: 100px;
+                border: 3px solid blue;
+                display: flex;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id = "container1">
+            <div id = "item1">flex item1</div>
+            <div id = "item2">flex item2</div>
+            <div id = "item3">flex item3</div>
+        </div>
+        <hr>
+        <h1>使用超過範圍時自動縮減(前提是要先設置flex-shrink)</h1>
+        <div id = "container2">
+            <div id = "item1">flex item1</div>
+            <div id = "item2">flex item2</div>
+            <div id = "item3">flex item3</div>
+        </div>
+    </body>
+</head>

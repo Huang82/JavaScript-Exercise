@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>align-self練習</title>
+        <style>
+
+            #container1 {
+                width: 600px;
+                height: 250px;
+                border: 3px solid blue;
+                display: flex;
+                align-items: flex-end;
+            }
+
+            #item1 {
+                flex-basis: 100px;
+                height: 150px;
+                background-color: yellow;
+                align-self: center;
+            }
+
+            #item2 {
+                flex-basis: 150px;
+                height: 100px;
+                background-color: pink;
+            }
+
+            #item3 {
+                flex-basis: 50px;
+                height: 200px;
+                background-color: aqua;
+                align-self: flex-start;
+            }
+
+            #item4 {
+                flex-basis: 100px;
+                height: 100px;
+                background-color: lightgreen;
+            }
+
+            #item5 {
+                flex-basis: 200px;
+                height: 150px;
+                background-color: lightblue;
+                align-self: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id = "container1">
+            <div id = "item1">item1</div>
+            <div id = "item2">item2</div>
+            <div id = "item3">item3</div>
+            <div id = "item4">item4</div>
+            <div id = "item5">item5</div>
+        </div>
+    </body>
+</html>

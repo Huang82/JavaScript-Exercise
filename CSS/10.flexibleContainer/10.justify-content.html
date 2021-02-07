@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>justify-content練習</title>
+        <style>
+
+            #container1 {
+                width: 600px;
+                height: 100px;
+                border: 3px solid blue;
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            #container2 {
+                width: 600px;
+                height: 100px;
+                border: 3px solid blue;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            #container3 {
+                width: 600px;
+                height: 100px;
+                border: 3px solid blue;
+                display: flex;
+                justify-content: center;
+            }
+
+            #container4 {
+                width: 600px;
+                height: 100px;
+                border: 3px solid blue;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #container5 {
+                width: 600px;
+                height: 100px;
+                border: 3px solid blue;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            #item1 {
+                flex-basis: 80px;
+                background-color: yellow;
+            }
+
+            #item2 {
+                flex-basis: 100px;
+                background-color: pink;
+            }
+
+            #item3 {
+                flex-basis: 50px;
+                background-color: aqua;
+            }
+
+            #item4 {
+                flex-basis: 100px;
+                background-color: lightgreen;
+            }
+
+            #item5 {
+                flex-basis: 60px;
+                background-color: lightblue;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>flex-start</h1>
+        <div id = "container1">
+            <div id = "item1">item1</div>
+            <div id = "item2">item2</div>
+            <div id = "item3">item3</div>
+            <div id = "item4">item4</div>
+            <div id = "item5">item5</div>
+        </div>
+        <h1>flex-end</h1>
+        <div id = "container2">
+            <div id = "item1">item1</div>
+            <div id = "item2">item2</div>
+            <div id = "item3">item3</div>
+            <div id = "item4">item4</div>
+            <div id = "item5">item5</div>
+        </div>
+        <h1>center</h1>
+        <div id = "container3">
+            <div id = "item1">item1</div>
+            <div id = "item2">item2</div>
+            <div id = "item3">item3</div>
+            <div id = "item4">item4</div>
+            <div id = "item5">item5</div>
+        </div>
+        <h1>space-between</h1>
+        <div id = "container4">
+            <div id = "item1">item1</div>
+            <div id = "item2">item2</div>
+            <div id = "item3">item3</div>
+            <div id = "item4">item4</div>
+            <div id = "item5">item5</div>
+        </div>
+        <h1>space-around</h1>
+        <div id = "container5">
+            <div id = "item1">item1</div>
+            <div id = "item2">item2</div>
+            <div id = "item3">item3</div>
+            <div id = "item4">item4</div>
+            <div id = "item5">item5</div>
+        </div>
+    </body>
+</html>
