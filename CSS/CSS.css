@@ -702,6 +702,147 @@ transition {
 
 }
 
+/* animation(設計網頁動畫) */
+animation {
+
+    animation-name:none;                /* 設置動畫名稱(必須@keyframes name的名字一樣，如果要使用動畫必須在該要用的style裡面增加此屬性，duration屬性也要) */
+
+    animation-duration: 0ms;            /* 設定動畫時間
+                                           time:可設定秒(s)或毫秒(ms)，如果有多個屬性要分開執行漸變效果，則需用逗號隔開 */
+
+    animation-timing-function: ease;    /* 設計動畫變速方式
+                                           ease:這是預設，開始是慢，中途加速、中途減速、結束是慢，相同於cubic-bezier(0.25, 0.1, 0.25, 1)
+                                           ease-in:開始是慢，然後加速，相同於cubic-bezier(0.25, 0.1, 0.25, 1)
+                                           ease-out:開始是快，結束是慢，相同於cubic-bezier(0, 0, 0.58, 1)
+                                           ease-in-out:開始是慢，漸漸加速，減速至結束，相同於cubic-bezier(0.42, 0, 0.58, 1)
+                                           linear:用相同速度，相同於cubic-bezier(0, 0, 1, 1)
+                                           step-start:與設定steps(1, start)相同
+                                           step-end:與設定steps(1, end)相同
+                                           steps(int, start|end):第一個參數是次數，設定變化的量次，執行平均分割。
+                                                                 第二個參數是觸發的時機，start代表在開始點觸發或是end代表在終點觸發
+                                                                 如果省略第二個參數，代表是end
+                                           cubic-bezier(x1, y1, x2, y2):這是貝茲函數代表0-1之間變化的數，其中x軸是變化所需時間，
+                                                                        y軸是變化的比例。主要是用在要設定更細化的變化使用 */
+
+    animation-iteration-count: 1;       /* 設定動畫次數
+                                           number:預設值是1，也可以在此設定動畫次數
+                                           infinite:無限次數執行 */
+
+    animation-direction: normal;        /* 設定動畫重複執行的方向，當動畫重負執行時，可以用這個屬性設定動畫重負執行的方向
+                                           normal:這是預設，使用相同方向
+                                           reverse:使用相反方向
+                                           alternate:奇數次數使用正方向，偶數次數使用反方向
+                                           alternate-reverse:奇數次數使用反方向，偶數次數使用正方向 */
+
+    animation-play-state: running;      /* 設定動畫執行或暫停
+                                           running:這是預設項，動畫是執行狀態
+                                           paused:設定動畫暫停 */
+
+    animation-fill-mode: none;          /* 設定動畫延遲與完成的樣式
+                                           none:這是預設，沒有任何樣式
+                                           forwards:動畫完成後，保持最後動關鍵動畫影格樣式
+                                           backwards:動畫在延遲時，保持最初動畫關鍵影格樣式
+                                           both:同時遵照forwards和backwards規定，動畫在延遲時，保持最初動畫關鍵影格樣式。
+                                                動畫完成後，保持最後動畫關鍵影格樣式 */
+
+    animation: name 0s infinite alternate;      /* 簡易表示法，用法(使用順序可以不同)
+                                                   animation:name duration timing-function iteration-count direction play-state delay fill-mode */
+
+}
+/* 如果要製作網頁動畫，格式為
+    @keyframes myanimation {
+        0% {屬性: ;~}
+        ...
+        100% {屬性: ;~}
+    }
+    ...
+    ...
+    animation-name:myanimation
+    ----------------------------
+    
+    @keyframes name                     name是關鍵影格的名稱，這個名稱未來須以animation-name屬性設定使用
+    
+    百分比%                             動畫的時間的幾個關鍵點，用時間的百分比做紀錄，開始點關鍵影格是0%，結果點關鍵影格是100%
+                                       ，這兩個影格是不可省略，至於動畫的過程，則是不同的百分比。在每一個關鍵影格中，我們可以設計屬性與相對應的屬性值。
+                                       程式設計時，0%也可以用"from"取代，100%可以用"to"取代
+
+    animation-name:none;                設置動畫名稱(必須和前面的名字一樣)
+    
+    */
+
+/* 變形動畫 */
+transform {
+
+    transform: none;                    /* 這個屬性可以執行2D變形，也可以執行3D變形
+                                        如果應用在2D時，使用格式如下
+                                        none:代表沒有變形
+                                        移動:
+                                                translate(x, y)         移動函數，可設定x和y軸的移動距離。如果只有一個數值，代表y軸移動距離是0
+                                                translateX(x)           移動函數，可設定x軸的移動距離
+                                                translateY(y)           移動函數，可設定y軸的移動距離
+                                        縮放:
+                                                scale(x, y)             縮小或放大函數，原始物件的尺寸為1，可設定x軸和y軸的縮放倍率。如果只有一個數值，代表x軸和y軸的縮放倍率相同
+                                                scaleX(x)               縮小或放大函數，原始物件的尺寸為1，可設定x軸的縮放倍率
+                                                scaleY(y)               縮小或放大汗數，原始物件的尺寸為1，可設定y軸的縮放倍率
+                                        旋轉:
+                                                rotate(angle)           物件旋轉函數，如果是正值表示順時針，如果是負值表示逆時針。最常用的角度是deg，ex.rotate(45deg)，向右旋轉45度
+                                        傾斜: 
+                                                skew(x, y)              傾斜函數，定義x和y軸傾斜角度
+                                                skewX(x)                x軸傾斜函數，定義x軸傾斜角度
+                                                skewY(y)                y軸傾斜函數，定義y軸傾斜角度
+                                        矩陣:
+                                                matrix(a, b, c, d, e, f)    使用3*3的矩陣來變換座標
+                                        
+                                        如果應用在3D時，使用格式如下
+                                        移動:
+                                                translate3D(x, y, z)    移動函數，可設定x、y和z軸的移動距離。z軸值越大表是距離眼睛最近，z軸不可用百分比%顯示
+                                                translateZ(z)           移動函數，可設定z軸的移動距離，z軸不可用百分比%顯示
+                                        縮放:
+                                                scale3D(x, y, z)        縮小或放大函數，原始物件的尺寸為1，可設定x、y和z軸的縮放倍率。
+                                                scaleZ(z)               縮小或放大函數，原始物件的尺寸為1，可設定z軸的縮放倍率
+                                        旋轉:
+                                                rotate3d(x, y, z, angle) 物件旋轉函數，將基準點和(x,y,z)點連成一條線，如果是正值表示順時針依此線旋轉，如果是負值表示逆時針依此線旋轉。
+                                                                         最常用的角度是deg，ex.rotate3d(x,y,z,45deg)，向右旋轉45度
+                                                rotateX(angle)          可設定x軸旋轉
+                                                rotateY(angle)          可設定y軸旋轉
+                                                rotateZ(angle)          可設定z軸旋轉
+                                        透視:
+                                                perspective()           這是透視圖，可由此設定視點的距離
+                                        矩陣:
+                                                matrix3d(a, b, c, d, e, f)    使用3*3的矩陣來變換座標         */
+
+    transform-origin: 50% top;        /* 2D變形的基準點
+                                         瀏覽器在執行2D變形時，是以物件元素的中心(50%, 50%)為基準點，但可以使用這屬性來更改基準點
+                                         x-axis:定義基準點的x座標。可能值是left、center、right、length或%
+                                         y-axis:定義基準點的y座標。可能值是top、center、bottom、length或%
+                                         
+                                         3D變形的基準點
+                                         瀏覽器在執行3D變形時，是以物件元素的中心(50%, 50%, 50%)為基準點，但可以使用這屬性來更改基準點
+                                         x-axis:定義基準點的x座標。可能值是left、center、right、length或%
+                                         y-axis:定義基準點的y座標。可能值是top、center、bottom、length或%
+                                         z-axis:定義基準點的z座標。可能值是length或% */
+
+    perspective: none;                  /* 設定透視圖視點距離，這是CSS本身提供的屬性，可以用這個屬性設定視點距離，與上面transform裡的perspective()函數最大差別
+                                           在，perspective()函數是用在元素本身。perspective屬性是設定子元素的視點距離
+                                           length:元素距離視點距離
+                                           none:這是預設值，值是0 */
+
+    perspective-origin: 50% center;     /* 透視圖的基準點
+                                           瀏覽器在執行透視圖時，是以物件元素的中心(50%, 50%)為視點的基準點，但可以使用這屬性來更改視點基準點
+                                           x-axis:定義基準點的x座標。可能值是left、center、right、length或%
+                                           y-axis:定義基準點的y座標。可能值是top、center、bottom、length或% */
+
+    transform-style: flat;              /* 巢狀元素產生時子元素的處理，這個屬性必須和tranform屬性配合使用，主要是在3D動畫中有巢狀元素時，父元素和
+                                           子元素要以何種關係顯示
+                                           flat:這是預設，子元素將不保持父元素的3D特效。子元素是以平面方式，投影到父元素上，因此父元素部分畫面將被子元素遮住
+                                           preserve-3d:父元素的3D效果將套用在子元素上，子元素部分畫面可能被父元素遮住 */
+
+    backface-visibility: visible;       /* 是否顯示背面內容，動畫若是以x或y軸旋轉時，當轉了180deg，會轉到背面，這時可以用這個屬性值設定是否顯示背面資料
+                                           visible:這是預設，顯示背面內容
+                                           hidden:不顯示背面內容 */
+
+}
+
 /* virtualClass */
     /* 連結的虛擬類別，使用在Client會接觸到的元素，ex.input，超連結 */
     /*未點選狀態*/

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>perspective1練習</title>
+        <style>
+
+            div {
+                position: absolute;
+                width: 200px;
+                height: 100px;
+                font-size: large;
+                background-color: aqua;
+            }
+
+            #mybox {
+                border: 3px solid blue;
+                perspective: 0px;
+            }
+
+            #mybox2 {
+                border: 3px solid blue;
+                perspective: 800px;
+            }
+
+            #ex {
+                background-color: yellow;
+                transform: rotateY(-45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "mybox">
+            <div id = "ex">HTML5 + CSS3</div>
+        </div>
+        <br><br><br><br><br><br><br><br><hr><br><br>
+        
+        <div id = "mybox2">
+            <div id = "ex">HTML5 + CSS3</div>
+        </div>
+    </body>
+</html>

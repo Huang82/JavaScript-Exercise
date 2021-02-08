@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>transform1練習</title>
+        <style>
+
+            @keyframes my {
+
+                /* 移動 */
+                0% {
+                    transform: translate(0px);
+                }
+
+                25% {
+                    transform: translate(100px);
+                }
+
+                50% {
+                    transform: translate(200px);
+                }
+
+                75% {
+                    transform: translate(100px);
+                }
+
+                100% {
+                    transform: translate(0px);
+                }
+
+            }
+
+            div {
+                width: 100px;
+                height: 100px;
+                border: 1px solid blue;
+                left: 50px;
+                top: 50px;
+                color: blue;
+                background-color: yellow;
+                position: relative;
+                animation: my 5s infinite linear;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>Silicon Stone</div>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>animation-play-state練習</title>
+        <style>
+
+            @keyframes my {
+
+                0% {
+                    color: blue;
+                    background-color: lightblue;
+                    left: 0px;
+                    top: 0px;
+                }
+
+                25% {
+                    color: green;
+                    background-color: lightgreen;
+                    left: 200px;
+                    top: 0px;
+                }
+
+                50% {
+                    color: violet;
+                    background-color: lightyellow;
+                    left: 200px;
+                    top: 200px;
+                }
+
+                75% {
+                    color: blue;
+                    background-color: lightblue;
+                    left: 0px;
+                    top: 200px;
+                }
+
+                100% {
+                    color: blue;
+                    background-color: lightblue;
+                    left: 0px;
+                    top: 0px;
+                }
+            }
+
+            div {
+                width: 150px;
+                height: 150px;
+                position: relative;
+                animation-name: my;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            div:hover {
+                animation-play-state: paused;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>Silicon Stone</div>
+    </body>
+</html>

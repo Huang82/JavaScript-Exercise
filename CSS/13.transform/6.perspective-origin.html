@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>perspective-origin練習</title>
+        <style>
+
+            div {
+                position: absolute;
+                width: 200px;
+                height: 100px;
+                font-size: large;
+                background-color: aqua;
+            }
+
+            #mybox1 {
+                border: 3px solid blue;
+                perspective: 800px;
+                perspective-origin: center top;
+            }
+
+            #ex {
+                background-color: yellow;
+                transform: rotateY(-45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "mybox1">
+            <div id = "ex">HTML5 + CSS3</div>
+        </div>
+    </body>
+</html>

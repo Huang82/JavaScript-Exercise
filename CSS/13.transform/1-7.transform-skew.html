@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>transform7練習</title>
+        <style>
+
+            @keyframes my {
+
+                /* 傾斜旋轉 */
+                0% {
+                    transform: skewY(0deg);
+                }
+
+                25% {
+                    transform: skewY(30deg);
+                }
+
+                50% {
+                    transform: skewY(0deg);
+                }
+
+                75% {
+                    transform: skewY(-30deg);
+                }
+
+                100% {
+                    transform: skewY(0deg);
+                }
+
+            }
+
+            img {
+                width: 100px;
+                height: 150px;
+                object-fit: fill;
+                border: 1px solid blue;
+                left: 50px;
+                top: 50px;
+                position: relative;
+                animation: my 6s infinite linear;
+            }
+
+        </style>
+    </head>
+    <body>
+        <img src = "./資料.jpg">
+    </body>
+</html>

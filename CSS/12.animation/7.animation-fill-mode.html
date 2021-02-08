@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>animation-fill-mode練習</title>
+        <style>
+
+            @keyframes my {
+
+                0% {
+                    left: 0px;
+                    top: 0px;
+                }
+
+                20% {
+                    left: 50px;
+                    top: 50px;
+                }
+
+                40% {
+                    left: 100px;
+                    top: 100px;
+                }
+
+                60% {
+                    left: 150px;
+                    top: 150px;
+                }
+
+                80% {
+                    left: 200px;
+                    top: 200px
+                }
+
+                100% {
+                    left: 250px;
+                    top: 250px;
+                    background-color: aqua;
+                }
+            }
+
+            div {
+                width: 250px;
+                height: 100px;
+                color: blue;
+                background-color: yellow;
+                position: absolute;
+                animation-name: my;
+                animation-duration: 5s;
+                animation-fill-mode: forwards;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>Silicon Stone</div>
+    </body>
+</html>

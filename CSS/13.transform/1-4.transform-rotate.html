@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>transform4練習</title>
+        <style>
+
+            @keyframes my {
+
+                /* 圖片旋轉 */
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                25% {
+                    transform: rotate(90deg);
+                }
+
+                50% {
+                    transform: rotate(180deg);
+                }
+
+                75% {
+                    transform: rotate(270deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+
+            }
+
+            img {
+                width: 100px;
+                height: 150px;
+                object-fit: fill;
+                border: 1px solid blue;
+                left: 50px;
+                top: 50px;
+                position: relative;
+                animation: my 6s infinite linear;
+            }
+
+        </style>
+    </head>
+    <body>
+        <img src = "./資料.jpg">
+    </body>
+</html>

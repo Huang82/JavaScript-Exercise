@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>3D-transform-origin2練習</title>
+        <style>
+
+            div {
+                left: 100px;
+                position: absolute;
+                width: 250px;
+                height: 250px;
+                background-color: aqua;
+                font-size: xx-large;
+            }
+
+
+            #ex {
+                background-color: yellow;
+                font-size: x-large;
+                transform: perspective(300px) translateZ(-30px) rotateX(30deg);
+                transform-origin: center bottom;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>HTML5+CSS3</div>
+        <div id = "ex">3D立體效果網頁畫面</div>
+    </body>
+</html>

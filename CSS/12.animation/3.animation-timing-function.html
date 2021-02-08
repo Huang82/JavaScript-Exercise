@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>animation-timing-function練習</title>
+        <style>
+
+            @keyframes my {
+                from {
+                    left: 0px;
+                }
+
+                to {
+                    left: 350px;
+                }
+            }
+
+            div {
+                width: 200px;
+                height: 60px;
+                color: blue;
+                background-color: yellow;
+                position: relative;
+                animation-name: my;
+                animation-duration: 5s;
+            }
+
+            #route1 {
+                animation-timing-function: ease;
+            }
+
+            #route2 {
+                animation-timing-function: ease-in;
+            }
+
+            #route3 {
+                animation-timing-function: ease-out;
+            }
+
+            #route4 {
+                animation-timing-function: ease-in-out;
+            }
+
+            #route5 {
+                animation-timing-function: linear;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id = "route1">ease</div>
+        <div id = "route2">ease-in</div>
+        <div id = "route3">ease-out</div>
+        <div id = "route4">ease-in-out</div>
+        <div id = "route5">linear</div>
+    </body>
+</html>

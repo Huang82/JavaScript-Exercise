@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>transform-perspective練習</title>
+        <style>
+
+            div {
+                left: 100px;
+                position: absolute;
+                width: 250px;
+                height: 250px;
+                background-color: aqua;
+                font-size: xx-large;
+            }
+
+            #ex {
+                background-color: yellow;
+                font-size: x-large;
+                transform: translateZ(-30px) rotateX(30deg);   /* 圖片往前移30px */
+            }
+
+            #ex2 {
+                background-color: yellow;
+                font-size: x-large;
+                transform: perspective(300px) translateZ(-30px) rotateX(30deg);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>HTML5+CSS3</div>
+        <div id = "ex">3D立體效果網頁畫面</div>
+        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+        <hr>
+        <p>使用透視</p>
+        <div>HTML5+CSS3</div>
+        <div id = "ex2">3D立體效果網頁畫面</div>
+    </body>
+</html>
