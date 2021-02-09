@@ -1,0 +1,14 @@
+
+body {
+    background-color: yellow;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: pink;
+    }
+
+    p {
+        font-size: small;
+    }
+}

@@ -1,0 +1,204 @@
+
+
+.class{ font-size: large; }
+/* ex: .ex
+   所有class="ex"皆套用 */
+
+#id { font-size: large; }
+/* ex: #name
+   所有id = "name"皆套用 */
+
+* { font-size: large; }
+/* ex: *
+   所有元素套用 */
+
+element { font-size: large; }
+/* ex: p
+   所有<p>元素套用 */
+
+element,element { font-size: large; }
+/* ex: p,div
+   所有<p>元素和<div>元素套用 */
+
+element element { font-size: large; }
+/* ex: div p
+   所有在<div>元素內的<p>元素套用 */
+
+element>element { font-size: large; }
+/* ex:div>p
+   所有<p>元素的父元素是<div>時套用 */
+
+element+element { font-size: large; }
+/* ex: div+p
+   所有<p>元素緊跟在<div>元素後面時套用 */
+
+element~element { font-size: large; }
+/* ex: p~ul
+   所有<ul>元素緊跟在<p>元素後面時套用 */
+
+[attribute] { font-size: large; }
+/* ex: [targer]
+   所有元素有targer屬性時套用 */
+
+[attribute=value] { font-size: large; }
+/* ex: [targer=xxx]
+   所有元素有屬性targer=xxx時套用 */
+
+[attribute~=value] { font-size: large; }
+/* ex: [title~=xxx]
+   所有元素有屬性值內容包含有xxx字串時套用 */
+
+[attribute|=value] { font-size: large; }
+/* ex: [lang|=zh]
+   所有元素有lang屬性值內容包含zh時套用 */
+
+[attribute^=value] { font-size: large; }
+/* ex: a[href^="http"]
+   所有<a>元素它的href屬性值內容包含http時套用 */
+
+[attribute$=value] { font-size: large; }
+/* ex: a[href$=".xps"]
+   所有<a>元素它的href屬性值內容以.xps結尾時套用 */
+
+[attribute*=value] { font-size: large; }
+/* ex: a[href*="depstone"]
+   所有<a>元素它的href屬性值包含deepstone子字串時套用 */
+
+:active { font-size: large; }
+/* ex: p:active
+   按一下超連結時套用 */
+
+:after { font-size: large; }
+/* ex: h2:after
+   在每一個<h2>元素後面插入內容 */
+
+:before { font-size: large; }
+/* ex: h2:before
+   在每一個<h2>元素前面插入內容 */
+
+:checked { font-size: large; }
+/* ex: input:checked
+   所有被核取的<input>元素套用 */
+
+:disabled { font-size: large; }
+/* ex: input:disabled
+   所有無法使用(disable)的<input>元素套用 */
+
+:empty { font-size: large; }
+/* ex: td:empty
+   儲存格內容是空的"<td></td>就套用" */
+
+:enabled { font-size: large; }
+/* ex: input:enabled
+   所有可以使用(enable)的<input>元素套用 */
+
+:first-child { font-size: large; }
+/* ex: p:first-child
+   所有<p>元素，條件是必須是其父元素的第一個子元素套用 */
+
+::first-letter { font-size: large; }
+/* ex: p::first-letter
+   選取所有<p>元素第一個字母 */
+
+::first-line { font-size: large; }
+/* ex: p::first-line
+   選取所有<p>元素第一行 */
+
+:first-of-type { font-size: large; }
+/* ex: p:first-of-type
+   同一個父元素中第一個出現的<p>元素套用樣式 */
+
+:focus { font-size: large; }
+/* ex: input:focus
+   <input>元素獲得焦點(focus)時套用 */
+
+:hover { font-size: large; }
+/* ex: h1:hover
+   滑鼠游標在<h1>元素時套用 */
+
+:in-range { font-size: large; }
+/* ex: input:in-range
+   值在<input>元素中設定範圍時套用 */
+
+:invalid { font-size: large; }
+/* ex: input:invalid
+   <input>元素的值是無效時套用 */
+
+:lang(language) { font-size: large;} 
+/* ex: h1:lang(fr)
+   h1的語言屬性值是法文時套用 */
+
+:last-child { font-size: large; }
+/* ex: p:last-child
+   所有<p>元素，條件是必須是其父元素的最後一個子元素套用 */
+
+:last-of-type { font-size: large; }
+/* ex: p:last-of-type
+   同一個父元素中最後一個出現的<p>元素套用樣式 */
+
+:link { font-size: large; }
+/* ex: a:link
+   尚未被點選的超連結套用 */
+
+:not(selector) { font-size: large; }
+/* ex: :not(h1)
+   所有非<h1>元素套用 */
+
+:nth-child(n) { font-size: large; }
+/* ex: tr:nth-child(2n)
+   表格偶數行套用 */
+
+:nth-last-child(n) { font-size: large; }
+/* ex: p:nth-last-child(2)
+   由後往前數第2個<p>屬性套用 */
+
+:nth-last-of-type(n) { font-size: large; }
+/* ex: p:nth-last-of-type(2)
+   由後往前數第2個<p>屬性套用 */
+
+:nth-of-type(n) { font-size: large; }
+/* ex: p:nth-of-type(2)
+   相同父元素中所有第2個<p>元素套用 */
+
+:only-of-type { font-size: large; }
+/* ex: p:only-of-type
+   元素中可能有許多子元素，其子元素中<p>是唯一的，套用這個唯一的<p>元素 */
+
+:only-child { font-size: large; }
+/* ex: p:only-child
+   每一個<p>元素是它的父元素中唯一的子元素套用 */
+
+:optional { font-size: large; }
+/* 在<input>元素中，沒有必要(required)屬性時套用 */
+
+:out-of-range { font-size: large; }
+/* input:out-of-range
+   值不在<input>元素中設定範圍時套用 */
+
+:read-only { font-size: large; }
+/* ex: input:read-only
+   在<input>元素中屬性是readonly時套用 */
+
+:read-write { font-size: large; }
+/* ex: input:read-write
+   在<input>元素中屬性不是readonly時套用 */
+
+:required { font-size: large; }
+/* ex: input:required
+   在<input>元素中屬性是required時套用 */
+
+:root { font-size: large; }
+/* ex: :root
+   HTML文件的根元素套用 */
+
+::selection { font-size: large; }
+/* ex: ::selection
+   所有使用者選取的範圍皆套用 */
+
+:valid { font-size: large; }
+/* ex: input:valid
+   允有有效值的所有<input>元素皆套用 */
+
+:visited { font-size: large; }
+/* ex: a:visited
+   選取所有拜訪過的元素 */

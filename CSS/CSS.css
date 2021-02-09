@@ -702,6 +702,49 @@ transition {
 
 }
 
+/* 響應式網頁 */
+RWD {
+
+    cursor: none;                       /* 可以將滑鼠游標設為特別形狀 */
+
+}
+/* 使用方法
+@media media-type and (media-feature)...and(media-feature) {
+    ...
+    ...
+}
+
+media-type:                 媒體類型
+    all:所有媒體
+    print:預覽列印或印表機的列印稿
+    screen:電腦螢幕、平板或Android(IOS)系統的智慧手機螢幕
+    aural:建議棄用(Deprecated)，用於語音和音頻合成器
+    braille:建議棄用(Deprecated)，盲人點字觸覺設備
+    embossed:建議棄用(Deprecated)，盲人點字機
+    handheld:建議棄用(Deprecated)，手持裝置
+    projection:建議棄用(Deprecated)，投影片
+    tty:建議棄用(Deprecated)，文字固定寬度的媒體，ex.電傳打字機或終端機
+    tv:建議棄用(Deprecated)，電視類別的設備
+
+
+media-features:             媒體特性
+    color:輸出設備(螢幕)每個色彩的位元數(bits)
+    color-index:輸出設備(螢幕)可以輸出的色彩數量
+    height:瀏覽器視窗的高度
+    width:瀏覽器視窗的寬度
+    aspect-ratio:瀏覽器視窗寬度和高度的比
+    monochrome:黑白螢幕每個色彩的位元數(bits)
+    resolution:輸出設備(螢幕)的螢幕解析度，單位是dpi或dpcm
+    device-height:建議棄用(Deprecated)，輸出設備(螢幕)的高度
+    device-width：建議棄用(Deprecated)，輸出設備(螢幕)的寬度
+    device-aspect-ratio:建議棄用(Deprecated)，輸出設備(螢幕)寬度和高度的比
+    上述所有屬性皆可以加上前綴詞，"min-"或"max-"表示"最小值"或"最大值"，
+    ex."min-width"表示瀏覽器視窗的最小寬度
+    orientation:輸出設備(螢幕)的方向，可能是landscape(水平)或portrait(垂直)
+    scan:輸出設備(螢幕)的掃描方式，可能是interlace(交錯式)或progressive(循序式)
+    grid:輸出設備(螢幕)的掃描方式，可能值是1(網格grid)或0(點陣bitmap)
+*/
+
 /* animation(設計網頁動畫) */
 animation {
 

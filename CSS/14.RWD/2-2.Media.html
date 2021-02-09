@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Media2練習</title>
+        <style>
+
+            @media screen and (min-width: 1280px) {         /* 電腦螢幕 */
+                body {
+                    font-size: large;
+                    background-color:yellow;
+                }
+            }
+
+            @media screen and (max-width: 1279px) and (min-width: 480px) {
+                body {
+                    font-size: medium;
+                    background-color: lightblue;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                body {
+                    font-size: small;
+                    background-color: lightgray;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <p>請更改視窗寬度</p>
+    </body>
+</html>
