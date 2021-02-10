@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>猜數字遊戲</title>
+        <style>
+            
+            body {
+                margin: 0px;
+            }
+            
+            div.ex {
+                width: 600px;
+                height: 600px;
+                background-color: black;
+                padding-top: 300px;
+                padding-left: 300px;
+            }
+
+            div div {
+                text-align: center;
+                width: 300px;
+                height: 200px;
+                background-color: aqua;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class = "ex">
+            <div>
+                <h1>猜數字!!</h1>
+                <p>請輸入您要猜的數字<input type = "text" id = "ex"></p>
+                <button type = "button" onclick = "guessNum()">猜!!</button>
+                <p id = "mess"></p>
+            </div>
+        </div>
+        <script>
+            var Ans = parseInt((Number(Math.random()) * 100));
+            function guessNum() {
+                var num = document.getElementById("ex").value;
+                if (Ans == num) {
+                    document.getElementById("mess").innerHTML = "恭喜猜對了答案就是：" + Ans;
+                } else if (Ans > num) {
+                    document.getElementById("mess").innerHTML = "在大一點";
+                } else {
+                    document.getElementById("mess").innerHTML = "在小一點";
+                }
+            }
+
+        </script>
+    </body>
+</html>
