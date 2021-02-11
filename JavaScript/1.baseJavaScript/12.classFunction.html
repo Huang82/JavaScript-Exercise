@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>classFunction練習</title>
+    </head>
+    <body>
+        <p>簡單輸出的應用</p>
+        <p id = "ex"></p>
+        <script>
+
+            var student = {
+                firstName: "Peter",
+                lastName: "Hung",
+                id: 1234,
+                stuName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+            document.getElementById("ex").innerHTML = student.stuName();
+        </script>
+    </body>
+</html>

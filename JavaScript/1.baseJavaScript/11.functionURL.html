@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>functionURL練習</title>
+        <script>
+
+            function sumFun(x ,y) {
+                window.alert(x + "+" + y + "=" + (x + y));
+                return (x + y);
+            }
+
+        </script>
+    </head>
+    <body>
+        <p>請點選下列公式</p>
+        <a href = "#" onclick = "sumFun(20, 30)">X + Y</a>
+        <p id = "ex"></p>
+        <script>
+            document.getElementById("ex").innerHTML = sumFun(20, 30);
+        </script>
+    </body>
+</html>
