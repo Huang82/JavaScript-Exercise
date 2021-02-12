@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>history練習</title>
+    </head>
+    <body>
+        <h1>瀏覽器history</h1>
+        <p id = "ex"></p>
+        <input type = "button" value = "上一頁" onclick = "historyback()">
+        <input type = "button" value = "下一頁" onclick = "historyForward()">
+        <script>
+            var numH = window.history;
+            document.getElementById("ex").innerHTML = "歷史紀錄次數 = " + numH.length;
+            function historyback() {
+                window.history.back();
+            }
+            function historyForward() {
+                window.history.forward();
+            }
+        </script>
+    </body>
+</html>

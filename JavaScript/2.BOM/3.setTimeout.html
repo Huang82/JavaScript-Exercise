@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>setTimeout練習</title>
+        <script>
+
+            var idTime;
+
+            function stopTime() {
+                var intBoolean = confirm("是否繼續計時?");
+                if (intBoolean == false) {
+                    status = "計時結束";
+                    clearTimeout(idTime);
+                } else {
+                    counterTime();
+                }
+            }
+
+            function counterTime() {
+                status = "計時中...";
+                idTime = setTimeout(stopTime, 3000);
+            }
+
+        </script>
+    </head>
+    <body>
+        <p>Window計時器運作</p>
+        <form>
+            <input type = "button" onclick = "counterTime()" value = "Timer">
+        </form>
+    </body>
+</html>

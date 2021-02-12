@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>status練習</title>
+        <script>
+
+            function load() {
+                defaultStatus = "HTML5+CSS3亡者歸來";
+            }
+
+            function displayDate() {
+                status = new Date();
+            }
+
+        </script>
+    </head>
+    <body onload = "load()">
+        <p>狀態列的輸出應用</p>
+        <form>
+            <input type = "button" onclick = "displayDate()" value = "Date">
+        </form>
+    </body>
+</html>

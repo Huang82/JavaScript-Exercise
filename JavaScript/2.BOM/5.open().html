@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <head>
+        <meta charset = "utf-8">
+        <title>open()練習</title>
+    </head>
+    <body>
+        <p>開啟新視窗Window</p>
+        <button onclick = "openWin()">Open Window</button>
+        <button onclick = "closeWin()">Close Window</button>
+        <script>
+            var myfirstWin;
+            function openWin() {
+                myfirstWin = window.open("", "_blank", "toolbar=yes, status=1, resizable=1, top=200, left=300, width=600, height=300");
+                myfirstWin.document.write("<p>test測試用</p>");
+            }
+            function closeWin() {
+                myfirstWin.close();
+            }
+        </script>
+    </body>
+</head>

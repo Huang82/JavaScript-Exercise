@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>height-width練習</title>
+    </head>
+    <body>
+        <p>輸出視窗高度與寬度的應用</p>
+        <p id = "ex1"></p>
+        <p id = "ex2"></p>
+        <script>
+
+            var winHeight = window.innerHeight;
+            var winWidth = window.innerWidth;
+            var outHeight = window.outerHeight;
+            var outWidth = window.outerWidth;
+
+            document.getElementById("ex1").innerHTML = "瀏覽區height = " + winHeight + ",瀏覽區Width = " + winWidth;
+            document.getElementById("ex2").innerHTML = "總視窗height = " + outHeight + ",總視窗Width = " + outWidth;
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>setinterval練習</title>
+        <script>
+
+            var idTime;
+            
+            function startTime() {
+                idTime = setInterval(updateTime, 1000);
+            }
+
+
+            function stopTime() {
+                clearInterval(idTime);
+                document.getElementById("ex1").innerHTML = "時鐘暫停";
+            }
+
+            function updateTime() {
+                var Time = new Date();
+                document.getElementById("ex1").innerHTML = Time.toLocaleString();
+            }
+
+        </script>
+    </head>
+    <body>
+        <p>Window時鐘設計</p>
+        <p id = "ex1">時鐘尚未啟動</p>
+        <form>
+            <input type = "button" onclick = "startTime()" value = "顯示時鐘">
+            <input type = "button" onclick = "stopTime()" value = "暫停時鐘">
+        </form>
+    </body>
+</html>

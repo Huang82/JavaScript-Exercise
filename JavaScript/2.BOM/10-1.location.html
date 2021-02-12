@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>location1練習</title>
+    </head>
+    <body>
+        <h1>location物件</h1>
+        <p id = "ex"></p>
+        <script>
+            var loInfo = "";
+            loInfo += "<p>hash = " + window.location.hash + "</p>";
+            loInfo += "<p>host = " + window.location.host + "</p>";
+            loInfo += "<p>hostname = " + window.location.hostname + "</p>";
+            loInfo += "<p>URL = " + window.location.href + "</p>";
+            loInfo += "<p>pathname = " + window.location.pathname + "</p>";
+            loInfo += "<p>port = " + window.location.port + "</p>";
+            loInfo += "<p>search = " + window.location.search + "</p>";
+            document.getElementById("ex").innerHTML += loInfo;
+        </script>
+    </body>
+</html>

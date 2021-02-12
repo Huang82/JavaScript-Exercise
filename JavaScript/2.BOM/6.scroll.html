@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <style>
+            body {
+                width: 1000px;
+                height: 1000px;
+            }
+
+            button {
+                position: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>深石數位</h1>
+        <p>深度學習滴水穿石</p>
+        <button onclick = "scrollMove(30, 0)">向右捲動</button><br><br>
+        <button onclick = "scrollMove(-30, 0)">向左捲動</button><br><br>
+        <button onclick = "scrollMove(0, 30)">向下捲動</button><br><br>
+        <button onclick = "scrollMove(0, -30)">向上捲動</button>
+    </body>
+    <script>
+        function scrollMove(x, y) {
+            scrollBy(x, y);
+        }
+    </script>
+</html>

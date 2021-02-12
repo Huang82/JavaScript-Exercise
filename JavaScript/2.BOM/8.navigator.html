@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>navigator練習</title>
+    </head>
+    <body>
+        <h1>獲得瀏覽器資訊</h1>
+        <p id = "ex"></p>
+        <script>
+            var bInfo = "";
+            bInfo += "<p>瀏覽器appCodeName: " + navigator.appCodeName + "</p>";
+            bInfo += "<p>瀏覽器appName: " + navigator.appName + "</p>";
+            bInfo += "<p>瀏覽器appVersion: " + navigator.appVersion + "</p>";
+            bInfo += "<p>瀏覽器cookieEnabled: " + navigator.cookieEnabled + "</p>";
+            bInfo += "<p>瀏覽器onLine: " + navigator.onLine + "</p>";
+            bInfo += "<p>瀏覽器platform: " + navigator.platform + "</p>";
+            bInfo += "<p>瀏覽器usetAgent: " + navigator.userAgent + "</p>";
+            document.getElementById("ex").innerHTML += bInfo;
+        </script>
+    </body>
+</html>
