@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>image練習</title>
+        <script>
+
+            function get() {
+                var count = document.images.length;
+                document.getElementById("ex").innerHTML += "圖片數量是 = " + count + "<br>";
+
+                var x1 = document.images[0].src;
+                var x2 = document.images.item(1).src;
+                var x3 = document.images.namedItem("pict1").src;
+                document.getElementById("ex").innerHTML += "圖片1 URL = " + x1 + "<br>" + "圖片2 URL = " + x2 + "<br>" + "圖片3 URL = " + x3;
+                
+                var x = document.images[0];
+                x.style.border = "3px dotted blue";
+            }
+
+        </script>
+    </head>
+    <body>
+        <img id = "pict1" src = "./map.PNG" width = "100">
+        <img id = "pict2" src = "./資料.jpg" width = "100">
+        <br>
+        <button onclick = "get()">Get</button>
+        <p id = "ex"></p>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>onclick事件練習</title>
+        <script>
+            function myText(id, txtcolor) {
+                id.innerHTML = "DeepStone";
+                id.style.color = txtcolor;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 onclick = "myText(this, 'blue')">深石數位</h1>
+        <p>當有按一下標題時會觸發事件</p>
+    </body>
+</html>

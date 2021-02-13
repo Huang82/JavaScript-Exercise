@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>textContent練習</title>
+        <script>
+
+            function showtextContent() {
+                var str = document.getElementById("ex").textContent;
+                alert(str);
+            }
+
+            function showinnerHTML() {
+                var str = document.getElementById("ex").innerHTML;
+                alert(str);
+            }
+
+            function showoutHTML() {
+                var str = document.getElementById("ex").outerHTML;
+                alert(str);
+            }
+
+        </script>
+    </head>
+    <body>
+        <p id = "ex">Marching onto path of <b>Web Design Expert</b></p>
+        <button onclick = "showtextContent()">textContent</button>
+        <button onclick = "showinnerHTML()">innerHTML</button>
+        <button onclick = "showoutHTML()">outerHTML</button>
+    </body>
+</html>

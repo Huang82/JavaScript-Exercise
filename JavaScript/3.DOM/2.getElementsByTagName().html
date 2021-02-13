@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>getElementsByTagName()練習</title>
+    </head>
+    <body>
+        <p>DOM觀念應用</p>
+        <p>使用getElementsByTagName()方法取得元素內容</p>
+        <p>HTML5+CSS3+JavaScript</p>
+        <p id = "ex"></p>
+        <script>
+            var exInfo = document.getElementsByTagName("p");
+            for(var i = 0 ; i < exInfo.length - 1 ; i++) {
+                document.getElementById("ex").innerHTML += "p(" + i + ") = " + exInfo[i].innerHTML + "<br>";
+            }
+            document.getElementById("ex").innerHTML += exInfo.length;
+        </script>
+    </body>
+</html>

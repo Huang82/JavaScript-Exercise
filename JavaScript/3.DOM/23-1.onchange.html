@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>onchange1事件練習</title>
+        <script>
+            function myFun(txt) {
+                alert("Warning:帳號內容被更改: "+ txt);
+            }
+        </script>
+    </head>
+    <body>
+        <p>請輸入帳號</p>
+        <p>Enter Accout:</p>
+        <input type = "text" name = "account" value = "DeepStone" onchange = "myFun(this.value)">
+    </body>
+</html>

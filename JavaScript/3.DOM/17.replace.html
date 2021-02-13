@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>replace練習</title>
+        <script>
+            function addSchool() {
+                var newNode = document.createElement("li");
+                var nodeText = document.createTextNode("台灣大學");
+                newNode.appendChild(nodeText);
+                var existParentNode = document.getElementById("demo");
+                var child = document.getElementById("ex2");
+                existParentNode.replaceChild(newNode, child);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>台灣著名大學</h1>
+        <ul id = "demo">
+            <li id = "ex1">明志科技大學</li>
+            <li id = "ex2">台灣科技大學</li>
+            <li id = "ex3">清華大學</li>
+        </ul>
+        <button onclick = "addSchool()">Replace</button>
+    </body>
+</html>

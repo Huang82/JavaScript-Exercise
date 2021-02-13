@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>offset練習</title>
+        <script>
+            function getWidthHeight() {
+                var x = document.getElementById("pict");
+                document.getElementById("size").innerHTML += "圖片寬度: " + x.offsetWidth + "<br>";
+                document.getElementById("size").innerHTML += "圖片高度: " + x.offsetHeight + "<br>";
+                document.getElementById("size").innerHTML += "左邊界距離: " + x.offsetLeft + "<br>";
+                document.getElementById("size").innerHTML += "上邊界距離: " + x.offsetTop + "<br>";
+            }
+
+            /* 可以利用width/height來更改圖片大小 */
+            function changeSize() {
+                var x = document.getElementById("pict");
+                x.width = "200";
+                x.height = "400";
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id = "ex">資料</h1>
+        <p><img id = "pict" src = "./資料.jpg"></p>
+        <button onclick = "getWidthHeight()">圖片尺寸位置</button>
+        <button onclick = "changeSize()">更改圖片大小</button>
+        <p id = "size"></p>
+    </body>
+</html>

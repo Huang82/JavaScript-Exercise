@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title id = "info">nodes練習</title>
+        <script>
+            function load() {
+                var x1 = document.getElementById("info").nodeName;
+                var x2 = document.getElementById("info").firstChild.nodeValue;
+                document.getElementById("ex").childNodes[0].nodeValue = "nodeName = " + x1 + "<br>" + "firstChild = " + x2;
+            }
+
+            function changeText() {
+                var x1 = document.getElementById("ex1").childNodes[0].nodeValue;
+                document.getElementById("ex2").childNodes[0].nodeValue = x1;
+            }
+        </script>
+    </head>
+    <body onload = "load()">
+        <p id = "ex">&nbsp;</p>
+        <hr>
+        <h1 id = "ex1">HTML5+CSS3</h1>
+        <p id = "ex2">王者歸來</p>
+        <button onclick = "changeText()">ChangeText</button>
+    </body>
+</html>

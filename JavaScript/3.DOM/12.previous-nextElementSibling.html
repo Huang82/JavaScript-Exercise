@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>previous-nextElementSibling練習(兄弟節點)</title>
+        <script>
+            function fun1() {
+                var x = document.getElementById("ex1").previousElementSibling.innerHTML;
+                alert("前一個節點內容 = " + x);
+            }
+
+            function fun2() {
+                var x = document.getElementById("ex2").previousElementSibling.innerHTML;
+                alert("前一個節點內容 = " + x);
+            }
+
+            function fun3() {
+                var x = document.getElementById("ex3").previousElementSibling.innerHTML;
+                alert("前一個節點內容 = " + x);
+            }
+
+
+
+            function fun4() {
+                var x = document.getElementById("ex4").nextElementSibling.innerHTML;
+                alert("前一個節點內容 = " + x);
+            }
+
+            function fun5() {
+                var x = document.getElementById("ex5").nextElementSibling.innerHTML;
+                alert("前一個節點內容 = " + x);
+            }
+
+            function fun6() {
+                var x = document.getElementById("ex6").nextElementSibling.innerHTML;
+                alert("前一個節點內容 = " + x);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>我的旅遊經歷</h1>
+        <p>前一個節點</p>
+        <ul>
+            <li>南極大陸</li>
+            <li id = "ex1" onclick = "fun1()">北極海</li>
+            <li id = "ex2" onclick = "fun2()">西藏</li>
+            <li id = "ex3" onclick = "fun3()">蒙古</li>
+        </ul>
+        <hr>
+        <p>下一個節點</p>
+        <ul>
+            <li id = "ex4" onclick = "fun4()">南極大陸</li>
+            <li id = "ex5" onclick = "fun5()">北極海</li>
+            <li id = "ex6" onclick = "fun6()">西藏</li>
+            <li>蒙古</li>
+        </ul>
+    </body>
+</html>

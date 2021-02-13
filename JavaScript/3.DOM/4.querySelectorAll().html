@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>querySelectorAll()練習</title>
+    </head>
+    <body>
+        <p class = "info">DOM觀念應用</p>
+        <p class = "info">使用querySelectorAll()方法取得元素內容</p>
+        <p class = "info">HTML5+CSS3+JavaScript</p>
+        <p id = "ex"></p>
+        <script>
+            var exInfo = document.querySelectorAll("p.info");
+            for(var i = 0 ; i < exInfo.length ; i++) {
+                document.getElementById("ex").innerHTML += "p(" + i + ") = " + exInfo[i].innerHTML + "<br>";
+            }
+            document.getElementById("ex").innerHTML += exInfo.length + "<br>";
+            document.getElementById("ex").innerHTML += "尋找到的第一筆資料 = " + document.querySelector("p.info").innerHTML;
+        </script>
+    </body>
+</html>

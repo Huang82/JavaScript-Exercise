@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>changeHTMLContent練習</title>
+        <script>
+
+            function changeText() {
+                var str = document.getElementById("ex");
+                if (str.innerHTML == "深石數位") {
+                    str.innerHTML = "DeepStone";
+                } else {
+                    str.innerHTML = "深石數位";
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1 id = "ex">深石數位</h1>
+        <button onclick = "changeText()">標題語言轉換</button>
+    </body>
+</html>

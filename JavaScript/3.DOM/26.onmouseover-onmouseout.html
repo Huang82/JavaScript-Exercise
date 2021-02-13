@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>onmouseover-onmouseout事件練習</title>
+        <script>
+            function large(id) {
+                id.style.width = "200px";
+            }
+
+            function normal(id) {
+                id.style.width = "100px";
+            }
+        </script>
+    </head>
+    <body>
+        <p>當有滑鼠經過或離開會觸發事件</p>
+        <img src = "./資料.jpg" width = "100px" onmouseover = "large(this)" onmouseout = "normal(this)">
+    </body>
+</html>

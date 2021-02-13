@@ -1,0 +1,26 @@
+<!DOCTYPE htmL>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>javaScript_in_event練習</title>
+    </head>
+    <body>
+        <p>按Time鈕可以顯示時間</p>
+        <button id = "myTime">時間</button>
+        <p id = "ex"></p>
+        <p>當有按一下視窗空白區會觸發事件時更改背景顏色</p>
+        <script>
+            /* 必須不要增加()，不然他預設會執行 */
+            document.getElementById("myTime").onclick = myDate;
+            function myDate() {
+                document.getElementById("ex").innerHTML = new Date();
+            }
+
+            /* window是指所有網頁的物件(點任何地方都會觸發) */
+            window.onclick = mybackground;
+            function mybackground() {
+                document.getElementsByTagName("body")[0].style.backgroundColor = "aqua";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>onchange2事件練習</title>
+        <script>
+            function myFun() {
+                var txt = document.getElementById("trip").value;
+                alert("你的選擇是 : " + txt);
+            }
+        </script>
+    </head>
+    <body>
+        <p>請輸入旅遊地點</p>
+        <select id = "trip" onchange = "myFun()">
+            <option value = "北極海">北極海</option>
+            <option value = "南極大陸">南極大陸</option>
+            <option value = "冰島">冰島</option>
+        </select>
+        <p>當有選擇新地點時會觸發事件</p>
+    </body>
+</html>

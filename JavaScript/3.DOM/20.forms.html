@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>forms練習</title>
+        <script>
+            function getLength() {
+                var len = document.forms.length;
+                var xId = document.forms[0].id;
+                document.getElementById("ex").innerHTML += "form元素數量" + len + "<br>" + "form id = " + xId + "<br>";
+
+                var form = document.forms[0];
+                for (var i = 0 ; i < form.length ; i++) {
+                    document.getElementById("ex").innerHTML += form.elements[i].value + "<br>"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form id = "info" action = "cgi-bin/getinfo.php" method = "GET">
+            <p>姓名: <input type = "text" name = "name" value = "JK Hung"></p>
+            <p>電話: <input type = "tel" name = "phone" value = "091234567"></p>
+            <p><input type = "submit" value = "測試"></p>
+        </form>
+        <p>請按執行紐</p>
+        <button onclick = "getLength()">執行</button>
+        <p id = "ex"></p>
+    </body>
+</html>

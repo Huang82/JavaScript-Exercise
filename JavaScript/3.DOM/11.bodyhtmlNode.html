@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>bodyhtmlNode練習</title>
+        <script>
+
+            function getBody() {
+                alert(document.body.innerHTML);
+            }
+
+            function getHtml() {
+                alert(document.documentElement.innerHTML);
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>body內容</h1>
+        <input type = "button" onclick = "getBody()" value = "getBody">
+        <input type = "button" onclick = "getHtml()" value = "getHtml">
+    </body>
+</html>

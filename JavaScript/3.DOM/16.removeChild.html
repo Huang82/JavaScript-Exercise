@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>removeChild練習</title>
+        <script>
+            function removeSchool() {
+                var parentNode = document.getElementById("demo");
+                var child = document.getElementById("ex2");
+                parentNode.removeChild(child);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>台灣著名大學</h1>
+        <ul id = "demo">
+            <li id = "ex1">明志科技大學</li>
+            <li id = "ex2">台灣科技大學</li>
+            <li id = "ex3">清華大學</li>
+        </ul>
+        <button onclick = "removeSchool()">remove</button>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+
+<!-- DOM events 事件屬性，HTML的DOM允許針對HTML事件發生時，使用JavaScript執行某些特定工作 -->
+
+<body onload = "Function()"></body>                 <!-- HTML文件下載時產生的事件 -->
+
+<body onunload = "Function()"></body>               <!-- HTML頁面被卸載時會觸發事件，好像很多BOM都不行使用，跳出視窗類的(好像?) -->
+
+<input onchange = "Function()">                     <!-- 元素內容更改時會被觸發，一般輸入欄位若有內容改變時，會觸發此事件 -->
+
+<h1 onclick = "Function()"></h1>                    <!-- 當按下此元素就會觸發事件 -->
+
+<h1 ondblclick = "Function()"></h1>                 <!-- 連按物件兩下才會觸發事件 -->
+
+<img onmouseover = "Function()">                    <!-- 當滑鼠游標滑入此物件會觸發事件 -->
+
+<img onmouseout = "Function()">                     <!-- 當滑鼠游標離開使物件會觸發事件 -->
+
+<img onmousedown = "Function()">                    <!-- 當按下滑鼠左鍵會觸發事件 -->
+
+<img onmouseup = "Function()">                      <!-- 當按下滑鼠左鍵放開時會觸發事件(其實觸發onclick()之前會先觸發onmousedown和onmouseup完之後才會輪到onclick()) -->
