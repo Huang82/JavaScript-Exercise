@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>CSS1練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <style>
+            .important {
+                font-weight: bold;
+                font-size: x-large;
+                color: aqua;
+            }
+
+            .blue {
+                color: blue;
+            }
+        </style>
+        <script>
+
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("h1, h2, p").addClass("blue");
+                    $("div").addClass("important");
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1>University of Kentucky</h1>
+        <h2>University of Mississippu</h2>
+        <p>明志工專</p>
+        <div>我的求學經歷</div>
+        <button>增加classes</button>
+    </body>
+</html>

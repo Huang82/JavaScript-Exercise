@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>selector2練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                /* 偶數列，然後再設定css背景顏色 */
+                $("table#tab1 tr:even").css("background-color", "yellow");
+            });
+
+
+            $(document).ready(function() {
+                /* 奇數列 */
+                $("table#tab2 tr:odd").css("background-color", "yellow");
+            });
+        </script>
+    </head>
+    <body>
+        <h3>世界水資源調查</h3>
+        <table id = "tab1" border = "1">
+            <thead>
+                <tr><th>河流名稱</th><th>國家</th><th>州名</th></tr>
+            </thead>
+            <tr><td>長江</td><td>中國</td><td>亞洲</td></tr>
+            <tr><td>黃河</td><td>中國</td><td>亞洲</td></tr>
+            <tr><td>尼羅河</td><td>埃及</td><td>非洲</td></tr>
+            <tr><td>亞馬遜河</td><td>巴西</td><td>南美洲</td></tr>
+        </table>
+        <hr>
+        <h3>世界水資源調查</h3>
+        <table id = "tab2" border = "1">
+            <thead>
+                <tr><th>河流名稱</th><th>國家</th><th>州名</th></tr>
+            </thead>
+            <tr><td>長江</td><td>中國</td><td>亞洲</td></tr>
+            <tr><td>黃河</td><td>中國</td><td>亞洲</td></tr>
+            <tr><td>尼羅河</td><td>埃及</td><td>非洲</td></tr>
+            <tr><td>亞馬遜河</td><td>巴西</td><td>南美洲</td></tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>event2練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                /* 滑鼠進入此元素會觸發 */
+                $("#mg").mouseenter(function() {
+                    $(this).css("width", "300px");
+                });
+
+                /* 滑鼠離開此元素會觸發 */
+                $("#mg").mouseleave(function() {
+                    $(this).css("width", "100px");
+                }); 
+            });
+
+        </script>
+    </head>
+    <body>
+        <figure>
+            <img id = "mg" src = "./資料.jpg" alt = "圖片輸出錯誤" width = "100px">
+            <figcaption>資料</figcaption>
+        </figure>
+    </body>
+</html>

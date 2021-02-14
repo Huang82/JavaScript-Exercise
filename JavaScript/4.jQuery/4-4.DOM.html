@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>DOM4練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                $("#but1").click(function() {
+                    $("#nation").text("美國首都");
+                });
+
+                $("#but2").click(function() {
+                    $("#city").html("<b>華盛頓</b>");
+                });
+
+                $("#but3").click(function() {
+                    $("#school").val("麻省理工大學");
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <p id = "nation">日本首都</p>
+        <p id = "city">東京</p>
+        <p>著名大學 : <input type = "text" id = "school" value = "東京大學"></p>
+        <button id = "but1">設定text</button>
+        <button id = "but2">設定html</button>
+        <button id = "but3">設定val</button>
+    </body>
+</html>

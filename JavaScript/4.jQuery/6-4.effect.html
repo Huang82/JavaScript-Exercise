@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>effect4練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <style>
+
+            #div1 {
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+            }
+
+            #div2 {
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+            }
+
+            #div3 {
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+            }
+        </style>
+        <script>
+
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("#div1").fadeToggle("fast");
+                    $("#div2").fadeToggle("slow");
+                    $("#div3").fadeToggle(10000);
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <p>fadeToggle()實例解說</p>
+        <button>fadeToggle功能</button><br><br>
+        <div id = "div1"></div><br>
+        <div id = "div2"></div><br>
+        <div id = "div3"></div><br>
+    </body>
+</html>

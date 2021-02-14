@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>effect12練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <style>
+            #animation {
+                background-color: yellow;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("div").animate({left: '200px',
+                                      width: '+=50px',
+                                      height: '+=50px'});
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <button>動畫</button>
+        <p>預設CSS position屬性需設為relative、fixed或absolute</p>
+        <div id = "animation"></div>
+    </body>
+</html>

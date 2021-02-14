@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>event4</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                /* 獲得焦點 */
+                $("input").focus(function() {
+                    $(this).css("background-color", "yellow");
+                });
+
+                /* 失去焦點 */
+                $("input").blur(function() {
+                    $(this).css("background-color", "lightgray");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>姓名:<input type = "text" name = "name"></p>
+        <p>地址:<input type = "text" name = "address"></p>
+    </body>
+</html>

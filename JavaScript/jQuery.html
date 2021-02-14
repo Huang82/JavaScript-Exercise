@@ -1,0 +1,181 @@
+
+
+<script>
+
+/* jQuery基本語法 */
+$(selector).action();
+
+
+/* $:符號式定義可以存取jQuery
+   selector:是搜尋處理的HTML元素
+   action():是要完成的工作
+        ex.
+            $(this).hide()          隱藏目前的HTML元素
+            $("p").hide()           隱藏所有的<p>段落
+            $(".mytest").hide()     隱藏所有class="mytest"的元素
+            $("#mytest").hide()     隱藏所有id="mytest"的元素   
+    使用jQuery時可以將jQuery函數放在下列函數中運作(這範例是一進去網頁就會執行)
+    $(document).ready(function() {
+        ----jQuery函數內容
+    });    */
+
+/* selector選擇器 */
+
+$("*");                              /* 選取所有元素 */
+
+$(this);                             /* 選取目前的HTML元素 */
+
+$("p.mytest");                       /* 選取所有class="mytest"的<p>元素 */
+
+$("#mytest");                        /* 選取所有id="mytest"的元素 */
+
+$("p:first");                        /* 選取第1個<p>元素 */
+
+$("ul li:first");                    /* 選取第1個<ul>的第1個<li>元素 */
+
+$("ul li:first-child");              /* 選取所有<ul>的第1個<li>元素 */
+
+$("[href]");                         /* 選取所有href屬性的元素 */
+
+$("[href$='.jpg']");                 /* 選取所有.jpg結尾的href屬性的元素 */
+
+$("a[target='_blank']");             /* 選取所有<a>元素target屬性是"_blank" */
+
+$(":button");                        /* 選取所有<input>元素type="button" */
+
+$("tr:even");                        /* 選取所有偶數的<tr>元素 */
+
+$("tr:odd");                         /* 選取所有奇數的<tr>元素 */
+
+/* event事件 */
+
+$(document).blur();                 /* 失去焦點事件 */
+
+$(document).change();               /* 指定元素有更改內容 */
+
+$(document).click();                /* 按一下 */
+
+$(document).dblclick();             /* 連按2下 */
+
+event.currentTarget;                /* 通常屬於this */
+
+event.data;                         /* event必須是綁定事件的數據 */
+
+event.delegateTarget;               /* 這是目前調用方法所添加的元素 */
+
+event.isDefaultPrevented();         /* 檢查指定事件是否調用preventDefault() */
+
+event.islmmediatePropagationStopped();  /* 檢查指定事件是否調用stoplmmediatePropagation() */
+
+event.ispropagationStopped();       /* 檢查指定事件是否調用stopPropagation() */
+
+event.namespace;                    /* 自訂義的命名空間 */
+
+event.pageX;                        /* 滑鼠游標相對於左邊界的位置 */
+
+event.pageY;                        /* 滑鼠游標相對於上邊界的位置 */
+
+event.preventDefault()              /* 可以防止發生預設行為 */
+
+event.relatedTarget;                /* 傳回滑鼠進入或離開那個元素 */
+
+event.result;                       /* 傳回事件觸發時最後一個值 */
+
+event.stopImmediatePropagation();   /* 阻止剩下事件處理程序被執行 */
+
+event.stopPropagation();            /* 阻止父事件處理程序被執行 */
+
+event.target;                       /* 觸發事件的元素 */
+
+event.timeStamp;                    /* 返回1970年1月1日到該事件的毫秒數 */
+
+event.type;                         /* 事件類型 */
+
+event.which;                        /* 指出按哪一個物件 */
+
+$(document).focus();                /* 獲得焦點時的事件 */
+
+$(document).focusin();              /* 元素的子元素獲得焦點時，也會觸發增加事件處理程式focusin */
+
+$(document).focusout();             /* 元素的子元素失去焦點時，也會出發增加事件處理程式focusout */
+
+$(document).hover();                /* 滑鼠游標停在被選取元素時觸發mouseenter和mouseleave事件 */
+
+$(document).keydown();              /* 鍵被按下 */
+
+$(document).keyup();                /* 鍵被鬆開 */
+
+$(document).keypress();             /* 鍵被按一下 */
+
+$(document).mousedown();            /* 滑鼠左邊鍵被按 */
+
+$(document).mouseenter();           /* 滑鼠進入 */
+
+$(document).mouseleave();           /* 滑鼠離開 */
+
+$(document).mousemove();            /* 滑鼠移動 */
+
+$(document).mouseup();              /* 滑鼠在物件上方 */
+
+$(document).off();                  /* 不再物件上 */
+
+$(document).on();                   /* 在物件上 */
+
+$(document).one();                  /* 對所選物件增加事件處理程式，但是只能觸發一次 */
+
+$(document).ready();                /* 網頁下載完成 */
+
+$(document).resize();               /* 更改視窗大小 */
+
+$(document).scroll();               /* 移動卷軸 */
+
+$(document).select();               /* 選取文字 */
+
+$(document).submit();               /* 按下送出按鈕 */
+
+$(document).trigger();              /* 觸發所有綁定所選物件的事件 */
+
+$(document).triggerHandler;         /* 觸發所選物件的事件有關的所有函數 */
+
+/* 操作DOM */
+
+$(document).html();                 /* 設定或讀取所選HTML元素的含HTML標籤的內容ˊ */
+
+$(document).text();                 /* 設定或讀取所選HTML元素的內容 */
+
+$(document).val();                  /* 設定或讀取所選表單欄位內容 */
+
+$(document).attr();                 /* 設定獲得屬性值 */
+
+$(document).addClass();             /* 為指定的選擇器(標籤)，新增Class(或樣式) */
+
+$(document).css();                  /* 為指定的選擇器(標籤)，直接設定css(樣式表)，ex. ess({"background-color":"yellow", "font-size":"150%"}); */
+
+/* 特效處理 */
+
+$(document).show();                 /* 把隱藏起來的標籤顯示起來 */
+
+$(document).hide();                 /* 把標籤隱藏起來 */
+
+$(document).fadeIn(speed, callback);               /* 用於淡入已經隱藏的元素 */
+
+$(document).fadeOut(speed, callback);              /* 用於淡出目前顯示的元素 */
+
+$(document).fadeToggle(speed, callback);           /* 如果元素是淡出的會淡入，如果元素是淡入的會淡出 */
+
+$(document).fadeTo(speed, opacity, callback);      /* 將被選取的元素透明度逐漸改為透明值，speed可以使用slow、fast或毫秒，
+                                                                                       callback是執行後需要執行的函數名稱
+                                                                                       opacity是可以淡出或淡入至一個0-1之間的透明度值,0是隱藏，1是正常顯示 */
+
+$(document).slideDown(speed, callback);            /* 向下滑動元素，到最後會隱藏 */
+
+$(document).slideUp(speed, callback);              /* 向上滑動元素，到最後會顯示 */
+
+$(document).toggle(speed, callback);               /* 切換向下或向上滑動元素，speed可以使用slow、fast或毫秒，
+                                                                            callback是執行後需要執行的函數名稱 */
+
+$(document).animate({params}, speed, callback);    /* 動畫效果，speed可以使用slow、fast或毫秒，
+                                                               callback是執行後需要執行的函數名稱，
+                                                               params是定義形成動畫的CSS屬性，屬性設的值也可以用show、hide、togle來處理動畫 */
+
+</script>

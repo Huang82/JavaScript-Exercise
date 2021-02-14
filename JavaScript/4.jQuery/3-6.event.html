@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>event6練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+
+                /* 可以觸發mouseenter()和mouseleave() */
+                $("p").hover(function() {
+                    $(this).css("background-color", "yellow");
+                }, function() {
+                    $(this).css("background-color", "lightgray");
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <h3>月下獨酌</h3>
+        <p>
+            花間一壺酒，<br>
+            獨酌雙無親；<br>
+            舉杯邀明月，<br>
+            對影成三人。<br>
+        </p>
+    </body>
+</html>

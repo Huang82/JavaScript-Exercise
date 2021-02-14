@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>effect7練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <style>
+            #board, #slideUp {
+                padding: 30px;
+                text-align: center;
+                background-color: yellow;
+                border: solid 3px blue;
+            }
+
+            #board {
+                padding: 60px;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $("#slideUp").click(function() {
+                    $("#board").slideUp("slow");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id = "slideUp">按此可以向上滑入深智公司面板</div>
+        <br>
+        <div id = "board">深智公司</div>
+    </body>
+</html>

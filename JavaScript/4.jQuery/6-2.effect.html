@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>effect2練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <style>
+
+            #div1 {
+                width: 50px;
+                height: 50px;
+                display: none;
+                background-color: blue;
+            }
+
+            #div2 {
+                width: 50px;
+                height: 50px;
+                display: none;
+                background-color: blue;
+            }
+
+            #div3 {
+                width: 50px;
+                height: 50px;
+                display: none;
+                background-color: blue;
+            }
+        </style>
+        <script>
+
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("#div1").fadeIn("fast");
+                    $("#div2").fadeIn("slow");
+                    $("#div3").fadeIn(10000);
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <p>fadeIn()實例解說</p>
+        <button>fadeIn功能</button><br><br>
+        <div id = "div1"></div><br>
+        <div id = "div2"></div><br>
+        <div id = "div3"></div><br>
+    </body>
+</html>

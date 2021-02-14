@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>DOM2練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                $("button").click(function() {
+                    alert("val(): " + $("#mytest").val());
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <p>我心中的理想大學：<input type = "text" id = "mytest" value = "沒有此大學"></p>
+        <button>val功能</button>
+    </body>
+</html>

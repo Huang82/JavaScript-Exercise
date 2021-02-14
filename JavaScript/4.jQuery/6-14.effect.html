@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>effect14練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <style>
+            #animation {
+                background-color: yellow;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $("button").click(function() {
+                    var div = $("div");
+                    div.animate({height: "250px", opacity: "0.3"}, "slow");
+                    div.animate({width: "250px", opacity: "0.7"}, "slow");
+                    div.animate({height: "100px", opacity: "0.3"}, "slow");
+                    div.animate({width: "100px", opacity: "0.7"}, "slow");
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <button>動畫</button>
+        <p>預設CSS position屬性需設為relative、fixed或absolute</p>
+        <div id = "animation"></div>
+    </body>
+</html>

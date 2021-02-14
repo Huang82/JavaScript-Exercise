@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>basejQuery練習</title>
+        <script src = "../jquery-3.5.1.min.js"></script>
+        <script>
+            /* 進去網頁就會執行 */
+            $(document).ready(function() {
+                alert("Hi JQuery");
+                
+                /* 按下button會把body所有的p都隱藏起來 */
+                $("button#but0").click(
+                    function (){
+                        $("p").hide();
+                    }
+                );
+
+                $("#but1").click(
+                    function() {
+                        $("#mytest").hide();
+                    }
+                );
+
+                $("#but2").click(
+                    function() {
+                        $(".myclass").hide();
+                    }
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <h1>我的JQuery程式</h1>
+        <p>網頁設計</p>
+        <p id = "mytest">網頁設計 id = "mytest"</p>
+        <p class = "myclass">網頁設計class = "myclass"</p>
+        <p>HTML+CSS+JavaScript+JQuery+Bootstrap</p>    
+        <button id = "but0">隱藏段落</button>
+        <button id = "but1">隱藏mytest</button>
+        <button id = "but2">隱藏myclass</button>
+    </body>
+</html>
