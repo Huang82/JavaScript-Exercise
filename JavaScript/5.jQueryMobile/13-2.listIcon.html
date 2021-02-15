@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name = "viewport" content = "width = device-width, initial-scale=1.0">
+        <title>listIcon2練習(清單Icon設計)</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <dic data-role="page" id="pageone">
+            <div data-role="content">
+                <h2>台灣的大學</h2>
+                <ul data-role="listview" data-inset="true">
+                    <!-- 新增了class="ui-li-icon"，可以新增在左邊插入icon圖示 -->
+                    <li><a href="#"><img src="./資料.jpg" class="ui-li-icon">明志科大default</a></li>
+                    <li data-icon="false"><a href="#">台灣科大false</a></li>
+                    <li data-icon="plus"><a href="#">台北科大plus</a></li>
+                    <li data-icon="minus"><a href="#">台灣大學minus</a></li>
+                    <li data-icon="delete"><a href="#">清華大學delete</a></li>
+                    <li data-icon="location"><a href="#">交通大學location</a></li>
+                </ul>
+            </div>
+        </dic>
+    </body>
+</html>

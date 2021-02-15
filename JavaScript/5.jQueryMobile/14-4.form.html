@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name = "viewport" content = "width = device-width, initial-scale=1.0">
+        <title>form4練習(表單設計)</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-role="header">
+                <h1>Select選單</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <form method="post" action="/mybookpost.php">
+                    <!-- select，data-role="ui-field-contain"針對<outgroup> -->
+                    <fieldset data-role="ui-field-contain">
+                        <label for="city">選擇城市</label>
+                        <select name="city" id="city">
+                            <optgroup label="亞洲">
+                                <option value="Beijing">北京</option>
+                                <option value="Beijing">東京</option>
+                                <option value="Beijing">香港</option>
+                            </optgroup>
+                            <optgroup label="歐洲">
+                                <option value="Beijing">倫敦</option>
+                                <option value="Beijing">羅馬</option>
+                                <option value="Beijing">巴黎</option>
+                            </optgroup>
+                        </select>
+                    </fieldset>
+                    <input type="submit" data-inline="true" value="確定">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

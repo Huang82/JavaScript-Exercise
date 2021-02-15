@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name = "viewport" content = "width = device-width, initial-scale=1.0">
+        <title>table2練習(表格設計)</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="pageone">
+            <div data-role="header">
+                <h1>Reflow表格</h1>
+            </div>
+            <div data-role="content">
+                <p>Reflow表格</p>
+                <p>請調整寬度了解執行狀況</p>
+                <!-- 主要新增了data-mode="columntoggle"，用處是當網頁寬小可以把列表隱藏起來，依照優先度來顯示
+                     ，data-column-btn-text(配合data-mode)是來更改按鈕裡面的文字 -->
+                <table data-role="table" class="ui-responsive" data-mode="columntoggle" id="myTable" data-column-btn-text="可切換顯示欄位鈕">
+                    <thead>
+                        <tr>
+                            <!-- 新增優先度越大先消失，如果沒有新增表示一定會顯示，data-priority="" -->
+                            <th data-priority="5">客戶標號</th>
+                            <th>客戶姓名</th>
+                            <th data-priority="1">地址</th>
+                            <th data-priority="2">城市</th>
+                            <th data-priority="3">郵遞區號</th>
+                            <th data-priority="4">國家</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Peter</td>
+                            <td>朝陽路18號</td>
+                            <td>東京</td>
+                            <td>30098</td>
+                            <td>日本</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>John</td>
+                            <td>明志路</td>
+                            <td>香港</td>
+                            <td>901900</td>
+                            <td>中國</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>John</td>
+                            <td>落日大道</td>
+                            <td>洛杉磯</td>
+                            <td>12349</td>
+                            <td>美國</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Nelson</td>
+                            <td>工專路</td>
+                            <td>曼谷</td>
+                            <td>55667</td>
+                            <td>泰國</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div data-role="footer">
+                <h1>阿里商店</h1>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>popups練習(彈出框設計)</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header">
+                <h1>深石數位</h1>
+            </div>
+            <div data-role="content">
+                <!-- 主要新增data-rel="要前往的data-role"，href必須要對目標id是一致的 -->
+                <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">深度學習</a>
+            </div>
+            <!-- ui-content增加內建去 -->
+            <div data-role="popup" id="myPopup" class="ui-content">
+                <p>深石數位公司開發了一套具有人工智慧的線上學習系統</p>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>台北市南京東路</h1>
+            </div>
+        </div>
+    </body>
+</html>

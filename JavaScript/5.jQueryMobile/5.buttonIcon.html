@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>buttonIcon練習(按鈕Icon設計)</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header">
+                <h1>深石數位</h1>
+            </div>
+            <div data-role="content">
+                <p>深度學習滴水穿石</p>
+                <!-- 要設定class ui-btn 它可以把超連結變成按鈕
+                     如果要先增圖案，圖案有這些
+                        ui-icon-arrow-l
+                        ui-icon-arrow-r
+                        ui-icon-info
+                        ui-icon-delete
+                        ui-icon-back
+                        ui-icon-audio
+                        ui-icon-lock
+                        ui-icon-search
+                        ui-icon-alert
+                        ui-icon-grid
+                        ui-icon-home
+                     然後如果<a>一定要在設定位置才能顯示
+                        ui-btn-icon-top
+                        ui-btn-icon-right
+                        ui-btn-icon-left
+                        ui-btn-icon-bottom
+                    如何使用如下方class -->
+                <a href="#" class="ui-btn ui-icon-home ui-btn-icon-top">返回Home</a>
+                <a href="#" class="ui-btn ui-icon-arrow-r ui-btn-icon-right">Big Data</a>
+                <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left">Web Design</a>
+                <a href="#" class="ui-btn ui-icon-info ui-btn-icon-bottom">Information</a>
+                <hr>
+                <!-- 更多圖示設定
+                        ui-shadow:圖示增加陰影
+                        ui-btn-icon-notext:隱藏圖示文字
+                        ui-alt-icon:圖示是黑色
+                        ui-nodisc-icon:不含外框
+                        ui-corner-all:為按鈕加圓框
+                        ui-btn-inline:按鈕可以只有包含它的內容，不會占據整行，在此情況按鈕可以相鄰 -->
+                <a href="#" class="ui-btn ui-icon-home ui-btn-icon-notext">返回Home</a>
+                <a href="#" class="ui-btn ui-icon-home ui-btn-icon-notext ui-alt-icon">Big Data</a>
+                <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext">Web Design</a>
+                <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext ui-nodisc-icon ui-corner-all">Information</a>
+                <a href="#" class="ui-btn ui-btn-inline">深度學習</a>
+                <a href="#" class="ui-btn ui-btn-inline">滴水穿石</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>台北市南京東路</h1>
+            </div>
+        </div>
+    </body>
+</html>

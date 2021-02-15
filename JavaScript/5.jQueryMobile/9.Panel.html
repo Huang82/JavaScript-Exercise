@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Panel練習(面板設計)</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-role="header">
+                <h1>深石數位</h1>
+            </div>
+            
+            <!-- 主要新增data-role="panel"來新增panel，主要使用id來指向它 -->
+            <div data-role="panel" id="overlayPanel" data-display="overlay">
+                <h2>Overlay顯示HTML5</h2>
+                <p>按一下下列鈕或在Panel區外可以關閉Panel</p>
+                <!-- data-rel="close"可以關閉此panel -->
+                <a href="#page1" data-rel="close" class="ui-btn ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-left">關閉panel</a>
+            </div>
+            <!-- data-position="right"讓panel從右邊出來 -->
+            <div data-role="panel" id="revealPanel" data-display="reveal" data-position="right">
+                <h2>Reveal顯示CSS3</h2>
+                <p>按一下下列鈕或在Panel區外可以關閉Panel</p>
+                <a href="#page1" data-rel="close" class="ui-btn ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-left">關閉panel</a>
+            </div>
+            <div data-role="panel" id="pushPanel" data-display="push">
+                <h2>Push顯示jQuery</h2>
+                <p>按一下下列鈕或在Panel區外可以關閉Panel</p>
+                <a href="#page1" data-rel="close" class="ui-btn ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-left">關閉panel</a>
+            </div>
+            
+
+
+            <div data-role="content">
+                <p>請選擇內容</p>
+                <a href="#overlayPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">HTML5</a>
+                <a href="#revealPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">CSS3</a>
+                <a href="#pushPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">jQuery</a>
+            </div>
+
+            <div data-role="footer">
+                <h1>歡迎參觀</h1>
+            </div>
+        </div>
+    </body>
+</html>

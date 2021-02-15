@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name = "viewport" content = "width = device-width, initial-scale=1.0">
+        <title>collapsible練習(可折疊區塊設計)</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-role="header">
+                <h1>深石數位</h1>
+            </div>
+            <div data-role="content">
+                <!-- 主要新增data-role="collapsible"來新增摺疊區塊 -->
+                <div data-role="collapsible">
+                    <h1>SSE國際證照 -- collapsible</h1>         <!-- 標題 -->
+                    <p>Web Design -- 這是被展開的內容</p>        <!-- 摺疊跑出來的內容 -->
+                </div>
+                <hr>
+                <p>巢狀可折疊區塊</p>
+                <div data-role="collapsible">
+                    <h1>SSE國際證照 -- collapsible</h1>
+                    <p>Web Design -- 這是被展開內容</p>
+                    <div data-role="collapsible">
+                        <h1>Web Design證照系列 -- 第二層collapsible</h1>
+                        <p>HTML5 -- 這是被展開的內容</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-role="footer">
+                <h1>深度學習滴水穿石</h1>
+            </div>
+        </div>
+    </body>
+</html>
