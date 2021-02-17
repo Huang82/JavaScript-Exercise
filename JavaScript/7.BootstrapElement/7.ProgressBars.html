@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>ProgressBars(進度條)</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h3>Progress Bars</h3>
+            <!-- 如果要使用必須在.container裡面增加.progress類別，然後在子元件內增加.progress-bar，在使用CSS的width屬性定義進度條長度 -->
+            <div class="progress">
+                <div class="progress-bar" style="width: 30%;"></div>
+            </div>
+
+            <br><hr><br>
+            <h3>Progress Bars的高度設計</h3>
+            <!-- 如果要設定進度條的高度必須在.progress這一欄增加CSS的style="height:30px" -->
+            <div class="progress" style="height: 30px;">
+                <div class="progress-bar" style="width: 30%;"></div>
+            </div>
+
+            <br><hr><br>
+            <h3>Progress Bars的進度條</h3>
+            <div class="progress">
+                <!-- 可以在裡面打字表示數值 -->
+                <div class="progress-bar" style="width: 30%;">30%</div>
+            </div>
+
+            <br><hr><br>
+            <h3>Progress Bars的色彩</h3>
+            <div class="progress">
+                <div class="progress-bar" style="width: 30%;">30%</div>
+            </div>
+            <br>
+            <!-- 可以在裡面新增bg-success代表改變色彩 -->
+            <div class="progress">
+                <div class="progress-bar bg-success" style="width: 60%;">60%</div>
+            </div>
+            <br>
+            <div class="progress">
+                <div class="progress-bar bg-danger" style="width: 90%;">90%</div>
+            </div>
+
+            <br><hr><br>
+            <h3>條紋的Progress Bars</h3>
+            <div class="progress">
+                <!-- 新增.progress-bar-striped，可以讓進度條有條紋 -->
+                <div class="progress-bar progress-bar-striped" style="width: 30%;">30%</div>
+            </div>
+            <br>
+            <div class="progress">
+                <div class="progress-bar bg-success progress-bar-striped" style="width: 60%;">60%</div>
+            </div>
+            <br>
+            <div class="progress">
+                <div class="progress-bar bg-danger progress-bar-striped" style="width: 90%;">90%</div>
+            </div>
+
+            <br><hr><br>
+            <h3>條紋的Progress Bars</h3>
+            <div class="progress">
+                <!-- 新增.progress-bar-animated，可以讓進度條有條紋 -->
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 30%;">30%</div>
+            </div>
+            <br>
+            <div class="progress">
+                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 60%;">60%</div>
+            </div>
+            <br>
+            <div class="progress">
+                <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width: 90%;">90%</div>
+            </div>
+
+            <br><hr><br>
+            <div class="progress">
+                <!-- progress-bar來推疊進度條 -->
+                <div class="progress-bar bg-primary" style="width: 20%;">免費空間</div>
+                <div class="progress-bar bg-success" style="width: 30%;">系統占用</div>
+                <div class="progress-bar bg-info" style="width: 30%;">其他使用</div>
+            </div>
+            <br><hr><br>
+        </div>
+    </body>
+</html>

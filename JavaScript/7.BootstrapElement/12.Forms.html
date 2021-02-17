@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>Forms(表單)</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- 建立表單的基本規則
+                    1.常用的表單元素是<input>、<textarea>、<select>，這些元素必須加上.form-control類別，然後會占用100%寬度
+                    2.可以使用<label>當作是表單元素的標籤文字，然後將<label>和上述規則1的項目元素放在<div class="form-group">的區塊內 -->
+            <h3>帳戶輸入</h3>
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="useraccount">帳號</label>
+                    <input type="text" class="form-control" id="userid" placeholder="請輸入帳號:">
+                </div>
+                <div class="form-group">
+                    <label for="userpwd">密碼</label>
+                    <input type="password" class="form-control" id="userpwd" placeholder="請輸入密碼">
+                </div>
+                <button type="login" class="btn btn-primary">登入</button>
+            </form>
+
+            <br><hr><br>
+            <h3>行內表單</h3>
+            <!-- .form-inline建立行表單，如果視窗寬度太小元素還是由上往下配置 -->
+            <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                    <label for="useraccount">帳號</label>
+                    <input type="text" class="form-control" id="userid" placeholder="請輸入帳號:">
+                </div>
+                <div class="form-group">
+                    <label for="userpwd">密碼</label>
+                    <input type="password" class="form-control" id="userpwd" placeholder="請輸入密碼">
+                </div>
+                <button type="login" class="btn btn-primary">登入</button>
+            </form>
+
+            <br><hr><br>
+            <h3>空間配置工具</h3>
+            <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                    <!-- 可以增加間距
+                            .mr-sm-2:在右邊增加2px間距
+                            .mb-2:在下邊增加2px間距
+                            .mt-2:在上邊增加2px間距 -->
+                    <label for="useraccount" class="mb-2 mr-sm-2">帳號</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="userid" placeholder="請輸入帳號:">
+                </div>
+                <div class="form-group">
+                    <label for="userpwd" class="mb-2 mr-sm-2">密碼</label>
+                    <input type="password" class="form-control mb-2 mr-sm-2" id="userpwd" placeholder="請輸入密碼">
+                </div>
+                <button type="login" class="btn btn-primary mb-2 mr-sm-2">登入</button>
+            </form>
+
+            <br><hr><br>
+            <h3>Row/Grid</h3>
+            <form class="form-inline" action="/action_page.php">
+                <div class="row">
+                    <div class="col">
+                        <label for="useraccount" class="mb-2 mr-sm-2">帳號</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="userid" placeholder="請輸入帳號:">
+                    </div>
+                    <div class="col">
+                        <label for="userpwd" class="mb-2 mr-sm-2">密碼</label>
+                        <input type="password" class="form-control mb-2 mr-sm-2" id="userpwd" placeholder="請輸入密碼">
+                    </div>
+                </div>
+                <button type="login" class="btn btn-primary mb-2 mr-sm-2">登入</button>
+            </form>
+        </div>
+    </body>
+</html>

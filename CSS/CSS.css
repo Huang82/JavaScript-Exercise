@@ -705,7 +705,14 @@ transition {
 /* 響應式網頁 */
 RWD {
 
-    cursor: none;                       /* 可以將滑鼠游標設為特別形狀 */
+    cursor: none;                       /* 可以將滑鼠游標設為特別形狀
+                                            crosshair   十字
+                                            e-resize    左右箭頭
+                                            help        游標右下角一個?
+                                            pointer     點擊手
+                                            progress    箭頭讀取
+                                            wait        讀取
+                                            not-allowed 禁止  */
 
 }
 /* 使用方法
