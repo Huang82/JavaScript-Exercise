@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>carousel1(輪播圖片)</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <!-- 
+            .carousel:建立輪播區塊
+            .carousel-indicators:輪播區圖片下方的點，可以由此了解目前有多少輪播圖片，以及目前撥放圖片在整體圖片的位置
+            .carousel-inner:將圖片加入輪播
+            .carousel-item:指定每個圖片內容
+            .carousel-control-pre:增加左邊鈕，控制圖片可以往前一頁
+            .carousel-control-pre-icon:噢.carousel-control-pre共同使用，建立按鈕
+            .carousel-control-next:增加右邊鈕，控制圖片可以跳下一頁
+            .carousel-control-next-icon:噢.carousel-control-next共同使用，建立按鈕
+         -->
+        <div class="container">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./資料.jpg" alt="img1" width="600" height="400">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./Tom Clancy's Rainbow Six® Siege2020-8-26-23-44-51.jpg" alt="img2" width="600" height="400">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./Tom Clancy's Rainbow Six® Siege2020-8-27-0-5-1.jpg" alt="img3" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

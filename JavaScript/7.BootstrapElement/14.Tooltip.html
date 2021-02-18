@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tooltip練習(工具提示)</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h3>Tooltip提示功能</h3>
+            <!-- 主要新增data-toggle="tooltip" -->
+            <a href="#" data-toggle="tooltip" title="Deepen your mind">深智數位</a>
+
+            <br><hr><br>
+            <h3>Tooltip提示功能</h3>
+            <!-- 可以設定提示文字的位置 data-placement="top" -->
+            <a href="#" data-toggle="tooltip" data-placement="top" title="top">上</a>
+            <a href="#" data-toggle="tooltip" data-placement="bottom" title="bottom">下</a>
+            <a href="#" data-toggle="tooltip" data-placement="left" title="left">左</a>
+            <a href="#" data-toggle="tooltip" data-placement="right" title="right">右</a>
+        </div>
+        <!-- 就算沒有script還是可以用，好像只是把提示顏色變黑 -->
+        <script>
+            $('[data-toggle="tooltip"]').tooltip();
+        </script>
+    </body>
+</html>

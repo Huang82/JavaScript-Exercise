@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>carousel2(可以手動調整圖片往前或往後撥放)</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./資料.jpg" alt="img1" width="600" height="400">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./Tom Clancy's Rainbow Six® Siege2020-8-26-23-44-51.jpg" alt="img2" width="600" height="400">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./Tom Clancy's Rainbow Six® Siege2020-8-27-0-5-1.jpg" alt="img3" width="600" height="400">
+                    </div>
+                    <!-- .carousel-control-prev data-slide="prev"增加上一頁，.carousel-control-prev-icon加入icon -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <!-- .carousel-control-next data-slide="next"增加上一頁，.carousel-control-prev-icon加入icon -->
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
