@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>我的第一個網站</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <style>
+
+            body {
+                background-color: skyblue;
+            }
+
+            /*  */
+
+            .header-div {
+                background-image: url(./header-Image1.jpg);
+                background-size: cover;
+                width: auto;
+                height: 300px;
+            }
+
+            .header-h2 {
+                text-align: center;
+                color: white;
+                padding-top: 100px;
+            }
+
+            .nav-box {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                height: 50px;
+                margin-top: 1em;
+            }
+
+            .nav-ul_box {
+                height: inherit;
+            }
+
+            .nav-background-li:hover {
+                height: inherit;
+                background-color: rgb(0, 149, 172);
+            }
+
+            .nav-a_margin {
+                margin-top: 5px;
+            }
+
+            .footer {
+                margin-top: 2em;
+                padding: 2em;
+                background-color: black;
+            }
+            
+            .footer-pre {
+                color: white;
+            }
+
+            /* 分頁設計 */
+
+            div[class~="tab-content"] div {
+                padding: 2em;
+                background-color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="card header-div">
+                    <div class="card-img-overlay">
+                        <h2 class="header-h2 card-title">歡迎進來Huang82的網站</h2>
+                    </div>
+                </div>
+            </header>
+            <nav class="navbar navbar-expand-sm bg-info navbar-dark nav-box justify-content-center">
+                <ul class="nav navbar-nav nav-ul_box">
+                    <li class="nav-item nav-background-li">
+                        <a class="nav-link nav-a_margin active" data-toggle="tab" href="#self">自我介紹</a>
+                    </li>
+                    <li class="nav-item nav-background-li">
+                        <a class="nav-link nav-a_margin" data-toggle="tab" href="#mygame">我的遊戲</a>
+                    </li>
+                    <li class="nav-item nav-background-li">
+                        <a class="nav-link nav-a_margin" data-toggle="tab" href="#myitem">專題介紹</a>
+                    </li>
+                    <li class="nav-item nav-background-li">
+                        <a class="nav-link nav-a_margin" data-toggle="tab" href="#test">Test</a>
+                    </li>
+                    <li class="nav-item nav-background-li">
+                        <a class="nav-link nav-a_margin" data-toggle="tab" href="#test">Test</a>
+                    </li>
+                    <li class="nav-item nav-background-li">
+                        <a class="nav-link nav-a_margin" data-toggle="tab" href="#test">Test</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="tab-content">
+                <div class="container tab-pane active" id="self">
+                    <p>自我介紹</p>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+                <div class="container fade tab-pane" id="mygame">
+                    <p>我的遊戲</p>
+                </div>
+                <div class="container fade tab-pane" id="myitem">
+                    <p>專題介紹</p>
+                </div>
+                <div class="container fade tab-pane" id="test">
+                    <p>目前無資料...</p>
+                </div>
+            </div>
+            <footer class="footer">
+<pre class="footer-pre">
+如何聯繫我：(手機)0912345678
+           (電話)07-5711234
+
+地址：高雄市旗津區中洲三路復興里x號x鄰
+</pre>
+            </footer>
+        </div>
+    </body>
+    </html>
