@@ -178,4 +178,71 @@ $(document).animate({params}, speed, callback);    /* 動畫效果，speed可以
                                                                callback是執行後需要執行的函數名稱，
                                                                params是定義形成動畫的CSS屬性，屬性設的值也可以用show、hide、togle來處理動畫 */
 
+
+
+
+/* -----------------------new-------------------------- */
+
+$("#test").addClass("newClass");                    /* 為節點加上新的Class */
+
+$("#test").removeClass("removeClass");              /* 刪除Class樣式 */
+
+$("#test").toggleClass("toggleClass");              /* 切換Class，當如果身上有Class他是直接增加上去並優先度優先 */
+
+$("#test").css('css樣式名稱','屬性');                /* 直接新增style屬性 */
+
+$("div").children();                                /* 取的元素下的所有子元素 */
+
+$("h1").parent();                                   /* 取得元素的父節點，並針對父節點操作 */
+
+$("div").find("p");                                 /* 尋找元素下的特定子元素，結果不一定是唯一值 */
+
+$("p").each(function() {                            /* 將取得的所有元素，使用函數一一進行處理 */
+    $(this).css('color', 'blue');
+});
+
+$(".content").append("<p>I' m new.</p>");           /* 在該方法內放置欲新增的內容，可以是數字或字串，且會在所有指定的元素之尾端插入 */
+
+$(".content").remove();                             /* 用來刪除所有指定的元素集合，注意聯內容、本身都會被刪除 */
+
+$(".content").empty();                              /* 與remove()類似，不過此方法僅將元素內的所有文字刪除，所有節點還是存在 */
+
+$("p").text("Hi jQuery!");                          /* 用來取得或設定元素內的文字內容 */
+
+$("#t").val(30);                                    /* 通常會用於<input>、<select>，取得或設定元素的值 */
+
+$("div").width();                                   /* 可以偵測頁面或物件之寬度 */
+
+$("div").height();                                  /* 可以偵測頁面或物件之高度 */
+
+/* event */
+
+$(document).ready(function() {                      /* 事件處理一進網頁就會載入 */
+    alert("document ready!");
+});
+
+$("p").mouseover(function() {                       /* 滑鼠移入元素將會執行function */
+    $(this).css('fontSize', 'large');
+});
+
+$("p").mouseout(function() {                        /* 滑鼠移出元素將會執行function */
+    $(this).css('fontSize', 'medium');
+});
+
+$("input").keydown(function() {                     /* 當按下鍵盤按鍵時會觸發function */
+    alert("你觸發了鍵盤");
+});
+
+$(window).resize(function() {                       /* 當視窗大小更動時則顯示目前視窗之寬、高資訊 */
+    alert("目前視窗寬:" + $(window).width() + "高:" + $(window).height());
+});
+
+$("input").change(function() {                      /* 當更動文字框內的值，並離開文字框時觸發 */
+    alert("你更改了文字");
+});
+
+$("input").on("change",function() {                 /* 綁定事件處理函數，.on()包含兩個參數，第一個參數放綁定的事件名稱，第二個為觸發後欲執行的方法 */
+    alert("你更改了文字");
+});
+
 </script>

@@ -1,0 +1,17 @@
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <title>css(直接新增style屬性)</title>
+    </head>
+    <body>
+        <p id="text1">Hello JavaScript!</p>
+        <button onclick="addstyle()">切換背景顏色</button>
+        <script>
+            function addstyle() {
+                $("#text1").css('background-color','blue');
+            }
+        </script>
+    </body>
+</html>

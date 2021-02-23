@@ -1,0 +1,16 @@
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <title>text(用來取得或設定元素內的文字內容)</title>
+    </head>
+    <body>
+        <p>Hello jQuery!</p>
+        <script>
+            console.log($("p").text());
+            $("p").text("Hi jQuery!");
+            console.log($("p").text());
+        </script>
+    </body>
+</html>
