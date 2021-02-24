@@ -1,0 +1,17 @@
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <title>empty(可以將元素內的所有文字刪除，所以節點還是存在的)</title>
+    </head>
+    <body>
+        <div class="content">
+            <p>Hello JavaScript!</p>
+        </div>
+        <p>Hello jQuery!</p>
+        <script>
+            $(".content").empty();   
+        </script>
+    </body>
+</html>

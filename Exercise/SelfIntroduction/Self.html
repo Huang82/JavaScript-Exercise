@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>我的第一個網站</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <style>
+
+            body {
+                background-color: skyblue;
+                z-index: 0;
+            }
+
+            /*  */
+
+            .header-div {
+                background-image: url(./header-Image1.jpg);
+                background-size: cover;
+                width: auto;
+                height: 300px;
+            }
+
+            .header-h2 {
+                text-align: center;
+                color: white;
+                padding-top: 100px;
+            }
+
+            .nav-box {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                height: 50px;
+                margin-top: 1em;
+            }
+
+            .nav-background-li:hover {
+                height: inherit;
+                background-color: rgb(0, 149, 172);
+            }
+
+            .nav-a_margin {
+                margin-top: 5px;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+
+            .footer {
+                margin-top: 2em;
+                padding: 2em;
+                background-color: black;
+            }
+            
+            .footer-pre {
+                color: white;
+            }
+
+            /* 分頁設計 */
+
+            div[class~="tab-content"] div[class~="container"] {
+                padding: 2em;
+                background-color: white;
+            }
+
+            /* 我的遊戲mygame */
+
+            #mygame div[class~="row"]{
+                margin-top: 1em;
+                padding: 1em;
+                border: 1px solid black;
+            }
+
+            #mygame_buy {
+                background-image: url(./minecraft_buy.png);
+                width: auto;
+                background-position: 50% 50%;
+                background-size: cover;
+                text-align: center;
+                color: whitesmoke;
+            }
+
+
+            /* 專題介紹topic */
+
+            #topic_ {
+                padding: 0px;
+                width: auto;
+            }
+
+            #topicID {
+                text-align: center;
+            }
+
+            #topicID p {
+                text-align: justify;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="card header-div">
+                    <div class="card-img-overlay">
+                        <h2 class="header-h2 card-title">歡迎進來Huang82的網站</h2>
+                    </div>
+                </div>
+            </header>
+            <nav class="navbar navbar-expand-lg bg-info navbar-dark nav-box">
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#b" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-info" id="b" style="z-index: 1;">
+                    <ul class="nav navbar-nav" >
+                        <li class="nav-item nav-background-li">
+                            <a class="nav-link nav-a_margin" data-toggle="tab" href="#self">自我介紹</a>
+                        </li>
+                        <li class="nav-item nav-background-li">
+                            <a class="nav-link nav-a_margin" data-toggle="tab" href="#mygame">我的遊戲</a>
+                        </li>
+                        <li class="nav-item nav-background-li">
+                            <a class="nav-link nav-a_margin active" data-toggle="tab" href="#myitem">專題介紹</a>
+                        </li>
+                        <li class="nav-item nav-background-li">
+                            <a class="nav-link nav-a_margin" data-toggle="tab" href="#test">Test</a>
+                        </li>
+                        <li class="nav-item nav-background-li">
+                            <a class="nav-link nav-a_margin" data-toggle="tab" href="#test">Test</a>
+                        </li>
+                        <li class="nav-item nav-background-li">
+                            <a class="nav-link nav-a_margin" data-toggle="tab" href="#test">Test</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="tab-content">
+
+                <!-- 自我介紹 -->
+                <div class="container tab-pane" id="self">
+                    <p>自我介紹</p>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+
+                <!-- 我的遊戲 -->
+                <div class="container fade tab-pane" id="mygame">
+                    <img src="./minecraft-title.jpg" width="100%">
+                    <div class="row" >
+                        <div class="col-lg-6">
+                            <h2>Minecraft是甚麼?</h2><br>
+                            <p>玩家可以在一個隨機生成的 3D世界內，以帶材質貼圖的立方體為基礎進行遊戲。
+                                遊戲中的其他特色包括探索世界、採集資源、合成物品及生存冒險等。</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="./minecraft-1.jpg" style="float: right; width: 100%;">
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-lg-6">
+                            <img src="./minecraft-2.png" style="float: left; width: 100%;">
+                        </div>
+                        <div class="col-lg-6">
+                            <h2>生存</h2><br>
+                            <p>玩家須在此世界存活下去，收集資源砍殺動植物，與村民交易，為的就是活下去!!</p>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-lg-6">
+                            <h2>挖礦</h2><br>
+                            <p>玩家必須下去地表下探險，底表下有洞窟裡面有許多的礦物與寶藏，
+                                有了礦物就可以製作出更高階的裝備與武器，所以才能讓人愛不釋手的挖!挖!挖!</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="./minecraft-3.jpg" style="float: right; width: 100%;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="./minecraft-4.png" style="float: left; width: 100%;">
+                        </div>
+                        <div class="col-lg-6">
+                            <h2>戰鬥</h2><br>
+                            <p>到了晚上會生成許多怪物，玩家必須做出裝備與武器得以度過晚上，
+                                當然還有許多更強的怪物等著玩家來挑戰</p>
+                        </div>
+                    </div>
+                    <div class="row" style="border: 0px;">
+                        <div class="col-sm-12" id="mygame_buy">
+                            <h2><strong>購買</strong></h2>
+                            <p>上述介紹讓您心動了嗎?</p>
+                            <p>那就來趕快按下下面的按鈕來購買遊戲吧!</p>
+                            <a class="btn btn-info" href="https://www.minecraft.net/zh-hans/store/minecraft-java-edition">Buy</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 專題介紹 -->
+                <div class="container  tab-pane active" id="myitem">
+                    <div class="row">
+                        <div class="col-sm-12" id="topicID">
+                            <h2>專題簡介</h2><br>
+                            <p>現今人手一支手機加上從不離身，於是我們想到讓身上的鑰匙轉換成手機App，App顯示密碼讓使用者可以輸入家裡的電子門鎖，密碼會隨著時間而變更，這樣讓使用者身上不用再多帶鑰匙這一種重物，安全性更是提升。
+                                這樣的想法是來自於現在很多電腦(手機)都會要求二次認證，像是電腦登入Google就會有二次認證訊息傳到你的手機，再由手機顯示的認證碼輸入到電腦上進行登入，於是這個專題就這樣出來了。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="width: 60%; height: 30%; margin-left: 20%; background-color: black;">
+                            <div class="carousel slide" data-ride="carousel" id="topic_">
+                                <ul class="carousel-indicators">
+                                    <li data-target="#topic_" data-slide-to="0" class="active"></li>
+                                    <li data-target="#topic_" data-slide-to="1"></li>
+                                </ul>
+                                <div class="carousel-inner" style="padding: 0px; height: inherit; ">
+                                    <div class="carousel-item active" style="padding: 0px;">
+                                        <img class="d-block w-100" src="./topic-1.jpg" alt="tipic_1_正面照">
+                                        <div class="carousel-caption">
+                                            <p>專題正面照</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="padding: 0px; margin-top: 29%; margin-bottom: 29.2%;">
+                                        <img class="d-block w-100" src="./topic-2.jpg" alt="tipic_2_裡面照">
+                                        <div class="carousel-caption" style="position: absolute;top: 100%;align-items: center;height: 100%;">
+                                            <p>專題裡面照</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#topic_" data-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#topic_" data-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+                
+                <!-- 目前無資料... -->
+                <div class="container fade tab-pane" id="test">
+                    <p>目前無資料...</p>
+                </div>
+            </div>
+            <footer class="footer">
+<pre class="footer-pre">
+如何聯繫我：(手機)0912345678
+           (電話)07-5711234
+
+地址：高雄市旗津區中洲三路復興里x號x鄰
+</pre>
+            </footer>
+        </div>
+        <script>
+            $(function(){
+                if($(window).width()<960){ //當視窗小於960時才運作，導覽列按完自動收縮
+                    $('.navbar a').on('click', function(){
+                            $('.navbar-toggler').click();
+                        });
+                    }
+                });
+        </script>
+    </body>
+    </html>

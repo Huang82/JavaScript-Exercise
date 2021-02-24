@@ -1,0 +1,36 @@
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <title>addClass(為節點新增Class、刪除Class、替換Class)</title>
+        <style>
+            .sText {
+                background-color: blue;
+            }
+
+            .sText2 {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="text1">Hello JavaScript!</p>
+        <button onclick="addstyle()">新增樣式</button>
+        <button onclick="removestyle()">刪除樣式</button>
+        <button onclick="togglestyle()">切換樣式</button>
+        <script>
+            function addstyle() {
+                $("#text1").addClass("sText");
+            }
+
+            function removestyle() {
+                $("#text1").removeClass("sText");
+            }
+
+            function togglestyle(   ) {
+                $("#text1").toggleClass("sText2");
+            }
+        </script>
+    </body>
+</html>
