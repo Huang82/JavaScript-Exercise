@@ -8,4 +8,5 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: test.multi(5, 6) });
 });
 
+
 module.exports = router;
