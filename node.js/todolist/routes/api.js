@@ -1,54 +1,106 @@
 var express = require('express');
 var router = express.Router();
-var listModel = [];
 var id=1;
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/todo',{useNewUrlParser: true});
+
+
+var listSchema = new mongoose.Schema({
+    title: String,
+    content: String,
+    status: Boolean
+});
+
+listSchema.set('collection', 'list');
+var listModel = mongoose.model('list', listSchema);
+
+
+
 router.post('/addList', function(req, res) {
-    var newlist = {
-        _id: id,
+    var newlist = new listModel({
         title: req.body.title,
         content: req.body.content,
         status: false
-    };
+    });
 
-    listModel.push(newlist);
-    id++;
-    res.json({
-        "status": 0,
-        "msg": "success",
-        "data": newlist
+    newlist.save(function (err, data) {
+        if (err) {
+            res.json({"status": 1, "msg": "error"});
+            console.log("add error");
+        } else {
+            res.json({
+                "status": 0,
+                "msg": "success",
+                "data": data
+            });
+            console.log("add success");
+        }
     });
 });
 
 router.get('/getList', function(req, res) {
-    res.json(listModel);
+    listModel.find(function(err, data) {
+        if(err) { console.log(err);};
+        res.json(data);
+    });
 });
 
 router.post('/removeList', function(req, res) {
     var id = req.body.id;
-    var index = listModel.findIndex(item => item._id == id);
-    listModel.splice(index, 1);
-    res.json({"status":0,"msg":"success"});
+    listModel.remove({_id: id}, function (err, data) {
+        if(err) {
+            console.log(err);
+            res.json({"status": 1, "msg": "error"});
+        } else {
+            res.json({"status":0,"msg":"success"});
+        }
+    });
 })
 
 router.post('/updateList', function(req, res) {
     var id = req.body.id;
-    var index = listModel.findIndex(item => item._id == id);
-    listModel[index].title = req.body.title;
-    listModel[index].content = req.body.content;
-    res.json({"status": 0, "msg": "success"});
+    listModel.findById(id, function (err, data) {
+        if(err) {
+            console.log(err);
+            res.json({"status": 1, "msg": "error"});
+        } else {
+            data.title = req.body.title;
+            data.content = req.body.content;
+            data.save(function(err) {
+                if(err) {
+                    console.log(err);
+                    res.json({"status": 1, "msg": "error"});
+                } else {
+                    res.json({"status": 0, "msg": "success"});
+                }
+            });
+        }
+    });
 })
 
 router.post('/changeStatus', function(req, res) {
     var id = req.body.id;
-    var index = listModel.findIndex(item => item._id == id);
-
-    if (listModel[index].status) {
-        listModel[index].status=false;
-    } else {
-        listModel[index].status=true;
-    }
-    res.json({"status": 0, "msg": "success"});
+    listModel.findById(id, function(err, data) {
+        if(err) {
+            console.log(err);
+            res.json({"status": 1, "msg": "error"});
+        } else {
+            if(data.status) {
+                data.status = false;
+            } else {
+                data.status = true;
+            }
+            data.save(function(err) {
+                if (err) {
+                    console.log(err);
+                    res.json({"status": 1, "msg": "error"});
+                } else {
+                    res.json({"status": 0, "msg": "success"});
+                }
+            });
+        }
+    });
 });
 
 module.exports = router;
