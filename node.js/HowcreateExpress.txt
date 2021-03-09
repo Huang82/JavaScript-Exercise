@@ -1,0 +1,12 @@
+如果你第一次安裝的流程：
+	cmd
+	npm install express-generator-g
+	
+安裝express流程：
+	cmd
+	移置你要建立的資料夾
+	express name				// 這邊就會建立一個資料夾在cmd的目前cd的地方
+	進去剛剛所創立的資料夾
+	npm install					// 安裝dependenies清單上的所有套件
+	npm start					// 這樣就可以執行後端伺服器了
+	

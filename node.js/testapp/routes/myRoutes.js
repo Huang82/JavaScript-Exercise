@@ -10,7 +10,6 @@ router.get('/getTest', function(req, res) {
     var n1 = parseInt(req.query.num1);
     var n2 = parseInt(req.query.num2);
     var sum = n1 + n2;
-    console.log(n1 + " " + n2);
     res.json({'mySum': sum});
 });
 
