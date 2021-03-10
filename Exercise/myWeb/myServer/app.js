@@ -4,6 +4,35 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// // create database
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/account',{ uesNewUrlParser: true});
+
+// // 測試database有沒有create success
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   console.log("connected!");
+// });
+
+// // 先建立儲存資料庫資料的結構
+// var accountStruct = new mongoose.Schema({
+//   name: String,
+//   acc: String,
+//   pass: String
+// });
+
+// accountStruct.set('collection', 'test');
+// var accountModel = mongoose.model('test', accountStruct);
+
+// var account1 = new accountModel({ name: "Huang", acc: "21118950", pass: "AS321654"});
+
+// account1.save(function(err) {
+//   if(err) console.log(err);
+
+//   console.log("Success!!!");
+// });
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var login = require('./routes/loginRoutes');

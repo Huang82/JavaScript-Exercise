@@ -1,12 +1,13 @@
+
 $(document).ready(function() {
     $("#login").click(function() {
         /* 檢查輸入帳號和密碼(去頭去尾空白)欄位是否為空 */
-        var pwd = $("#pwd").val().trim();
+        var acc = $("#acc").val().trim();
         var pass = $("#pass").val().trim();
-        if (pwd == "" || pass == "") {
+        if (acc == "" || pass == "") {
             alert("您的帳號或密碼為空!");
-            if (pwd == "") {
-                $("#pwd").addClass("inputAir");
+            if (acc == "") {
+                $("#acc").addClass("inputAir");
             }
             if (pass == "") {
                 $("#pass").addClass("inputAir");
@@ -14,16 +15,16 @@ $(document).ready(function() {
         } else {
             /* 傳送帳密 */
             var API = "http://localhost:3000/login/login";
-            $.post(API, { pwd: pwd, pass: pass}, 
+            $.post(API, {acc: acc, pass: pass}, 
             function(res) {
-                alert(res.mypwd);
-            })
+                alert(res.mess);
+            });
         }
     });
 
     /* 當focus到input remove inputAir */
-    $("#pwd").focus(function() {
-        $("#pwd").removeClass("inputAir");
+    $("#acc").focus(function() {
+        $("#acc").removeClass("inputAir");
     });
     $("#pass").focus(function() {
         $("#pass").removeClass("inputAir");
