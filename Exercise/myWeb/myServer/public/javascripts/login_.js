@@ -14,7 +14,7 @@ $(document).ready(function() {
             }
         } else {
             /* 傳送帳密 */
-            var API = "http://localhost:3000/login/login";
+            var API = "http://192.168.0.106:3000/login/login";
             $.post(API, {acc: acc, pass: pass}, 
             function(res) {
                 alert(res.mess);

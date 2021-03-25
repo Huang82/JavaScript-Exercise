@@ -26,7 +26,7 @@ $(document).ready(function() {
             $("#pass_").addClass("inputAir");
         } else {
             /* 註冊成功，傳送給後端 */
-            var API = "http://localhost:3000/login/register";
+            var API = "http://192.168.0.106:3000/login/register";
             $.post(API, {name: name, acc: acc, pass: pass}, 
                 function(res) {
                     alert(res.mess);

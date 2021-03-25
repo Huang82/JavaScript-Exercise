@@ -6,7 +6,17 @@
 
 var app = require('../app');
 var debug = require('debug')('myserver:server');
-var http = require('http');
+var http = require('https');
+var fs = require('fs');
+
+// read openssl
+
+var privatekey = fs.readFileSync('bin/server_no_passwd.key', 'utf8');
+
+var certificate = fs.readFileSync('bin/server.crt', 'utf8');
+
+var options={key:privatekey, cert:certificate};
+
 
 /**
  * Get port from environment and store in Express.
@@ -19,7 +29,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
