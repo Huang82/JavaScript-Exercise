@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>item6_(測試)</title>
+    </head>
+    <body>
+        <video id="video" autoplay muted playsinline></video>
+
+        <script type="text/javascript">
+
+            // get video element
+            var video = document.getElementById("video");
+            // create constraints
+            var constraints = window.constraints = {
+                audio: false,
+                video: true
+            }
+
+            navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
+                var videoTracks = stream.getVideoTracks();
+                console.log("Got stream with constraints", constraints);
+                console.log("Using video deviec: " + videoTracks[0].label);
+                stream.onremovetrack = function() {
+                    console.log('stream ended');
+                }
+                window.stream = stream;
+                video.srcObject = stream;
+            })
+            // .catch(function(error) {
+            //     if (error.name === 'ConstraintNotSatisfiedError') {
+            //         errorMsg('The resolution ' + constraints.video.width.exact + 'x' +
+            //             constraints.video.height.exact + ' px is not supported by your device.');
+            //     } else if (error.name === 'PermissionDeniedError') {
+            //         errorMsg('Permissions have not been granted to use your camera and ' +
+            //         'microphone, you need to allow the page access to your devices in ' +
+            //         'order for the demo to work.');
+            //     }
+            //     errorMsg('getUserMedia error: ' + error.name, error);
+            // });
+
+            function errorMsg(msg, error) {
+                console.log(msg);
+                if (typeof error !== 'undefind') {
+                    console.error(error);
+                }
+            }
+
+            // --------------------------------------------------
+            
+            // 
+
+            // let localPeer;
+            // let remotePeer;
+
+            // const configuration = {};
+
+            // localPeer = new RTCPeerConnection(configuration);
+            // localPeer.onicecandidate = (e) => onicecandidate(localPeer, e);
+            // localPeer.oniceconnectionstatechange = (e) => onIceStateChange(localPeer, e);
+
+            // let localStream;
+            // async function start() {
+            //     // ...
+            //     try {
+            //         const stream = await navigator.mediaDevices.getUserMedia({
+            //             audio: false,
+            //             video: true
+            //         });
+            //         localVideo.srcObject = stream;
+            //         localStream = stream;
+            //         // ...
+            //     } catch (e) {
+            //         alert(`getUserMedia() error: ${e.name}`);
+            //     }
+            // }
+
+            // localStream.getTracks().forEach((track) => localPeer.addTrack(track, localStream));
+
+            // remotePeer.ontrack = (e) => {
+            //     if (remoteVideo.srcObject !== e.stream[0]) {
+            //         remoteVideo.srcObject = e.stream[0];
+            //     }
+            // }
+
+            // async function onIceCandidate(event) {
+            //     try {
+            //         await remotePeer.addIceCandidate(event.candidate);
+            //         // ... handle success
+            //     } catch (e) {
+            //         // ... catch error
+            //     }
+            // }
+
+            // const offer = localPeer.createOffer(offerOptions);
+
+            // try {
+            //     localPeer.setLocalDescription(offer);
+            //     remotePeer.setRemoteDescription(offer);
+
+            //     const answer = remotePeer.createAnswer();
+
+            //     remotePeer.setLocalDescription(answer);
+            //     localPeer.setRemoteDescription(answer);
+            // } catch (e) {
+            //     // ... catch error
+            // }
+
+        </script>
+    </body>
+</html>
