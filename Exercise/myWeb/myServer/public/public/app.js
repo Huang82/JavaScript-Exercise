@@ -14,10 +14,13 @@ const configuration = {
 };
 
 let peerConnection = null;
+let remoteConnection = null;
 let localStream = null;
 let remoteStream = null;
 let roomDialog = null;
 let roomId = null;
+let stream = null;
+
 
 function init() {
   document.querySelector('#cameraBtn').addEventListener('click', openUserMedia);
@@ -30,68 +33,81 @@ function init() {
 async function createRoom() {
   document.querySelector('#createBtn').disabled = true;
   document.querySelector('#joinBtn').disabled = true;
-  // const db = firebase.firestore();   好像沒有使用?
   
-  console.log('Create PeerConnection with configuration: ', configuration);
-  peerConnection = new RTCPeerConnection(configuration);
+  var localVideo = document.querySelector("#localVideo");
+  var remoteVideo = document.querySelector("#remoteVideo");
 
-  registerPeerConnectionListeners();
+  peerConnection = new RTCPeerConnection();
+  remoteConnection = new RTCPeerConnection();
 
-  // Add code for creating a room here
-  const offer = await peerConnection.createOffer();
-  await peerConnection.setLocalDescription(offer);
-
-  const roomWithOffer = {
-      offer: {
-          type: offer.type,
-          sdp: offer.sdp
-      }
-  }
-  const roomRef = await db.collection('rooms').add(roomWithOffer);
-  const roomId = roomRef.id;
-  document.querySelector('#currentRoom').innerText = `Current room is ${roomId} - You are the caller!`
-
-
-  roomRef.onSnapshot(async snapshot => {
-    console.log('Got updated room:', snapshot.data());
-    const data = snapshot.data();
-    if (!peerConnection.currentRemoteDescription && data.answer) {
-        console.log('Set remote description: ', data.answer);
-        const answer = new RTCSessionDescription(data.answer)
-        await peerConnection.setRemoteDescription(answer);
+  peerConnection.onicecandidate = e => {
+    if (e.candidate) {
+      console.log("aaaaa");
+      remoteConnection.addIceCandidate(e.candidate);
     }
-  });
+  };
+
+  remoteConnection.onicecandidate = e => {
+    if (e.candidate) {
+      peerConnection.addIceCandidate(e.candidate);
+    }
+  }
   
-  // Code for creating room above
+  // Track remote先找
+  remoteConnection.ontrack = e => {
+    remoteVideo.srcObject = e.streams[0];
+  };
   
-  localStream.getTracks().forEach(track => {
-    peerConnection.addTrack(track, localStream);
-  });
 
-  // Code for creating a room below
+  // 再新增local的Track
+  localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+  
+  // 新增串流
+  peerConnection.addStream(localVideo.srcObject);
 
-  // Code for creating a room above
+  // // 互相交換 local:offer remote:answer 
+  try {
+    // 設立local offer
+    const offer = await peerConnection.createOffer();
 
-  // Code for collecting ICE candidates below
+    await peerConnection.setLocalDescription(new RTCSessionDescription(offer));
+    await remoteConnection.setRemoteDescription(peerConnection.localDescription);
+    console.log("bbbbb");
+    // 設立answer Answer
+    const answer = await remoteConnection.createAnswer();
+    
+    await remoteConnection.setLocalDescription(new RTCSessionDescription(answer));
+    await peerConnection.setRemoteDescription(remoteConnection.localDescription);
+  } catch (e) {
+    console.log("Error");
+    console.log(e);
+  }
+  
 
-  // Code for collecting ICE candidates above
+  // navigator.mediaDevices.getUserMedia({
+  //   video: true
+  // })
+  // .then(stream => {
+  //   localVideo.srcObject = stream;
+  //   localPeer.addStream(stream);
+  //   return localPeer.createOffer();
+  // })
+  // .then(offer => localPeer.setLocalDescription(new RTCSessionDescription(offer)))
+  // .then(() => remotePeer.setRemoteDescription(localPeer.localDescription))
+  // .then(() => remotePeer.createAnswer())
+  // .then(answer => remotePeer.setLocalDescription(new RTCSessionDescription(answer)))
+  // .then(() => localPeer.setRemoteDescription(remotePeer.localDescription));
 
-  peerConnection.addEventListener('track', event => {
-    console.log('Got remote track:', event.streams[0]);
-    event.streams[0].getTracks().forEach(track => {
-      console.log('Add a track to the remoteStream:', track);
-      remoteStream.addTrack(track);
-    });
-  });
 
-  // Listening for remote session description below
 
-  // Listening for remote session description above
 
-  // Listen for remote ICE candidates below
 
-  // Listen for remote ICE candidates above
+
+
+  
+
 }
+
 
 function joinRoom() {
   document.querySelector('#createBtn').disabled = true;
@@ -145,12 +161,11 @@ async function joinRoomById(roomId) {
 }
 
 async function openUserMedia(e) {
-  const stream = await navigator.mediaDevices.getUserMedia(
-      {video: true, audio: true});
+  stream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
   document.querySelector('#localVideo').srcObject = stream;
   localStream = stream;
-  remoteStream = new MediaStream();
-  document.querySelector('#remoteVideo').srcObject = remoteStream;
+  // remoteStream = new MediaStream();
+  // document.querySelector('#remoteVideo').srcObject = remoteStream;
 
   console.log('Stream:', document.querySelector('#localVideo').srcObject);
   document.querySelector('#cameraBtn').disabled = true;
